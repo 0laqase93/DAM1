@@ -1,24 +1,131 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Stack;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
-class Cartas {
-    private int num;
+class Nodo {
+    private Jugador valor;
+    private Nodo anterior;
+    private Nodo siguiente;
+
+    public Nodo() {
+        this.valor = new Jugador();
+        this.anterior = null;
+        this.siguiente = null;
+    }
+
+    public Nodo(Jugador valor, Nodo anterior, Nodo siguiente) {
+        this.valor = valor;
+        this.anterior = anterior;
+        this.siguiente = siguiente;
+    }
+
+    public Jugador getValor() {
+        return valor;
+    }
+
+    public void setValor(Jugador valor) {
+        this.valor = valor;
+    }
+
+    public Nodo getAnterior() {
+        return anterior;
+    }
+
+    public void setAnterior(Nodo anterior) {
+        this.anterior = anterior;
+    }
+
+    public Nodo getSiguiente() {
+        return siguiente;
+    }
+
+    public void setSiguiente(Nodo siguiente) {
+        this.siguiente = siguiente;
+    }
+}
+
+class ListaCircular {
+    private Nodo inicio;
+    private Nodo ultimo;
+    private int size;
+    
+    public listaCircular() {
+        this.inicio = null;
+        this.ultimo = null;
+        this.size = 0;
+    }
+
+    public listaCircular(Nodo inicio, Nodo ultimo, int size) {
+        this.inicio = inicio;
+        this.ultimo = ultimo;
+        this.size = size;
+    }
+
+    public boolean esVacia() {
+        return inicio == null;
+    }
+
+    public void add(Jugador valor) {
+        Nodo nuevo = new Nodo();
+        nuevo.setValor(valor);
+        if (esVacia()) {
+            this.inicio = nuevo;
+            this.ultimo = nuevo;
+            this.ultimo.setAnterior(nuevo);
+            this.ultimo.setSiguiente(nuevo);
+        } else {
+            this.ultimo.setSiguiente(nuevo);
+            nuevo.setSiguiente(this.inicio);
+            this.ultimo = nuevo;
+        }
+        size++;
+    }
+
+    public Jugador get(int index) {
+        int aux = 0;
+        Nodo nodo = this.inicio;
+        while (aux != index) {
+            nodo = nodo.getSiguiente();
+            aux++;
+        }
+        return nodo.getValor();
+    }
+}
+
+class Colores {
+    public static final String RESET = "\u001B[0m";
+    public static final String RED = "\u001B[31m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String YELLOW = "\u001B[33m";
+    public static final String BLUE = "\u001B[34m";
+    public static final String PURPLE = "\u001B[35m";
+    public static final String CYAN = "\u001B[36m";
+}
+
+class Carta implements Comparable<Carta> {
+    private char num;
     private String color;
+    private Map<String, Integer> colores = new HashMap<>(); 
 
-    public Cartas() {}
+    public Carta() {}
 
-    public Cartas(int num, String color) {
+    public Carta(char num, String color) {
         this.num = num;
         this.color = color;
+        colores.put(Colores.RED, 1);
+        colores.put(Colores.GREEN, 2);
+        colores.put(Colores.BLUE, 3);
+        colores.put(Colores.YELLOW, 4);
+        colores.put("", 5); //cartas especiales
     }
 
     public int getNum() {
         return num;
     }
 
-    public void setNum(int num) {
+    public void setNum(char num) {
         this.num = num;
     }
 
@@ -32,14 +139,19 @@ class Cartas {
 
     @Override
     public String toString() {
-        return "(" + this.num + " " + this.color + ")";
+        return "[" + this.color + this.num + Colores.RESET + "]";
+    }
+
+    @Override
+    public int compareTo(Carta carta) {
+        return this.colores.get(this.color) - carta.colores.get(carta.getColor());
     }
 }
 
 class Baraja {
-    ArrayList<Cartas> cartas = new ArrayList<>();
+    ArrayList<Carta> cartas = new ArrayList<>();
 
-    public Baraja(ArrayList<Cartas> cartas) {
+    public Baraja(ArrayList<Carta> cartas) {
         this.cartas = cartas;
     }
 
@@ -47,69 +159,198 @@ class Baraja {
         Collections.shuffle(cartas);
     }
 
-    public Cartas repartirCarta() {
+    public Carta repartirCarta() {
         return cartas.remove(0);
     }
 
     @Override
     public String toString() {
         String output = "";
-        for (Cartas valor : cartas) {
+        for (Carta valor : cartas) {
             output += valor + " ";
+        }
+        return output;
+    }
+
+
+}
+
+class Jugador {
+    ArrayList<Carta> mano = new ArrayList<>();
+
+    public void recibeCarta(Carta carta) {
+        mano.add(carta);
+    }
+
+    public ArrayList<Carta> getMano() {
+        return mano;
+    }
+    
+    public void setMano(ArrayList<Carta> mano) {
+        this.mano = mano;
+    }
+
+    @Override
+    public String toString() {
+        String output = "";
+        int indice = 1;
+        for (Carta carta : mano) {
+            output += (Colores.PURPLE + indice + Colores.RESET + ":" + carta + " ");
+            indice++;
         }
         return output;
     }
 }
 
-class Jugador {
-    ArrayList<Cartas> mano;
-
-    public void recibeCarta(Cartas carta) {
-        mano.add(carta);
-    }
-
-    @Override
-    public String toString() {
-        return mano.toString();
-    }
-}
-
 public class uno {
-    
-    public static final String RESET = "\u001B[0m";
-    public static final String BLACK = "\u001B[30m";
-    public static final String RED = "\u001B[31m";
-    public static final String GREEN = "\u001B[32m";
-    public static final String YELLOW = "\u001B[33m";
-    public static final String BLUE = "\u001B[34m";
-    public static final String PURPLE = "\u001B[35m";
-    public static final String CYAN = "\u001B[36m";
-    public static final String WHITE = "\u001B[37m";
 
-    public static void main(String[] args) {
+    public static Scanner sc = new Scanner(System.in);
+    
+    public static void main(String[] args) throws InterruptedException {
+        ListaCircular jugadores = new ListaCircular();
+        
         Jugador user1 = new Jugador();
-        ArrayList<Cartas> cartas = new ArrayList<>();
-        String[] colores = { RED+"rojo"+RESET, GREEN+"verde"+RESET, YELLOW+"amarillo"+RESET, BLUE+"azul"+RESET };
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 3; j++) {
-                cartas.add(new Cartas(j, colores[i]));
-            }
+        Jugador user2 = new Jugador();
+        Jugador user3 = new Jugador();
+        Jugador user4 = new Jugador();
+        Baraja b = new Baraja(llenarBaraja());
+        b.barajar();
+        Carta central = b.repartirCarta();
+        //Repartir cartas
+        for (int i = 0; i < 7; i++) {
+            user1.recibeCarta(b.repartirCarta());
         }
-        Baraja b = new Baraja(cartas);
-        System.out.println(b);
-        b.barajar();
-        System.out.println(b);
-        b.barajar();
-        System.out.println(b);
-        b.barajar();
-        System.out.println(b);
-        b.barajar();
-        System.out.println(b);
-        b.barajar();
-        System.out.println(b);
-        user1.recibeCarta(b.repartirCarta());
-        user1.recibeCarta(b.repartirCarta());
-        user1.recibeCarta(b.repartirCarta());
-        System.out.println(user1);
+        Collections.sort(user1.getMano());
+        do {
+            mostrarMenú(1, central, user1);
+            int opcion = elegirOpcion();
+            if (opcion == 1) {
+                central = elegirCarta(user1, central);
+            } else if (opcion == 2) {
+                user1.recibeCarta(b.repartirCarta());
+                System.out.println("[+] Has robado la carta " + user1.getMano().get(user1.getMano().size() - 1) + ". Presione enter para continuar...");
+                Collections.sort(user1.getMano());
+                sc.nextLine();
+            } else {
+                System.out.println("UNO");
+                Thread.sleep(3000);
+            }
+        } while (true);
+    }
+
+    public static ArrayList<Carta> llenarBaraja() {
+        ArrayList<Carta> cartas = new ArrayList<>();
+        String[] colores = { Colores.RED, Colores.GREEN, Colores.YELLOW, Colores.BLUE };
+        // Añadir los numeros (0-9) con sus colores
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 10; j++) {
+                cartas.add(new Carta((char)(j + 48), colores[i]));
+            }
+            // Añadir cartas especiales
+            cartas.add(new Carta('↔', colores[i])); //Reverse
+            cartas.add(new Carta('Ø', colores[i])); //pasar
+            cartas.add(new Carta('═', colores[i])); //+2
+        }
+        // Añadir cartas especiales
+        for (int i = 0; i < 4; i++) {
+            cartas.add(new Carta('C', "")); //Cambiar color
+            cartas.add(new Carta('╬', "")); //+4
+        }
+        return cartas;
+    }
+
+    public static void mostrarMenú(int menu, Carta central, Jugador user) {
+        //Limpiar pantalla
+        System.out.print("\033[H\033[2J");  
+        System.out.flush(); 
+
+        System.out.println(Colores.YELLOW + "-----Central-----" + Colores.RESET);
+        System.out.println("       " + central);
+        System.out.println(Colores.YELLOW + "-----------------" + Colores.RESET);
+        switch (menu) {
+            case 1:
+                System.out.println(Colores.PURPLE + "-->" + Colores.RESET + Colores.CYAN + " 1." + Colores.RESET + " Jugar cartas");
+                System.out.println(Colores.PURPLE + "-->" + Colores.RESET + Colores.CYAN + " 2." + Colores.RESET + " Robar carta");
+                System.out.println(Colores.PURPLE + "-->" + Colores.RESET + Colores.CYAN + " 3." + Colores.RESET + " Decir UNO");
+                break;
+        
+            case 2:
+                System.out.println("Usuario: " + user);
+                break;
+        }
+    }
+
+    public static int elegirOpcion() {
+        int input = 0;
+        System.out.print("[+] Elija la opción que quiere hacer: ");
+        input = sc.nextInt(); sc.nextLine();
+        return input;
+    }
+
+    public static Carta elegirCarta(Jugador jugador, Carta central) {
+        int index = 0;
+        Carta cartaJugada = new Carta();
+        boolean valida = true;
+
+        System.out.println(jugador); //Muestra las cartas del usuario
+        //Leer opción
+        do {
+            do {
+                System.out.print("[+] Elija la posición de la carta que quiere jugar(1-" + jugador.getMano().size() + "): ");
+                index = sc.nextInt(); sc.nextLine();
+                if ((index < 1) || (index > jugador.getMano().size())) {
+                    System.out.println(Colores.RED + "[!] Opción no válida." + Colores.RESET);
+                }
+            } while ((index < 1) || (index > jugador.getMano().size()));
+            index--; // Esto es para que se ajuste a los índices del arraylist
+            cartaJugada = jugador.getMano().get(index);
+    
+            // Esta condición es para ver si la carta tiene el mismo color o el mismo número
+            // "" es una carta especial
+            if (cartaJugada.getColor() != "") {
+                if ((cartaJugada.getColor() != central.getColor()) && (cartaJugada.getNum() != central.getNum())) {
+                    System.out.println(Colores.RED + "[+] La carta sececionada no se puede jugar" + Colores.RESET);
+                    valida = false;
+                } else {
+                    valida = true;
+                }
+            } else {
+                valida = true;
+                //Esto es para cambiar el color de la carta especial al deseado
+                boolean colorValido = false;
+                String color = "";
+                //Comprueba que la opción esté entre las posibles opciones
+                do {
+                    colorValido = false;
+                    System.out.print("[+] ¿A cuál color quieres cambiar? (rojo/verde/amarillo/azul): ");
+                    color = sc.nextLine();
+                    color.toLowerCase();
+                    if (color.equals("rojo") || color.equals("verde") || color.equals("amarillo") || color.equals("azul")) {
+                        colorValido = true;
+                    } else {
+                        System.out.println("[+] Opción no válida");
+                    }
+                } while (!colorValido);
+                //Cambia el color al color deseado
+                switch (color) {
+                    case "rojo":
+                        jugador.getMano().get(index).setColor(Colores.RED);
+                        break;
+                
+                    case "verde":
+                        jugador.getMano().get(index).setColor(Colores.GREEN);
+                        break;
+
+                    case "amarillo":
+                        jugador.getMano().get(index).setColor(Colores.YELLOW);
+                        break;
+
+                    case "azul":
+                        jugador.getMano().get(index).setColor(Colores.BLUE);
+                        break;
+                }
+            }
+        } while (!valida);
+        return jugador.getMano().remove(index);
     }
 }
