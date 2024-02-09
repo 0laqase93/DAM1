@@ -51,13 +51,13 @@ class ListaCircular {
     private Nodo ultimo;
     private int size;
     
-    public listaCircular() {
+    public ListaCircular() {
         this.inicio = null;
         this.ultimo = null;
         this.size = 0;
     }
 
-    public listaCircular(Nodo inicio, Nodo ultimo, int size) {
+    public ListaCircular(Nodo inicio, Nodo ultimo, int size) {
         this.inicio = inicio;
         this.ultimo = ultimo;
         this.size = size;
@@ -109,7 +109,9 @@ class Carta implements Comparable<Carta> {
     private String color;
     private Map<String, Integer> colores = new HashMap<>(); 
 
-    public Carta() {}
+    public Carta() {
+        num = '-';
+    }
 
     public Carta(char num, String color) {
         this.num = num;
@@ -205,31 +207,44 @@ class Jugador {
 public class uno {
 
     public static Scanner sc = new Scanner(System.in);
+    public static int turno = 0;
     
     public static void main(String[] args) throws InterruptedException {
+        int numJugadores = 0;
         ListaCircular jugadores = new ListaCircular();
-        
-        Jugador user1 = new Jugador();
-        Jugador user2 = new Jugador();
-        Jugador user3 = new Jugador();
-        Jugador user4 = new Jugador();
+        imprimirLogo();
+        do {
+            System.out.print("[+] ¿Cuántos jugadores van a jugar? (2/4): ");
+            numJugadores = sc.nextInt(); sc.nextLine();
+            if (numJugadores < 2 || numJugadores > 4) {
+                 System.out.println(Colores.RED + "[!] Opción no válida." + Colores.RESET);
+            }
+        } while (numJugadores < 2 || numJugadores > 4);
+
+        for (int i = 0; i < numJugadores; i++) {
+            jugadores.add(new Jugador());
+        }
+
         Baraja b = new Baraja(llenarBaraja());
         b.barajar();
         Carta central = b.repartirCarta();
         //Repartir cartas
         for (int i = 0; i < 7; i++) {
-            user1.recibeCarta(b.repartirCarta());
+            jugadores.get(turno).recibeCarta(b.repartirCarta());
         }
-        Collections.sort(user1.getMano());
+        Collections.sort(jugadores.get(turno).getMano());
         do {
-            mostrarMenú(1, central, user1);
+            mostrarMenú(1, central, jugadores.get(turno));
             int opcion = elegirOpcion();
             if (opcion == 1) {
-                central = elegirCarta(user1, central);
+                Carta jugada = elegirCarta(jugadores.get(turno), central);
+                if (jugada.getNum() != '-') { //Si es '-' el jugador no ha elegido carta
+                    central = jugada;
+                }
             } else if (opcion == 2) {
-                user1.recibeCarta(b.repartirCarta());
-                System.out.println("[+] Has robado la carta " + user1.getMano().get(user1.getMano().size() - 1) + ". Presione enter para continuar...");
-                Collections.sort(user1.getMano());
+                jugadores.get(turno).recibeCarta(b.repartirCarta());
+                System.out.println("[+] Has robado la carta " + jugadores.get(turno).getMano().get(jugadores.get(turno).getMano().size() - 1) + ". Presione enter para continuar...");
+                Collections.sort(jugadores.get(turno).getMano());
                 sc.nextLine();
             } else {
                 System.out.println("UNO");
@@ -288,7 +303,8 @@ public class uno {
     }
 
     public static Carta elegirCarta(Jugador jugador, Carta central) {
-        int index = 0;
+        int index = 1;
+        String input = "";
         Carta cartaJugada = new Carta();
         boolean valida = true;
 
@@ -296,61 +312,106 @@ public class uno {
         //Leer opción
         do {
             do {
-                System.out.print("[+] Elija la posición de la carta que quiere jugar(1-" + jugador.getMano().size() + "): ");
-                index = sc.nextInt(); sc.nextLine();
-                if ((index < 1) || (index > jugador.getMano().size())) {
-                    System.out.println(Colores.RED + "[!] Opción no válida." + Colores.RESET);
+                System.out.print("[+] Elija la posición de la carta que quiere jugar(1-" + jugador.getMano().size() + ")(\"volver\" para volver): ");
+                input.toLowerCase();
+                input = sc.nextLine();
+                if (!input.equals("volver")) {
+                    index = Integer.parseInt(input);
+                    if ((index < 1) || (index > jugador.getMano().size())) {
+                        System.out.println(Colores.RED + "[!] Opción no válida." + Colores.RESET);
+                    }
                 }
-            } while ((index < 1) || (index > jugador.getMano().size()));
-            index--; // Esto es para que se ajuste a los índices del arraylist
-            cartaJugada = jugador.getMano().get(index);
-    
-            // Esta condición es para ver si la carta tiene el mismo color o el mismo número
-            // "" es una carta especial
-            if (cartaJugada.getColor() != "") {
-                if ((cartaJugada.getColor() != central.getColor()) && (cartaJugada.getNum() != central.getNum())) {
-                    System.out.println(Colores.RED + "[+] La carta sececionada no se puede jugar" + Colores.RESET);
-                    valida = false;
+            } while ((index < 1) || (index > jugador.getMano().size()) && (!input.equals("volver")));
+            if (!input.equals("volver")) {
+                index--; // Esto es para que se ajuste a los índices del arraylist
+                cartaJugada = jugador.getMano().get(index);
+        
+                // Esta condición es para ver si la carta tiene el mismo color o el mismo número
+                // "" es una carta especial
+                if (cartaJugada.getColor() != "") {
+                    if ((cartaJugada.getColor() != central.getColor()) && (cartaJugada.getNum() != central.getNum())) {
+                        System.out.println(Colores.RED + "[+] La carta sececionada no se puede jugar" + Colores.RESET);
+                        valida = false;
+                    } else {
+                        valida = true;
+                    }
                 } else {
                     valida = true;
-                }
-            } else {
-                valida = true;
-                //Esto es para cambiar el color de la carta especial al deseado
-                boolean colorValido = false;
-                String color = "";
-                //Comprueba que la opción esté entre las posibles opciones
-                do {
-                    colorValido = false;
-                    System.out.print("[+] ¿A cuál color quieres cambiar? (rojo/verde/amarillo/azul): ");
-                    color = sc.nextLine();
-                    color.toLowerCase();
-                    if (color.equals("rojo") || color.equals("verde") || color.equals("amarillo") || color.equals("azul")) {
-                        colorValido = true;
-                    } else {
-                        System.out.println("[+] Opción no válida");
+                    //Esto es para cambiar el color de la carta especial al deseado
+                    boolean colorValido = false;
+                    String color = "";
+                    //Comprueba que la opción esté entre las posibles opciones
+                    do {
+                        colorValido = false;
+                        System.out.print("[+] ¿A cuál color quieres cambiar? (rojo/verde/amarillo/azul): ");
+                        color = sc.nextLine();
+                        color.toLowerCase();
+                        if (color.equals("rojo") || color.equals("verde") || color.equals("amarillo") || color.equals("azul")) {
+                            colorValido = true;
+                        } else {
+                            System.out.println("[+] Opción no válida");
+                        }
+                    } while (!colorValido);
+                    //Cambia el color al color deseado
+                    switch (color) {
+                        case "rojo":
+                            jugador.getMano().get(index).setColor(Colores.RED);
+                            break;
+                    
+                        case "verde":
+                            jugador.getMano().get(index).setColor(Colores.GREEN);
+                            break;
+    
+                        case "amarillo":
+                            jugador.getMano().get(index).setColor(Colores.YELLOW);
+                            break;
+    
+                        case "azul":
+                            jugador.getMano().get(index).setColor(Colores.BLUE);
+                            break;
                     }
-                } while (!colorValido);
-                //Cambia el color al color deseado
-                switch (color) {
-                    case "rojo":
-                        jugador.getMano().get(index).setColor(Colores.RED);
-                        break;
-                
-                    case "verde":
-                        jugador.getMano().get(index).setColor(Colores.GREEN);
-                        break;
-
-                    case "amarillo":
-                        jugador.getMano().get(index).setColor(Colores.YELLOW);
-                        break;
-
-                    case "azul":
-                        jugador.getMano().get(index).setColor(Colores.BLUE);
-                        break;
                 }
             }
         } while (!valida);
-        return jugador.getMano().remove(index);
+        if (!input.equals("volver")) {
+            return jugador.getMano().remove(index);
+        } else {
+            return new Carta();
+        }
+    }
+
+    public static void imprimirLogo() {
+        //Limpiar pantalla
+        System.out.print("\033[H\033[2J");  
+        System.out.flush();
+
+        System.out.println("\n" + //
+        "                                     "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"                   \n" + //
+        "                               "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"▓"+Colores.YELLOW+"░░░░░░░░░"+Colores.RESET+"         \n" + //
+        "                           "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"▒░▒█"+Colores.YELLOW+"░░░░░░░░░"+Colores.RESET+"█▓░      \n" + //
+        "                        "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"░░█"+Colores.YELLOW+"░░░░░░░░░░░░░░░"+Colores.RESET+"█░    \n" + //
+        "                     ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"░░░█░▓░░██"+Colores.YELLOW+"░░░░░░░░░░░░░░░░░"+Colores.RESET+"█░░  \n" + //
+        "                   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░██░░░░█░██▓"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█████████"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"█░ \n" + //
+        "                 ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░█▓█░░░░░████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"███████▓▓▓█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░ \n" + //
+        "               ▓▓▓▓▓▓▓▓▓▓░░░██░░▓▓░█▓▓▓█░░░░░███"+Colores.YELLOW+"░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓▓▓"+Colores.RESET+"░░█▓▓██"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░\n" + //
+        "             ▓▓▓▓▓▓▓░░░██░░░░░░██░░░█▓█▓█░░░░░██"+Colores.YELLOW+"░░░░░"+Colores.RESET+"░"+Colores.RED+"▓▓▓▓▓▓"+Colores.RESET+"░█▓▓█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░\n" + //
+        "            ▓▓▓▓░░██░░░░█░░░░░░░░░█▓░█▓██░░░░░░█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓▓▓▓"+Colores.RESET+"░████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░\n" + //
+        "          ▓▓▓▓░░█▓█░░░░░██░░░░░░░░░░░█████░░░░░█"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓▓▓▓"+Colores.RESET+"░██"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"█░\n" + //
+        "     ░░░██░▓▓▓░█▓▓▓█░░░░░██░░░░░░░░░░░░░███░░░░░█"+Colores.YELLOW+"░░░░░░░"+Colores.RESET+"█"+Colores.YELLOW+"░░░░"+Colores.RESET+"██"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"█░ \n" + //
+        "  ░▒█░░░░░█░▓▓▓░█▓█▓█░░░░░██░░░░░█░░░░░░░░░░░░░░░█"+Colores.YELLOW+"░░░░░░░░░░░░░░░░░░"+Colores.RESET+"█░  \n" + //
+        "░░████░░░░░█░▓▓░░█▓██░░░░░▒█░░░░░▓███░░░░░░░░░░░░███"+Colores.YELLOW+"░░░░░░░░░░░░░░"+Colores.RESET+"██░   \n" + //
+        "░░████░░░░░░░░▓▓░█████░░░░░██░░░░░██████░░░░░░░░░░██████"+Colores.YELLOW+"░░░░░░░"+Colores.RESET+"███░     \n" + //
+        " ░█████░░░░░█░▓▓▓░█████░░░░░██░░░░░████████░░░░░░░░█████████████░       \n" + //
+        "  ░█████░░░░░█░▓▓░░████░░░░░▓█░░░░░░░████████░░░░░░▒░███████░░░         \n" + //
+        "  ░░██▓▓░░░░░░█░▓▓░█████░░░░░██░░░░░█░░░███████████░░▓▓▓▓▓▓▓"+Colores.RESET+"            \n" + //
+        "   ░█▓▓▓█░░░░░█░▓▓▓░████░░░░░███░░░░░█░▓▓░███████░░▓▓▓▓▓▓▓▓"+Colores.RESET+"             \n" + //
+        "    ░███▓█░░░░░░█░░░██▒░░░░░▒███░░░░░██░▓▓▓░░░░▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"               \n" + //
+        "     ░█▓███░░░░░░░░░░░░░░░░░█████████░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"                 \n" + //
+        "     ░░█████░░░░░░░░░░░░░░█░░█████░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"                   \n" + //
+        "      ░░██████▓░░░░░░░███░░▓▓░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"                      \n" + //
+        "        ░██████████████░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"                        \n" + //
+        "          ░░████████░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"                            \n" + //
+        "              ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"                                \n" + //
+        "                   ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"                                      \n");
     }
 }
