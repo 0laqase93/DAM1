@@ -1,0 +1,55 @@
+@media screen and (max-width: 750px) {
+    nav {
+        padding-top: 10px;
+        flex-direction: column;
+        position: relative;
+    }
+    
+    nav img {
+        margin: 0;
+    }
+
+    ul {
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        float: none;
+        left: 0;
+        right: 0;
+        text-align: center;
+    }
+
+    .imagenPresentacion {
+        height: 65vh;
+    }
+
+    .imagenPresentacion img {
+        height: auto;
+        width: 100%;
+        opacity: 1;
+        transition: none;
+    }
+
+    .infoImg {
+        display: grid;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+            "foto1"
+            "text1"
+            "foto2"
+            "text2";
+        align-items: center;
+    }
+
+    .condiciones {
+        display: flex;
+        flex-direction: column;
+    }
+
+    article.servicios {
+        flex-direction: column;
+    }
+}
