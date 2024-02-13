@@ -174,11 +174,25 @@ class Baraja {
         return output;
     }
 
-
+    // Esta función es para añadir una carta al final de la baraja
+    public void añadirFinal(Carta carta) {
+        cartas.add(carta);
+    }
 }
 
 class Jugador {
     ArrayList<Carta> mano = new ArrayList<>();
+    String nombre;
+
+    public Jugador() {}
+
+    public Jugador(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    public String getNombre() {
+        return nombre;
+    }
 
     public void recibeCarta(Carta carta) {
         mano.add(carta);
@@ -202,48 +216,75 @@ class Jugador {
         }
         return output;
     }
+
+    public int numCartas() {
+        return this.mano.size();
+    }
 }
 
 public class uno {
 
     public static Scanner sc = new Scanner(System.in);
-    public static int turno = 0;
+    public static int turno = 0, multiplicador = 1, numCartasRobar = 0;
     
     public static void main(String[] args) throws InterruptedException {
+        // Declaración de variables
         int numJugadores = 0;
+        boolean juega = true;
         Baraja b = new Baraja(llenarBaraja());
         b.barajar();
         Carta central = b.repartirCarta();
         ListaCircular jugadores = new ListaCircular();
         imprimirLogo();
+
+        // Inserción del número de jugadores
         do {
-            System.out.print("[+] ¿Cuántos jugadores van a jugar? (2/4): ");
+            System.out.print(Colores.BLUE + "[+]" + Colores.RESET + " ¿Cuántos jugadores van a jugar? (2/4): ");
             numJugadores = sc.nextInt(); sc.nextLine();
             if (numJugadores < 2 || numJugadores > 4) {
                  System.out.println(Colores.RED + "[!] Opción no válida." + Colores.RESET);
             }
         } while (numJugadores < 2 || numJugadores > 4);
 
+        // Inserción de los jugadores
         for (int i = 0; i < numJugadores; i++) {
-            jugadores.add(new Jugador());
-            for (int j = 0; j < 7; j++) {
+            System.out.print(Colores.BLUE + "[+]" + Colores.RESET + " Nombre del jugador " + Colores.RED + (i+1) + Colores.RESET + ": ");
+            String nombre = sc.nextLine();
+            jugadores.add(new Jugador(nombre));
+            for (int j = 0; j < 1; j++) {
                 jugadores.get(i).recibeCarta(b.repartirCarta());
             }
+            Collections.sort(jugadores.get(i).getMano());
         }
-        
-        Collections.sort(jugadores.get(turno).getMano());
+
+        // El juego como tal empieza aquí
         do {
+            juega = true;
+            
             if (turno > numJugadores) {
                 turno = 0;
             }
+
             mostrarMenú(1, central, jugadores.get(turno));
+
+            //Esto es para robar cartas (Caso +2 / +4)
+            for (int i = 0; i < numCartasRobar; i++) {
+                jugadores.get(turno).recibeCarta(b.repartirCarta());
+            }
+            if (numCartasRobar != 0) {
+                System.out.println(Colores.BLUE + "[+]" + Colores.RESET +" Has robado " + Colores.RED + numCartasRobar + Colores.RESET + " cartas :(" + Colores.RESET);
+                numCartasRobar = 0;
+                Collections.sort(jugadores.get(turno).getMano());
+            }
+            
             int opcion = elegirOpcion();
             if (opcion == 1) {
                 Carta jugada = elegirCarta(jugadores.get(turno), central);
                 if (jugada.getNum() != '-') { //Si es '-' el jugador no ha elegido carta
                     central = jugada;
+                    b.añadirFinal(jugada);
                 } else {
-                    turno--; //Si no juega repite turno
+                    juega = false; //Si no juega repite turno
                 }
             } else if (opcion == 2) {
                 jugadores.get(turno).recibeCarta(b.repartirCarta());
@@ -254,7 +295,17 @@ public class uno {
                 System.out.println("UNO");
                 Thread.sleep(3000);
             }
-            turno++;
+
+            // Comprueba si no quedan cartas en la mano del jugador
+            if (jugadores.get(turno).numCartas() == 0) {
+                System.out.println("[++] Jugador " + jugadores.get(turno).getNombre() + " ha ganado!!!");
+                System.exit(1);
+            }
+
+            if (juega) {
+                turno += multiplicador;
+            }
+
         } while (true);
     }
 
@@ -284,6 +335,8 @@ public class uno {
         System.out.print("\033[H\033[2J");  
         System.out.flush(); 
 
+        System.out.println(Colores.BLUE + "[+]" + Colores.RESET + " Jugador: " + Colores.PURPLE + user.getNombre() + Colores.RESET);
+
         System.out.println(Colores.YELLOW + "-----Central-----" + Colores.RESET);
         System.out.println("       " + central);
         System.out.println(Colores.YELLOW + "-----------------" + Colores.RESET);
@@ -307,7 +360,7 @@ public class uno {
         return input;
     }
 
-    public static Carta elegirCarta(Jugador jugador, Carta central) {
+    public static Carta elegirCarta(Jugador jugador, Carta central) throws InterruptedException {
         int index = 1;
         String input = "";
         Carta cartaJugada = new Carta();
@@ -376,6 +429,31 @@ public class uno {
                             break;
                     }
                 }
+
+                // Acciones de las cartas especiales
+                if (cartaJugada.getNum() == '↔') {
+                    if (multiplicador == 1) {
+                        multiplicador = -1;
+                    } else {
+                        multiplicador = 1;
+                    }
+                    System.out.println(Colores.CYAN + "[+]" + Colores.RESET + " Revertiendo el orden");
+                    Thread.sleep(2000);
+                }
+
+                if (cartaJugada.getNum() == 'Ø') {
+                    System.out.println(Colores.CYAN + "[+]" + Colores.RESET + " Jugador siguiente saltado...");
+                    Thread.sleep(2000);
+                    turno += multiplicador;
+                }
+
+                if (cartaJugada.getNum() == '═') {
+                    numCartasRobar = 2;
+                }
+
+                if (cartaJugada.getNum() == '╬') {
+                    numCartasRobar = 4;
+                }
             }
         } while (!valida);
         if (!input.equals("volver")) {
@@ -391,32 +469,32 @@ public class uno {
         System.out.flush();
 
         System.out.println("\n" + //
-        "                                     "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"                   \n" + //
-        "                               "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"▓"+Colores.YELLOW+"░░░░░░░░░"+Colores.RESET+"         \n" + //
-        "                           "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"▒░▒█"+Colores.YELLOW+"░░░░░░░░░"+Colores.RESET+"█▓░      \n" + //
-        "                        "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"░░█"+Colores.YELLOW+"░░░░░░░░░░░░░░░"+Colores.RESET+"█░    \n" + //
-        "                     "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"░░░█░"+Colores.RED+"▓"+Colores.RESET+"░░██"+Colores.YELLOW+"░░░░░░░░░░░░░░░░░"+Colores.RESET+"█░░  \n" + //
-        "                   "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"░░██"+Colores.YELLOW+"░░░░"+Colores.RESET+"█░██▓"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█████████"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"█░ \n" + //
-        "                 "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"░░█▓█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"███████▓▓▓█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░ \n" + //
+        "                                     "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"\n" + //
+        "                               "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"▓"+Colores.YELLOW+"░░░░░░░░░"+Colores.RESET+"\n" + //
+        "                           "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"▒░▒█"+Colores.YELLOW+"░░░░░░░░░"+Colores.RESET+"█▓░\n" + //
+        "                        "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"░░█"+Colores.YELLOW+"░░░░░░░░░░░░░░░"+Colores.RESET+"█░\n" + //
+        "                     "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"░░░█░"+Colores.RED+"▓"+Colores.RESET+"░░██"+Colores.YELLOW+"░░░░░░░░░░░░░░░░░"+Colores.RESET+"█░░\n" + //
+        "                   "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"░░██"+Colores.YELLOW+"░░░░"+Colores.RESET+"█░██▓"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█████████"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"█░\n" + //
+        "                 "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"░░█▓█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"███████▓▓▓█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░\n" + //
         "               "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"░░░██░░"+Colores.RED+"▓▓"+Colores.RESET+"░█▓▓▓█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"███"+Colores.YELLOW+"░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓▓▓"+Colores.RESET+"░░█▓▓██"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░\n" + //
         "             "+Colores.RED+"▓▓▓▓▓▓▓"+Colores.RESET+"░░░██"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"██░░░█▓█▓█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"██"+Colores.YELLOW+"░░░░░"+Colores.RESET+"░"+Colores.RED+"▓▓▓▓▓▓"+Colores.RESET+"░█▓▓█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░\n" + //
         "            "+Colores.RED+"▓▓▓▓"+Colores.RESET+"░░██"+Colores.YELLOW+"░░░░"+Colores.RESET+"█"+Colores.YELLOW+"░░░░░░░░░"+Colores.RESET+"█▓░█▓██"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓▓▓▓"+Colores.RESET+"░████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░\n" + //
         "          "+Colores.RED+"▓▓▓▓"+Colores.RESET+"░░█▓█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"██"+Colores.YELLOW+"░░░░░░░░░░░"+Colores.RESET+"█████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓▓▓▓"+Colores.RESET+"░██"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"█░\n" + //
-        "     ░░░██░"+Colores.RED+"▓▓▓"+Colores.RESET+"░█▓▓▓█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"██"+Colores.YELLOW+"░░░░░░░░░░░░░"+Colores.RESET+"███"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█"+Colores.YELLOW+"░░░░░░░"+Colores.RESET+"█"+Colores.YELLOW+"░░░░"+Colores.RESET+"██"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"█░ \n" + //
-        "  ░▒█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓▓"+Colores.RESET+"░█▓█▓█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"██"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█"+Colores.YELLOW+"░░░░░░░░░░░░░░░"+Colores.RESET+"█"+Colores.YELLOW+"░░░░░░░░░░░░░░░░░░"+Colores.RESET+"█░  \n" + //
-        "░░████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓"+Colores.RESET+"░░█▓██"+Colores.YELLOW+"░░░░░▒"+Colores.RESET+"█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"▓███"+Colores.YELLOW+"░░░░░░░░░░░░"+Colores.RESET+"███"+Colores.YELLOW+"░░░░░░░░░░░░░░"+Colores.RESET+"██░   \n" + //
-        "░░████"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"░░"+Colores.RED+"▓▓"+Colores.RESET+"░█████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"██"+Colores.YELLOW+"░░░░░"+Colores.RESET+"██████"+Colores.YELLOW+"░░░░░░░░░░"+Colores.RESET+"██████"+Colores.YELLOW+"░░░░░░░"+Colores.RESET+"███░     \n" + //
-        " ░█████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓▓"+Colores.RESET+"░█████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"██"+Colores.YELLOW+"░░░░░"+Colores.RESET+"████████"+Colores.YELLOW+"░░░░░░░░"+Colores.RESET+"█████████████░       \n" + //
-        "  ░█████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓"+Colores.RESET+"░░████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"▓█"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"░████████"+Colores.YELLOW+"░░░░░░▒"+Colores.RESET+"░███████░░░         \n" + //
-        "  ░░██▓▓"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓"+Colores.RESET+"░█████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"██"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░░░███████████░░"+Colores.RED+"▓▓▓▓▓▓▓"+Colores.RESET+"            \n" + //
-        "   ░█▓▓▓█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓▓"+Colores.RESET+"░████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"███"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓"+Colores.RESET+"░███████░░"+Colores.RED+"▓▓▓▓▓▓▓▓"+Colores.RESET+"             \n" + //
-        "    ░███▓█"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"█░░░██"+Colores.YELLOW+"▒░░░░░▒"+Colores.RESET+"███"+Colores.YELLOW+"░░░░░"+Colores.RESET+"██░"+Colores.RED+"▓▓▓"+Colores.RESET+"░░░░"+Colores.RED+"▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"               \n" + //
-        "     ░█▓███"+Colores.YELLOW+"░░░░░░░░░░░░░░░░░"+Colores.RESET+"█████████░"+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"                 \n" + //
-        "     ░░█████"+Colores.YELLOW+"░░░░░░░░░░░░░░"+Colores.RESET+"█░░█████░░"+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"                   \n" + //
-        "      ░░██████▓"+Colores.YELLOW+"░░░░░░░"+Colores.RESET+"███░░"+Colores.RED+"▓▓"+Colores.RESET+"░░░"+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"                      \n" + //
-        "        ░██████████████░░"+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"                        \n" + //
-        "          ░░████████░░"+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"                            \n" + //
-        "              "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"                                \n" + //
-        "                   "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"                                      \n");
+        "     ░░░██░"+Colores.RED+"▓▓▓"+Colores.RESET+"░█▓▓▓█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"██"+Colores.YELLOW+"░░░░░░░░░░░░░"+Colores.RESET+"███"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█"+Colores.YELLOW+"░░░░░░░"+Colores.RESET+"█"+Colores.YELLOW+"░░░░"+Colores.RESET+"██"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"█░\n" + //
+        "  ░▒█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓▓"+Colores.RESET+"░█▓█▓█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"██"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█"+Colores.YELLOW+"░░░░░░░░░░░░░░░"+Colores.RESET+"█"+Colores.YELLOW+"░░░░░░░░░░░░░░░░░░"+Colores.RESET+"█░\n" + //
+        "░░████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓"+Colores.RESET+"░░█▓██"+Colores.YELLOW+"░░░░░▒"+Colores.RESET+"█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"▓███"+Colores.YELLOW+"░░░░░░░░░░░░"+Colores.RESET+"███"+Colores.YELLOW+"░░░░░░░░░░░░░░"+Colores.RESET+"██░\n" + //
+        "░░████"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"░░"+Colores.RED+"▓▓"+Colores.RESET+"░█████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"██"+Colores.YELLOW+"░░░░░"+Colores.RESET+"██████"+Colores.YELLOW+"░░░░░░░░░░"+Colores.RESET+"██████"+Colores.YELLOW+"░░░░░░░"+Colores.RESET+"███░\n" + //
+        " ░█████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓▓"+Colores.RESET+"░█████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"██"+Colores.YELLOW+"░░░░░"+Colores.RESET+"████████"+Colores.YELLOW+"░░░░░░░░"+Colores.RESET+"█████████████░\n" + //
+        "  ░█████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓"+Colores.RESET+"░░████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"▓█"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"░████████"+Colores.YELLOW+"░░░░░░▒"+Colores.RESET+"░███████░░░\n" + //
+        "  ░░██▓▓"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓"+Colores.RESET+"░█████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"██"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░░░███████████░░"+Colores.RED+"▓▓▓▓▓▓▓"+Colores.RESET+"\n" + //
+        "   ░█▓▓▓█"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓▓"+Colores.RESET+"░████"+Colores.YELLOW+"░░░░░"+Colores.RESET+"███"+Colores.YELLOW+"░░░░░"+Colores.RESET+"█░"+Colores.RED+"▓▓"+Colores.RESET+"░███████░░"+Colores.RED+"▓▓▓▓▓▓▓▓"+Colores.RESET+"\n" + //
+        "    ░███▓█"+Colores.YELLOW+"░░░░░░"+Colores.RESET+"█░░░██"+Colores.YELLOW+"▒░░░░░▒"+Colores.RESET+"███"+Colores.YELLOW+"░░░░░"+Colores.RESET+"██░"+Colores.RED+"▓▓▓"+Colores.RESET+"░░░░"+Colores.RED+"▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"\n" + //
+        "     ░█▓███"+Colores.YELLOW+"░░░░░░░░░░░░░░░░░"+Colores.RESET+"█████████░"+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"\n" + //
+        "     ░░█████"+Colores.YELLOW+"░░░░░░░░░░░░░░"+Colores.RESET+"█░░█████░░"+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"\n" + //
+        "      ░░██████▓"+Colores.YELLOW+"░░░░░░░"+Colores.RESET+"███░░"+Colores.RED+"▓▓"+Colores.RESET+"░░░"+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"\n" + //
+        "        ░██████████████░░"+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"\n" + //
+        "          ░░████████░░"+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"\n" + //
+        "              "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"\n" + //
+        "                   "+Colores.RED+"▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓"+Colores.RESET+"\n");
     }
 }
