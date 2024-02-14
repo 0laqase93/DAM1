@@ -36,8 +36,8 @@ public class uno {
             }
         }
 
-        System.out.println(CartasASCII.getCartaAscii(0));
-        System.out.println(CartasASCII.getCartaAscii(1));
+        System.out.println(CartasASCII.getCartaAscii(13));
+        System.out.println(CartasASCII.getCartaAscii(14));
     }
 
     /**
@@ -48,22 +48,22 @@ public class uno {
         ArrayList<Carta> cartas = new ArrayList<>();
         String[] colores = { Colores.RED, Colores.BLUE, Colores.YELLOW, Colores.GREEN };
         for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 13; j++) {
+            for (int j = 10; j < 13; j++) {
                 // Van de los número normales (0-9) hasta un par de especiales (+2/reverse/saltar):
-                //  -> +2:      index 10
-                //  -> reverse: index 11
+                //  -> reverse: index 10
+                //  -> +2:      index 11
                 //  -> saltar:  index 12
                 cartas.add(new Carta(j, colores[i]));
             }
         }
         // Las cartas especiales sin color (+4/Cambiar color):
-        //  -> +4:            index 14
-        //  -> Cambiar color: index 15
+        //  -> +4:            index 13
+        //  -> Cambiar color: index 14
         for (int i = 0; i < 4; i++) {
-            cartas.add(new Carta(14, Colores.BLACK_BACKGROUND));
+            cartas.add(new Carta(13, Colores.BLACK_BACKGROUND));
         }
         for (int i = 0; i < 4; i++) {
-            cartas.add(new Carta(15, Colores.BLACK_BACKGROUND));
+            cartas.add(new Carta(14, Colores.BLACK_BACKGROUND));
         }
         return cartas;
     }
