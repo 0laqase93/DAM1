@@ -42,4 +42,12 @@ public class Nodo {
     public void setSiguiente(Nodo siguiente) {
         this.siguiente = siguiente;
     }
+
+    public Nodo getSiguienteJugador(boolean direccion) {
+        if (direccion) {
+            return this.siguiente;
+        } else {
+            return this.anterior;
+        }
+    }
 }

@@ -19,6 +19,10 @@ public class ListaCircular {
         this.size = size;
     }
 
+    public int getSize() {
+        return size;
+    }
+
     public boolean esVacia() {
         return inicio == null;
     }
@@ -32,20 +36,22 @@ public class ListaCircular {
             this.ultimo.setAnterior(nuevo);
             this.ultimo.setSiguiente(nuevo);
         } else {
-            this.ultimo.setSiguiente(nuevo);
             nuevo.setSiguiente(this.inicio);
+            nuevo.setAnterior(this.ultimo);
+            this.ultimo.setSiguiente(nuevo);
+            this.inicio.setAnterior(nuevo);
             this.ultimo = nuevo;
         }
         size++;
     }
 
-    public Jugador get(int index) {
+    public Nodo get(int index) {
         int aux = 0;
         Nodo nodo = this.inicio;
         while (aux != index) {
             nodo = nodo.getSiguiente();
             aux++;
         }
-        return nodo.getValor();
+        return nodo;
     }
 }

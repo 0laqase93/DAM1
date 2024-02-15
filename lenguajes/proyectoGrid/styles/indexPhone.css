@@ -52,4 +52,9 @@
     article.servicios {
         flex-direction: column;
     }
+
+    .infoImg p {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 }
