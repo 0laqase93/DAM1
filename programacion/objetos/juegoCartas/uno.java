@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 import cartas.*;
 
@@ -10,6 +11,7 @@ public class uno {
         ListaCircular jugadores = new ListaCircular();
         Baraja b = new Baraja(rellenarMazo()); // Creación del mazo de robar
         b.barajar();
+        Carta central = b.repartirCarta();
         int numJugadores = 0;
         int numCartarRepatir = 7; // Esto es el número de cartas con la que empizan la partida
 
@@ -30,14 +32,15 @@ public class uno {
             System.out.print( Colores.BLUE + "[+]" + Colores.RESET + " Introduce el nombre del jugador " + (i+1) + ": ");
             String nombre = sc.nextLine();
             jugadores.add(new Jugador(nombre));
+            // Les reparte las cartas
+            Jugador jugador = jugadores.get(i);
             for (int j = 0; j < numCartarRepatir; j++) {
-                Jugador jugador = jugadores.get(i);
-                jugador.recibeCarta(b.repartirCarta());
+                jugador.recibeCarta(b);
             }
+            Collections.sort(jugador.getMano());
         }
 
-        System.out.println(CartasASCII.getCartaAscii(13));
-        System.out.println(CartasASCII.getCartaAscii(14));
+        jugadores.get(0).juegaCarta(central);
     }
 
     /**
@@ -46,9 +49,9 @@ public class uno {
      */
     public static ArrayList<Carta> rellenarMazo() {
         ArrayList<Carta> cartas = new ArrayList<>();
-        String[] colores = { Colores.RED, Colores.BLUE, Colores.YELLOW, Colores.GREEN };
+        char[] colores = { 'r', 'v', 'a', 'b' };
         for (int i = 0; i < 4; i++) {
-            for (int j = 10; j < 13; j++) {
+            for (int j = 0; j < 13; j++) {
                 // Van de los número normales (0-9) hasta un par de especiales (+2/reverse/saltar):
                 //  -> reverse: index 10
                 //  -> +2:      index 11
@@ -60,10 +63,10 @@ public class uno {
         //  -> +4:            index 13
         //  -> Cambiar color: index 14
         for (int i = 0; i < 4; i++) {
-            cartas.add(new Carta(13, Colores.BLACK_BACKGROUND));
+            cartas.add(new Carta(13, 'x'));
         }
         for (int i = 0; i < 4; i++) {
-            cartas.add(new Carta(14, Colores.BLACK_BACKGROUND));
+            cartas.add(new Carta(14, 'x'));
         }
         return cartas;
     }

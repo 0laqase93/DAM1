@@ -7,17 +7,11 @@ import java.util.Map;
 
 public class Carta implements Comparable<Carta> {
     private Integer num;
-    private String color;
-    private Map<String, Integer> colores = new HashMap<>();
+    private char color;
 
-    public Carta(Integer num, String color) {
+    public Carta(Integer num, char color) {
         this.num = num;
         this.color = color;
-        colores.put(Colores.RED, 1);
-        colores.put(Colores.GREEN, 2);
-        colores.put(Colores.BLUE, 3);
-        colores.put(Colores.YELLOW, 4);
-        colores.put("", 5); //cartas especiales
     }
 
     public int getNum() {
@@ -28,11 +22,11 @@ public class Carta implements Comparable<Carta> {
         this.num = num;
     }
 
-    public String getColor() {
+    public char getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(char color) {
         this.color = color;
     }
 
@@ -43,6 +37,9 @@ public class Carta implements Comparable<Carta> {
 
     @Override
     public int compareTo(Carta carta) {
-        return this.colores.get(this.color) - carta.colores.get(carta.getColor());
+        if (this.color == carta.getColor()) {
+            return this.num - carta.getNum();
+        }
+        return this.color - carta.getColor();
     }
 }

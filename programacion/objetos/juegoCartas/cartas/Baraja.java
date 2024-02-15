@@ -13,6 +13,9 @@ public class Baraja {
 
     public void barajar() {
         Collections.shuffle(cartas);
+        while ((cartas.get(0).getNum() == 13) || (cartas.get(0).getNum() == 14)) {
+            Collections.shuffle(cartas);
+        }
     }
 
     public Carta repartirCarta() {
@@ -26,10 +29,5 @@ public class Baraja {
             output += valor + " ";
         }
         return output;
-    }
-
-    // Esta función es para añadir una carta al final de la baraja
-    public void añadirFinal(Carta carta) {
-        cartas.add(carta);
     }
 }
