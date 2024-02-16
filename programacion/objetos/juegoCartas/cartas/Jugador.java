@@ -100,49 +100,67 @@ public class Jugador {
             input = sc.nextLine();
             input = input.toLowerCase().trim();
             if (!(input.equals("reverse")) && !(input.equals("saltar")) && !(input.equals("+2")) && !(input.equals("+4")) && !(input.equals("robar")) && !(input.equals("cambiarcolor"))) {
-                int numero = Integer.parseInt(input.split(" ")[0]);
-                String colorString = input.split(" ")[1];
-                char color = 'x';
-                switch (colorString) { // Pasar color al formato carácter
-                    case "rojo":
-                        color = 'r';
-                        break;
-                
-                    case "azul":
-                        color = 'b';
-                        break;
-
-                    case "amarillo":
-                        color = 'a';
-                        break;
-
-                    case "verde":
-                        color = 'v';
-                        break;
-                    default:
-                        System.out.println(Colores.RED + "[!] Opción no válida" + Colores.RESET);
-                        valido = false;
-                        break;
+                // Este arraylist lo que hace es almacenar los números (0-9) en forma de String 
+                ArrayList<String> num = new ArrayList<>();
+                for (int i = 0; i < 10; i++) {
+                    num.add(i + "");
                 }
-                if (valido) {
-                    valido = false;
-                    for (Carta valor : mano) {
-                        if ((valor.getNum() == numero) && (valor.getColor() == color)) {
-                            jugada = valor;
-                            valido = true;
-                            break; // Lo siento por el break
+                // Este arraylist almacena los colores
+                ArrayList<String> colores = new ArrayList<>();
+                colores.add("rojo"); colores.add("azul"); colores.add("amarillo"); colores.add("verde");
+                if (input.split(" ").length == 2) { // Comprueba si tiene al menos dos palabras
+                    if (num.contains(input.split(" ")[0]) && colores.contains(input.split(" ")[1])) { // Con este compruebo que el input sea correcto
+                        int numero = Integer.parseInt(input.split(" ")[0]);
+                        String colorString = input.split(" ")[1];
+                        char color = 'x';
+                        switch (colorString) { // Pasar color al formato carácter
+                            case "rojo":
+                                color = 'r';
+                                break;
+                        
+                            case "azul":
+                                color = 'b';
+                                break;
+        
+                            case "amarillo":
+                                color = 'a';
+                                break;
+        
+                            case "verde":
+                                color = 'v';
+                                break;
+                            default:
+                                System.out.println(Colores.RED + "[!] Opción no válida" + Colores.RESET);
+                                valido = false;
+                                break;
                         }
-                        indexCarta++;
-                    }
-                    if (!valido) {
-                        indexCarta = 0;
-                        System.out.println(Colores.RED + "[!] No tienes esta carta" + Colores.RESET);
-                    }
-                    if ((central.getColor() != jugada.getColor()) && (central.getNum() != jugada.getNum())) {
+                        if (valido) {
+                            valido = false;
+                            for (Carta valor : mano) {
+                                if ((valor.getNum() == numero) && (valor.getColor() == color)) {
+                                    jugada = valor;
+                                    valido = true;
+                                    break; // Lo siento por el break
+                                }
+                                indexCarta++;
+                            }
+                            if (!valido) {
+                                indexCarta = 0;
+                                System.out.println(Colores.RED + "[!] No tienes esta carta" + Colores.RESET);
+                            }
+                            if ((central.getColor() != jugada.getColor()) && (central.getNum() != jugada.getNum())) {
+                                valido = false;
+                                indexCarta = 0;
+                                System.out.println(Colores.RED + "[!] Esta carta no se puede jugar." + Colores.RESET);
+                            }
+                        }
+                    } else {
                         valido = false;
-                        indexCarta = 0;
-                        System.out.println(Colores.RED + "[!] Esta carta no se puede jugar." + Colores.RESET);
+                        System.out.println(Colores.RED + "[!] Opción no válida" + Colores.RESET);
                     }
+                } else {
+                    valido = false;
+                    System.out.println(Colores.RED + "[!] El input tiene que tener al menos dos palabras" + Colores.RESET);
                 }
             } else if ((input.equals("reverse")) || (input.equals("saltar")) || (input.equals("+2"))) {
                 HashMap<String, Integer> valores = new HashMap<>();

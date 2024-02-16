@@ -88,6 +88,6 @@ public class Sprite {
     public Sprite() { }
 
     public String getFondo() {
-        return fondo;
+        return this.fondo;
     }
 }
