@@ -15,7 +15,7 @@ public class uno {
         b.barajar();
         Carta central = b.repartirCarta();
         int numJugadores = 0;
-        int numCartarRepatir = 20; // Esto es el número de cartas con la que empizan la partida
+        int numCartarRepatir = 7; // Esto es el número de cartas con la que empizan la partida
         boolean direccion = true; // True sentido normal, false sentido al revés
         boolean funcionEjecutada = false; // Esto es para evitar que una carta especial se ejecute varias veces
 
