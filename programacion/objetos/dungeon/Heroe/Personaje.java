@@ -46,7 +46,15 @@ public class Personaje {
         return this.vida;
     }
 
-    public void reciveDanyo(int danyo) {
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void recibeDanyo(int danyo) {
         this.vida -= danyo;
     }
 

@@ -19,6 +19,10 @@ public abstract class Arma {
         return this.numRandom.nextInt(danyomin, danyomax);
     }
 
+    public String getTipo() {
+        return tipo;
+    }
+
     @Override
     public String toString() {
         return this.tipo;

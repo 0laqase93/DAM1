@@ -26,16 +26,24 @@ public abstract class Monstruo {
         this.arma = arma;
     }
 
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
     public int getVida() {
         return this.vida;
     }
 
-    public void reciveDanyo(int danyo) {
+    public void recibeDanyo(int danyo) {
         this.vida -= danyo;
     }
 
     public int getPosicion() {
         return this.x;
+    }
+
+    public String getTipo() {
+        return tipo;
     }
 
     @Override

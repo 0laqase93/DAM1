@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 import Armas.*;
 import Heroe.*;
@@ -8,10 +10,9 @@ import Sprites.*;
 public class dungeon {
     
     static boolean[] pasillo = new boolean[40];
+    static Scanner sc = new Scanner(System.in);
     
     public static void main(String[] args) throws InterruptedException {
-        Scanner sc = new Scanner(System.in);
-        Sprite sprites = new Sprite();
         Personaje jugador = new Personaje();
         ArrayList<Monstruo> monstruos = new ArrayList<>();
         monstruos = creacionEnemigos(3);
@@ -23,7 +24,7 @@ public class dungeon {
         System.out.print("\033[H\033[2J");  
         System.out.flush();
 
-        System.out.print("[+] Nombre del personaje: ");
+        System.out.print(Colors.BLUE + "[+]" + Colors.RESET + " Nombre del personaje: ");
         nick = sc.nextLine();
 
         // Crear tipo de jugador
@@ -49,29 +50,23 @@ public class dungeon {
                 break;
         }
 
-        //Aquí empieza el juego
-        /*System.out.println(jugador);
-        System.out.println("----");
-        System.out.println(monstruos);
-        for (int i = 0; i < pasillo.length; i++) {
-            if (pasillo[i]) {
-                System.out.print("█ ");
-            } else {
-                System.out.print(i + " ");
-            }
-        }*/
-        while (jugador.getPosicion() < pasillo.length) {
-            //Limpiar pantalla
-            System.out.print("\033[H\033[2J");  
-            System.out.flush();
+        System.out.println(Colors.RED + "[!!] ¡¡Minimiza la pantalla al mínimo!!" + Colors.RESET);
+        System.out.println("[+] Lo único que tienes que hacer es presionar enter...");
+        sc.nextLine();
 
-            System.out.println(jugador);
-            System.out.println("[+] Estás en la habitación " + jugador.getPosicion());
-            if (pasillo[jugador.getPosicion()]) {
-                System.out.println("[!] Cuidado, Aquí hay un enemigo");
-                Thread.sleep(3000);
-                Monstruo monstruo = monstruos.get(0);
-                int danyo = 0;
+        ////////////////////////////////////////////////////
+
+        //Aquí empieza el juego
+        while (jugador.getPosicion() < pasillo.length) { //Comprueba si ha llegado al final
+            boolean enemigo = false;
+            int jugadorAtaca = 1;
+            Monstruo monstruo = monstruos.get(0);
+            int danyo = 0;
+
+            if (pasillo[jugador.getPosicion()]) { // Aquí detecta que la habitación está ocupada
+                enemigo = true;
+                danyo = 0;
+
                 for (Monstruo valor : monstruos) {
                     if (valor.getPosicion() == jugador.getPosicion()) {
                         monstruo = valor;
@@ -79,51 +74,38 @@ public class dungeon {
                     }
                 }
 
-                boolean jugadorAtaca = true;
+                imprimirGraficos(jugador, true);
+                sc.nextLine();
+                imprimirGraficos(jugador, monstruo, 0, danyo);
+                sc.nextLine();
+                
+                jugadorAtaca = 1;
 
                 do {
-                    //Limpiar pantalla
-                    System.out.print("\033[H\033[2J");  
-                    System.out.flush();
-
-                    System.out.println("[+] Jugador");
-                    System.out.println(jugador);
-                    System.out.println("----");
-                    System.out.println("[-] Monstruo:");
-                    System.out.println(monstruo);
-                    System.out.println("----");
-                    if (jugadorAtaca) {
+                    if (jugadorAtaca == 1) {
                         danyo = jugador.getArma().danyoArma();
-                        System.out.println("[+] El jugador hace " + danyo + " daño al monstruo");
-                        Thread.sleep(3000);
-                        monstruo.reciveDanyo(danyo);
+                        monstruo.recibeDanyo(danyo);
                         if (monstruo.getVida() <= 0) {
-                            System.out.println("[+] Felicidades, has ganado.");
-                        } else {
-                            System.out.println("[+] El monstruo ahora tiene " + monstruo.getVida() + " de vida.");
+                            monstruo.setVida(0);
                         }
-                        jugadorAtaca = false;
+                        jugadorAtaca = -1;
                     } else {
                         danyo = monstruo.getArma().danyoArma();
-                        System.out.println("[+] El Monstruo hace " + danyo + " daño al jugador");
-                        Thread.sleep(3000);
-                        jugador.reciveDanyo(danyo);
+                        jugador.recibeDanyo(danyo);
                         if (jugador.getVida() <= 0) {
-                            System.out.println("[+] No te queda vida, has perdido.");
+                            jugador.setVida(0);
+                            imprimirGraficos(jugador, monstruo, jugadorAtaca, danyo);
                             System.exit(0);
-                        } else {
-                            System.out.println("[+] El jugador ahora tiene " + jugador.getVida() + " de vida.");
                         }
-                        jugadorAtaca = true;
+                        jugadorAtaca = 1;
                     }
-                    Thread.sleep(3000);
+                    imprimirGraficos(jugador, monstruo, jugadorAtaca, danyo);
+                    sc.nextLine();
                 } while ((monstruo.getVida() > 0) && (jugador.getVida() > 0));
-                sc.nextLine();
             } else {
-                System.out.println("[+] Es una habitación libre");
+                imprimirGraficos(jugador, false);
+                sc.nextLine();
             }
-            System.out.println("[+] Presiona enter para avanzar a la siguiente habitación...");
-            sc.nextLine();
             jugador.avanzar();
         }
         System.out.println("[++] Felicidades, has ganado el juego.");
@@ -136,20 +118,18 @@ public class dungeon {
 
         switch (menu) {
             case 1:
-                System.out.println("[+] Elige el tipo de heroe que deseas utilizar: ");
-                System.out.println("\t--> 1)Mago");
-                System.out.println("\t--> 2)Guerrero");
-                System.out.println("\t--> 3)Enano");
+                System.out.println(Colors.BLUE + "[+]" + Colors.RESET + " Elige el tipo de heroe que deseas utilizar: ");
+                System.out.println("\t--> " + Colors.PURPLE + "1" + Colors.RESET + ")" + Colors.YELLOW + "Mago" + Colors.RESET);
+                System.out.println("\t--> " + Colors.PURPLE + "2" + Colors.RESET + ")" + Colors.YELLOW + "Guerrero" + Colors.RESET);
+                System.out.println("\t--> " + Colors.PURPLE + "3" + Colors.RESET + ")" + Colors.YELLOW + "Enano" + Colors.RESET);
                 break;
         
             case 2:
-                System.out.println("[+] Elige el arma que deseas utilizar: ");
-                System.out.println("\t--> 1)Arco");
-                System.out.println("\t--> 2)Espada");
-                System.out.println("\t--> 3)Hacha");
-                System.out.println("\t--> 4)Hechizo");
-                break;
-            default:
+                System.out.println(Colors.BLUE + "[+]" + Colors.RESET + " Elige el arma que deseas utilizar: ");
+                System.out.println("\t--> " + Colors.PURPLE + "1" + Colors.RESET + ")" + Colors.YELLOW + "Arco" + Colors.RESET);
+                System.out.println("\t--> " + Colors.PURPLE + "2" + Colors.RESET + ")" + Colors.YELLOW + "Espada" + Colors.RESET);
+                System.out.println("\t--> " + Colors.PURPLE + "3" + Colors.RESET + ")" + Colors.YELLOW + "Hacha" + Colors.RESET);
+                System.out.println("\t--> " + Colors.PURPLE + "4" + Colors.RESET + ")" + Colors.YELLOW + "Hechizo" + Colors.RESET);
                 break;
         }
     }
@@ -160,7 +140,7 @@ public class dungeon {
             int tipo = (int)(Math.random()*3)+1;
             int x = 0;
             do {
-                x = (int)(Math.random()*39)+1; // Posición aleatoria
+                x = (int)(Math.random()*38)+1; // Posición aleatoria (1-39)
                 if (!pasillo[x]) {
                     pasillo[x] = true;
                 }
@@ -176,10 +156,153 @@ public class dungeon {
             switch (tipo) {
                 case 1: monstruo.setArma(new Arco()); break;
                 case 2: monstruo.setArma(new Espada()); break;
-                case 3: monstruo.setArma(new Arco()); break;
+                case 3: monstruo.setArma(new Hacha()); break;
                 case 4: monstruo.setArma(new Hechizo()); break;
             }
         }
         return monstruos;
+    }
+
+    public static void imprimirGraficos(Personaje jugador, Monstruo monstruo, int jugadorAtaca, int danyo) {
+        Pantalla screen = new Pantalla(86, 280);
+        Pantalla info = new Pantalla(25, 276);
+        Pantalla armaPantalla = new Pantalla(21, 34);
+        screen.marco('b');
+        info.marco('b');
+        info.dividirH();
+        armaPantalla.marco('b');
+        Sprite sprites = new Sprite();
+
+        screen.posiciona(sprites.getFondo(), 'n', 2, 2);
+
+        //Contador de habitación
+        int habitacion = jugador.getPosicion();
+
+        screen.posiciona(sprites.getNumero(habitacion/10), 'b', 5, 3);
+        screen.posiciona(sprites.getNumero(habitacion%10), 'b', 10, 3);
+
+        if (monstruo.getTipo() == "Dragón") {
+            screen.posiciona(sprites.getDragon(),'r', 85, 10);
+            screen.posiciona(sprites.getEnemigo(0),'a', 160, 62);
+        } else if (monstruo.getTipo() == "Orco") {
+            screen.posiciona(sprites.getOrco(), 'v', 80, 10);
+            screen.posiciona(sprites.getEnemigo(1),'a', 160, 62);
+        } else if (monstruo.getTipo() == "Zombie") {
+            screen.posiciona(sprites.getZombie(), 'v', 110,25);
+            screen.posiciona(sprites.getEnemigo(2),'a', 160, 62);
+        }
+
+        screen.posiciona(info.toString(), 'x', 2, 59, true);
+
+        /////////////////////////////////////////// Jugador
+        //Imprimir arma
+        screen.posiciona(armaPantalla.toString(), 'x', 4, 61);
+        switch (jugador.getArma().getTipo()) {
+            case "Espada": screen.posiciona(sprites.getEspada(), 'z', 6, 63); break;
+            case "Hacha": screen.posiciona(sprites.getHacha(), 'z', 6, 63); break;
+            case "Hechizo": screen.posiciona(sprites.getHechizo(),'z', 6, 63); break;
+            case "Arco": screen.posiciona(sprites.getArco(),'z', 6, 63); break;
+        }
+
+        if (jugador.getVida() != 0) {
+            screen.posiciona(sprites.getCorazon(), 'r', 40, 62);
+            screen.posiciona(sprites.getNumero(jugador.getVida()/100), 'r', 47, 76);
+            screen.posiciona(sprites.getNumero(jugador.getVida()/10), 'r', 52, 76);
+            screen.posiciona(sprites.getNumero(jugador.getVida()%10), 'r', 57, 76);
+        } else {
+            screen.posiciona(sprites.getCalavera(), 'r', 41, 62);
+        }
+        Map<String, Integer> valoresTipo = new HashMap<>();
+        valoresTipo.put("Enano", 0);
+        valoresTipo.put("Guerrero", 1);
+        valoresTipo.put("Mago", 2);
+        screen.posiciona(sprites.getTipo(valoresTipo.get(jugador.getTipo())), 'a', 80, 62);
+        if (jugadorAtaca == -1) {
+            screen.posiciona(sprites.getCorte(), 'a', 70, 30);
+            screen.posiciona(sprites.getGolpe(), 'a', 80, 68);
+            //Daño hecho
+            screen.posiciona(sprites.getNumero(danyo/10), 'b', 96, 72);
+            screen.posiciona(sprites.getNumero(danyo%10), 'b', 101, 72);
+        }
+
+        /////////////////////////////////////////// Enemigo
+        if (monstruo.getTipo() == "Dragón") {
+            screen.posiciona(sprites.getEnemigo(0),'a', 160, 62);
+        } else if (monstruo.getTipo() == "Orco") {
+            screen.posiciona(sprites.getEnemigo(1),'a', 160, 62);
+        } else if (monstruo.getTipo() == "Zombie") {
+            screen.posiciona(sprites.getEnemigo(2),'a', 160, 62);
+        }
+
+        screen.posiciona(armaPantalla.toString(), 'x', 242, 61);
+        switch (monstruo.getArma().getTipo()) {
+            case "Espada": screen.posiciona(sprites.getEspada(), 'z', 244, 63); break;
+            case "Hacha": screen.posiciona(sprites.getHacha(), 'z', 244, 63); break;
+            case "Hechizo": screen.posiciona(sprites.getHechizo(),'z', 244, 63); break;
+            case "Arco": screen.posiciona(sprites.getArco(),'z', 244, 63); break;
+        }
+
+        if (monstruo.getVida() != 0) {
+            screen.posiciona(sprites.getCorazon(), 'r', 212, 62);
+            screen.posiciona(sprites.getNumero(monstruo.getVida()/100), 'r', 219, 76);
+            screen.posiciona(sprites.getNumero(monstruo.getVida()/10), 'r', 224, 76);
+            screen.posiciona(sprites.getNumero(monstruo.getVida()%10), 'r', 229, 76);
+        } else {
+            screen.posiciona(sprites.getCalavera(), 'r', 213, 62);
+        }
+
+        if (jugadorAtaca == 1) {
+            screen.posiciona(sprites.getGolpe(), 'a', 155, 68);
+            screen.posiciona(sprites.getNumero(danyo/10), 'b', 171, 72);
+            screen.posiciona(sprites.getNumero(danyo%10), 'b', 176, 72);
+        }
+        ///////////////////////////////////////////
+        screen.mostrarPantalla();
+    }
+
+    public static void imprimirGraficos(Personaje jugador, boolean alerta) {
+        Pantalla screen = new Pantalla(86, 280);
+        Pantalla info = new Pantalla(25, 276);
+        Pantalla armaPantalla = new Pantalla(21, 34);
+        screen.marco('b');
+        info.marco('b');
+        armaPantalla.marco('b');
+        Sprite sprites = new Sprite();
+
+        screen.posiciona(sprites.getFondo(), 'n', 2, 2);
+        screen.posiciona(info.toString(), 'x', 2, 59, true);
+
+        //Contador de habitación
+        int habitacion = jugador.getPosicion();
+
+        screen.posiciona(sprites.getNumero(habitacion/10), 'b', 5, 3);
+        screen.posiciona(sprites.getNumero(habitacion%10), 'b', 10, 3);
+
+        /////////////////////////////////////////// Jugador
+        //Imprimir arma
+        screen.posiciona(armaPantalla.toString(), 'x', 4, 61);
+        switch (jugador.getArma().getTipo()) {
+            case "Espada": screen.posiciona(sprites.getEspada(), 'z', 6, 63); break;
+            case "Hacha": screen.posiciona(sprites.getHacha(), 'z', 6, 63); break;
+            case "Hechizo": screen.posiciona(sprites.getHechizo(),'z', 6, 63); break;
+            case "Arco": screen.posiciona(sprites.getArco(),'z', 6, 63); break;
+        }
+
+        screen.posiciona(sprites.getCorazon(), 'r', 40, 62);
+        screen.posiciona(sprites.getNumero(jugador.getVida()/100), 'r', 47, 76);
+        screen.posiciona(sprites.getNumero(jugador.getVida()/10), 'r', 52, 76);
+        screen.posiciona(sprites.getNumero(jugador.getVida()%10), 'r', 57, 76);
+        
+        Map<String, Integer> valoresTipo = new HashMap<>();
+        valoresTipo.put("Enano", 0);
+        valoresTipo.put("Guerrero", 1);
+        valoresTipo.put("Mago", 2);
+        screen.posiciona(sprites.getTipo(valoresTipo.get(jugador.getTipo())), 'a', 80, 62);
+
+        if(alerta) {
+            screen.posiciona(sprites.getDanger(), 'r', 90, 8);
+        }
+
+        screen.mostrarPantalla();
     }
 }
