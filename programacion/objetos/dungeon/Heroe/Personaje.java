@@ -54,6 +54,10 @@ public class Personaje {
         return tipo;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     public void recibeDanyo(int danyo) {
         this.vida -= danyo;
     }

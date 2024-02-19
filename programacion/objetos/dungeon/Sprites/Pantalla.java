@@ -117,10 +117,10 @@ public class Pantalla {
         posiciona(texto, color, x, y, false);
     }
 
-    public void rellenarPantalla() {
+    public void rellenarPantalla(char relleno) {
         for (int i = 0; i < altura; i++) {
             for (int j = 0; j < ancho; j++) {
-                pantalla[i][j] = '▒';
+                pantalla[i][j] = relleno;
             }
         }
     }

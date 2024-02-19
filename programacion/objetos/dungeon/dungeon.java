@@ -50,6 +50,8 @@ public class dungeon {
                 break;
         }
 
+        contarHistoria(jugador);
+
         System.out.println(Colors.RED + "[!!] ¡¡Minimiza la pantalla al mínimo!!" + Colors.RESET);
         System.out.println("[+] Lo único que tienes que hacer es presionar enter...");
         sc.nextLine();
@@ -59,14 +61,15 @@ public class dungeon {
         //Aquí empieza el juego
         while (jugador.getPosicion() < pasillo.length) { //Comprueba si ha llegado al final
             boolean enemigo = false;
-            int jugadorAtaca = 1;
-            Monstruo monstruo = monstruos.get(0);
+            int jugadorAtaca = 1; //1 = ataca el jugar | 0 = no ataca nadie | -1 = ataca el enemigo
+            Monstruo monstruo = monstruos.get(0); //Inicializo el mosntruo
             int danyo = 0;
 
             if (pasillo[jugador.getPosicion()]) { // Aquí detecta que la habitación está ocupada
                 enemigo = true;
                 danyo = 0;
 
+                //Aquí busco el enemigo en el arraylist ya no está ordenados por su posición
                 for (Monstruo valor : monstruos) {
                     if (valor.getPosicion() == jugador.getPosicion()) {
                         monstruo = valor;
@@ -74,14 +77,16 @@ public class dungeon {
                     }
                 }
 
+                //Si hay un enemigo en la misma sala pues salta una alerta
                 imprimirGraficos(jugador, true);
                 sc.nextLine();
                 imprimirGraficos(jugador, monstruo, 0, danyo);
                 sc.nextLine();
                 
+                //Aquí empieza el combate
                 jugadorAtaca = 1;
-
                 do {
+                    //Ataca el jugador
                     if (jugadorAtaca == 1) {
                         danyo = jugador.getArma().danyoArma();
                         monstruo.recibeDanyo(danyo);
@@ -89,26 +94,31 @@ public class dungeon {
                             monstruo.setVida(0);
                         }
                         jugadorAtaca = -1;
+                    //Ataca el monstruo
                     } else {
                         danyo = monstruo.getArma().danyoArma();
                         jugador.recibeDanyo(danyo);
                         if (jugador.getVida() <= 0) {
                             jugador.setVida(0);
                             imprimirGraficos(jugador, monstruo, jugadorAtaca, danyo);
+                            Thread.sleep(1000);
+                            acabarJuego(false);
                             System.exit(0);
                         }
                         jugadorAtaca = 1;
                     }
+                    //Se imprime todo después de cada turno
                     imprimirGraficos(jugador, monstruo, jugadorAtaca, danyo);
                     sc.nextLine();
                 } while ((monstruo.getVida() > 0) && (jugador.getVida() > 0));
             } else {
+                //Si no encuentra nada pues solo imprime el pasillo
                 imprimirGraficos(jugador, false);
                 sc.nextLine();
             }
             jugador.avanzar();
         }
-        System.out.println("[++] Felicidades, has ganado el juego.");
+        acabarJuego(true);
     }
 
     public static void MostrarMenu(int menu) {
@@ -304,5 +314,70 @@ public class dungeon {
         }
 
         screen.mostrarPantalla();
+    }
+
+    public static void acabarJuego(boolean victoria) throws InterruptedException {
+        Pantalla screen = new Pantalla(86, 280);
+        Sprite sprites = new Sprite();
+        int tiempoFade = 500;
+
+        screen.rellenarPantalla('▓');
+        screen.marco('b');
+        screen.mostrarPantalla();
+        Thread.sleep(tiempoFade);
+        screen.rellenarPantalla('▒');
+        screen.marco('b');
+        screen.mostrarPantalla();
+        Thread.sleep(tiempoFade);
+        screen.rellenarPantalla('░');
+        screen.marco('b');
+        screen.mostrarPantalla();
+        Thread.sleep(tiempoFade);
+
+        screen.limpiarPantalla();
+        screen.marco('b');
+
+        if (victoria) {
+            screen.posiciona(sprites.getPaisaje(), 'v', 2, 2);
+            screen.posiciona(sprites.getYouWin(), 'a', 70, 20);
+        } else {
+            screen.posiciona(sprites.getYouLose(), 'r', 80, 40);
+        }
+
+        screen.mostrarPantalla();
+    }
+
+    public static void contarHistoria(Personaje jugador) throws InterruptedException {
+        String historia = "";
+
+        if (jugador.getArma().getTipo() == "Hechizo") {
+            historia = 
+                "En las antiguas crónicas de tiempos olvidados se nos cuenta el relato de " + Colors.YELLOW + jugador.getNombre() + Colors.RESET + ", un héroe cuyo despertar resonó en las paredes de una arcaica mazmorra.\n\n" +
+                "Lleno de confusión, " + Colors.YELLOW + jugador.getNombre() + Colors.RESET + " se despertó de su sueño para encontrarse perdido en un pasillo lúgubre, cuyas baldosas desgastadas marcaban el inicio de un laberino.\n\n" +
+                "Todavía somnoliento, se sentía embrujado por un poder ancestral: La capacidad de hacer "+ Colors.RED +"hechizos" + Colors.RESET + ", una habilidad existente desde tiempos remotos y cuyo origen parecía ser un regalo de los dioses ya olvidados.\n\n" +
+                "Con determinación en su pecho, " + Colors.YELLOW + jugador.getNombre() + Colors.RESET + " se embarcó en la osada aventura de atravesar las 40 habitaciones, desafiando los enigmas y peligros que acechaban en cada pasillo. A través de la penumbra y del misterio, cada paso hacia adelante era un paso hacia la libertad, cada enfrentamiento una prueba de su valor y coraje.\n\n" +
+                "Así, armado con la magia de los dioses y el anhelo de la libertad, " + Colors.YELLOW + jugador.getNombre() + Colors.RESET + " se adentró en las profundidades de la mazmorra con esperanza, decidido a desafiar las sombras y emerger triunfante bajo el resplandor del sol.\n";
+        } else {
+            historia =
+                "En las crónicas de tiempos olvidados se entrelaza el relato de " + Colors.YELLOW + jugador.getNombre() + Colors.RESET + ", un héroe cuyo despertar resonó en las paredes pétreas de una mazmorra ancestral. Envuelto en un velo de confusión, " + Colors.YELLOW + jugador.getNombre() + Colors.RESET + " se alzó de su letargo para encontrarse perdido en un pasillo lúgubre, cuyas baldosas desgastadas marcaban el inicio de un laberinto de 40 habitaciones. En el umbral de la conciencia, su mano se cerró en torno a un objeto antiguo y poderoso: su fiel " + Colors.RED + jugador.getArma() + Colors.RESET + ", un tesoro de tiempos remotos que reposaba en el suelo de piedra como un regalo de los dioses olvidados.\n\n" +
+                "Con el arma en mano y la determinación ardiente en su pecho, " + Colors.YELLOW + jugador.getNombre() + Colors.RESET + " se embarcó en la osada empresa de atravesar las 40 habitaciones, desafiando a los enigmas y peligros que acechaban en cada umbral. A través de la penumbra y el misterio, cada paso hacia adelante era un paso hacia la libertad, cada enfrentamiento una prueba de su valor y coraje.\n\n" +
+                "Así, armado con la fuerza de su " + Colors.RED + jugador.getArma() + Colors.RESET + " y el anhelo de la libertad, " + Colors.YELLOW + jugador.getNombre() + Colors.RESET + " se adentró en las profundidades de la mazmorra con la esperanza ardiente en su corazón, decidido a desafiar las sombras y emerger triunfante bajo el resplandor del sol.\n";
+        }
+
+
+        //Limpiar pantalla
+        System.out.print("\033[H\033[2J");  
+        System.out.flush();
+
+        for (int i = 0; i < historia.length(); i++) {
+            System.out.print(historia.charAt(i));
+            if ((historia.charAt(i) == ',') || (historia.charAt(i) == '\n')) {
+                Thread.sleep(400);
+            } else if ((historia.charAt(i) == '.') || (historia.charAt(i) == ':')) {
+                Thread.sleep(800);
+            } else {
+                Thread.sleep(60);
+            }
+        }
     }
 }

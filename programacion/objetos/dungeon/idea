@@ -1,3 +1,28 @@
-golpes críticos
-stats (daño mágico, melee, armadura, etc...)
-cofres trampa
+DAMgeon
+
+Golpes críticos.
+Seleccionador de personajes con teclas
+5 puntos de Stats (daño mágico, melee, armadura, etc...).
+Sistema de niveles.
+Cofres trampa.
+Hacer intro.
+    En las crónicas de tiempos olvidados se entrelaza el relato de <nombre>, un héroe cuyo despertar resonó en las paredes pétreas de una mazmorra ancestral. Envuelto en un velo de confusión, <nombre> se alzó de su letargo para encontrarse perdido en un pasillo lúgubre, cuyas baldosas desgastadas marcaban el inicio de un laberinto de <x> habitaciones. En el umbral de la conciencia, su mano se cerró en torno a un objeto antiguo y poderoso: su fiel <arma>, un tesoro de tiempos remotos que reposaba en el suelo de piedra como un regalo de los dioses olvidados.
+
+    Con el arma en mano y la determinación ardiente en su pecho, <nombre> se embarcó en la osada empresa de atravesar las <x> habitaciones, desafiando a los enigmas y peligros que acechaban en cada umbral. A través de la penumbra y el misterio, cada paso hacia adelante era un paso hacia la libertad, cada enfrentamiento una prueba de su valor y coraje.
+
+    Así, armado con la fuerza de su <arma> y el anhelo de la libertad, <nombre> se adentró en las profundidades de la mazmorra con la esperanza ardiente en su corazón, decidido a desafiar las sombras y emerger triunfante bajo el resplandor del sol.
+
+    ----------------------------------------------------------------------------------------------------------------------
+
+    En las antiguas crónicas de tiempos olvidados se nos cuenta el relato de <nombre>, un héroe cuyo despertar resonó en las paredes de una arcaica mazmorra. 
+
+    Lleno de confusión, <nombre> se despertó de su sueño para encontrarse perdido en un pasillo lúgubre, cuyas baldosas desgastadas marcaban el inicio de un laberinto.
+
+    Todavía somnoliento, se 
+    sentía embrujado por un poder ancestral: La capacidad de hacer hechizos, una habilidad existente desde tiempos remotos y cuyo origen parecía ser un regalo de los dioses ya olvidados.
+
+    Con determinación en su pecho, <nombre> se embarcó en la osada aventura de atravesar las <x> habitaciones, desafiando los enigmas y peligros que acechaban en cada pasillo. A través de la penumbra y del misterio, cada paso hacia adelante era un paso hacia la libertad, cada enfrentamiento una prueba de su valor y coraje.
+
+    Así, armado con la magia de los dioses y el anhelo de la libertad, <nombre> se adentró en las profundidades de la mazmorra con esperanza, decidido a desafiar las sombras y emerger triunfante bajo el resplandor del sol.
+
+You win / You lose.
