@@ -1,0 +1,5 @@
+Aparecer rama y entrar: git checkout -t origin/angel
+Cambiar nombre de main: git branch -m todo
+Mover commits de una rama a otra: 
+Cuando hay conflictos hacemos un git status.
+Cuando ya tenemos el conflicto solucionado y le hemos hecho un add le tenemos hacemos un git rebase --continue y nos vamos a todo y un merge.

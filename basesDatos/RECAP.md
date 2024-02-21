@@ -39,7 +39,7 @@ El software libre implica que el usuario tiene ciertos privilegios: adaptarlos, 
 - Imagen de un esquema desarrolado en clase por Crístian (Profesor de bases de datos): https://hhtpreview.s3.us-east-2.amazonaws.com/whiteboard_oem/20240215081317643060B0C2A1928/1.pdf
 
 El modelo cliente-servidor se basa en un dos partes, el cliente que busca la información y manda peticiones SQL al server y el server que es el sofware que almacena la bases de datos o el servicio(ejecuta, pone a disposicion una serie de recuersos...) y devuelve la respuesta que buscaba el cliente. El SGBD está en el server, que a su vez tiene la base de datos. El cliente accede al server mediante una red (capa física) a través de peticiones:  
-`(Cliente --(Petición)-> Server) (Server --(Respuesta)->Cliente)`  
+`(Cliente --(Petición)-> Server) (Server --(Respuesta)-> Cliente)`  
 No antes sin abrir puertos (conexión) de escucha (server) a través de una dirección IP (TCP/IP -> 127.0.0.1:33006). Peticiones (SQL)
 
 * __Cliente__: Software que hace peticiones a otro programa.
@@ -59,7 +59,7 @@ No antes sin abrir puertos (conexión) de escucha (server) a través de una dire
 * __DDL:__ **D**ata **D**efinition **L**enguaje: "CREATE", "ALTER", "RENAME", etc...  
 * __DML:__ **D**ata **M**anipulation **L**enguaje: ***"SELECT"***, "INSERT", "UPDATE", "DELETE", etc...  
 * __DCL:__ **D**ata **C**ontrol **L**anguage (control de acceso): "GRANT", "REVOKE".  
-* __TCL:__ **T**ransection **C**ontrol **L**enguaje (Control de transacciones): "COMMIT", "ROLLBACK", etc...  
+* __TCL:__ **T**ransaction **C**ontrol **L**enguaje (Control de transacciones): "COMMIT", "ROLLBACK", etc...  
 
 ## Bases de datos relacionales
 **¿Qué es una base de datos relacional? ¿Qué ventajas tiene? ¿Qué elementos la conforman?**  
