@@ -2,18 +2,18 @@ package Armas;
 
 public class Espada extends Arma {
 
-    private final int danyoMax = 10;
-    private final double critico = 0.1; 
+    private final static int danyoMax = 10;
+    private final static double critico = 0.15; 
 
     public Espada() {
-        super("Espada", 10, 0.1);
+        super("Espada", danyoMax, critico);
     }
 
-    public int getDanyoMax() {
+    public static int getDanyoMax() {
         return danyoMax;
     }
 
-    public double getCritico() {
+    public static double getCritico() {
         return critico;
     }
 }

@@ -7,7 +7,7 @@ public class Guerrero extends Personaje {
     private final static int vidaXpiso = 1;
     
     public Guerrero(String nombre) {
-        super(nombre, "Guerrero", 9, 15);
+        super(nombre, "Guerrero", minVida, maxVida);
     }
 
     public static int getMinVida() {

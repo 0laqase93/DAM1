@@ -7,7 +7,7 @@ public class Mago extends Personaje {
     private final static int vidaXpiso = 2;
 
     public Mago(String nombre) {
-        super(nombre, "Mago", 3, 8);
+        super(nombre, "Mago", minVida, maxVida);
     }
 
     public static int getMinVida() {

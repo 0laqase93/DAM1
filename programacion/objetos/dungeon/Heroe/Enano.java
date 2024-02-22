@@ -7,7 +7,7 @@ public class Enano extends Personaje {
     private final static int vidaXpiso = 1;
 
     public Enano(String nombre) {
-        super(nombre, "Enano", 5, 10);
+        super(nombre, "Enano", minVida, maxVida);
     }
 
     public static int getMinVida() {

@@ -145,11 +145,28 @@ public class Pantalla {
 
     public void mostrarPantalla() {
         this.clear();
+        String linea = "";
+        String ultimoColor = "";
         for (int i = 0; i < altura; i++) {
             for (int j = 0; j < ancho; j++) {
-                System.out.print(formatoColores.get(this.colores[i][j]) + this.pantalla[i][j]);
+                if (!ultimoColor.equals(formatoColores.get(this.colores[i][j]))) {
+                    ultimoColor = formatoColores.get(this.colores[i][j]);
+                    linea += formatoColores.get(this.colores[i][j]) + this.pantalla[i][j];
+                } else {
+                    linea += this.pantalla[i][j];
+                }
             }
-            System.out.println();
+            System.out.println(linea);
+            linea = "";
         }
+        System.out.println(pantalla);
+    }
+
+    public int getAncho() {
+        return this.ancho;
+    }
+
+    public int getAltura() {
+        return this.altura;
     }
 }

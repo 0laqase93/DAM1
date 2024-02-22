@@ -17,8 +17,9 @@ public class dungeon {
         ArrayList<Monstruo> monstruos = new ArrayList<>();
         monstruos = creacionEnemigos(3);
 
-        // Inserción de datos del jugador y contar historia
+        // Inserción de datos del jugador
         jugador = seleccionarPersonajeArma();
+        contarHistoria(jugador);
 
         ////////////////////////////////////////////////////
 
@@ -203,8 +204,8 @@ public class dungeon {
                 screen.posiciona(sprites.getGolpe(), 'a', 80, 68);
             }
             // Daño hecho
-            screen.posiciona(sprites.getNumero(danyo / 10), 'b', 96, 72);
-            screen.posiciona(sprites.getNumero(danyo % 10), 'b', 101, 72);
+            screen.posiciona(sprites.getNumero(danyo / 10), 'x', 96, 72);
+            screen.posiciona(sprites.getNumero(danyo % 10), 'x', 101, 72);
         }
 
         /////////////////////////////////////////// Enemigo
@@ -247,8 +248,8 @@ public class dungeon {
             } else {
                 screen.posiciona(sprites.getGolpe(), 'a', 155, 68);
             }
-            screen.posiciona(sprites.getNumero(danyo / 10), 'z', 171, 72);
-            screen.posiciona(sprites.getNumero(danyo % 10), 'z', 176, 72);
+            screen.posiciona(sprites.getNumero(danyo / 10), 'x', 171, 72);
+            screen.posiciona(sprites.getNumero(danyo % 10), 'x', 176, 72);
         }
         ///////////////////////////////////////////
         screen.mostrarPantalla();
@@ -350,58 +351,35 @@ public class dungeon {
     }
 
     public static void contarHistoria(Personaje jugador) throws InterruptedException {
-        String historia = "";
-
-        if (jugador.getArma().getTipo() == "Hechizo") {
-            historia = "En las antiguas crónicas de tiempos olvidados se nos cuenta el relato de " + Colors.YELLOW
-                    + jugador.getNombre() + Colors.RESET
-                    + ", un héroe cuyo despertar resonó en las paredes de una arcaica mazmorra.\n\n" +
-                    "Lleno de confusión, " + Colors.YELLOW + jugador.getNombre() + Colors.RESET
-                    + " se despertó de su sueño para encontrarse perdido en un pasillo lúgubre, cuyas baldosas desgastadas marcaban el inicio de un laberinto.\n\n"
-                    +
-                    "Todavía somnoliento, se sentía embrujado por un poder ancestral: La capacidad de hacer "
-                    + Colors.RED + "hechizos" + Colors.RESET
-                    + ", una habilidad existente desde tiempos remotos y cuyo origen parecía ser un regalo de los dioses ya olvidados.\n\n"
-                    +
-                    "Con determinación en su pecho, " + Colors.YELLOW + jugador.getNombre() + Colors.RESET
-                    + " se embarcó en la osada aventura de atravesar las 40 habitaciones, desafiando los enigmas y peligros que acechaban en cada pasillo. A través de la penumbra y del misterio, cada paso hacia adelante era un paso hacia la libertad, cada enfrentamiento una prueba de su valor y coraje.\n\n"
-                    +
-                    "Así, armado con la magia de los dioses y el anhelo de la libertad, " + Colors.YELLOW
-                    + jugador.getNombre() + Colors.RESET
-                    + " se adentró en las profundidades de la mazmorra con esperanza, decidido a desafiar las sombras y emerger triunfante bajo el resplandor del sol.\n";
-        } else {
-            historia = "En las crónicas de tiempos olvidados se entrelaza el relato de " + Colors.YELLOW
-                    + jugador.getNombre() + Colors.RESET
-                    + ", un héroe cuyo despertar resonó en las paredes pétreas de una mazmorra ancestral. Envuelto en un velo de confusión, "
-                    + Colors.YELLOW + jugador.getNombre() + Colors.RESET
-                    + " se alzó de su letargo para encontrarse perdido en un pasillo lúgubre, cuyas baldosas desgastadas marcaban el inicio de un laberinto de 40 habitaciones. En el umbral de la conciencia, su mano se cerró en torno a un objeto antiguo y poderoso: su fiel "
-                    + Colors.RED + jugador.getArma() + Colors.RESET
-                    + ", un tesoro de tiempos remotos que reposaba en el suelo de piedra como un regalo de los dioses olvidados.\n\n"
-                    +
-                    "Con el arma en mano y la determinación ardiente en su pecho, " + Colors.YELLOW
-                    + jugador.getNombre() + Colors.RESET
-                    + " se embarcó en la osada empresa de atravesar las 40 habitaciones, desafiando a los enigmas y peligros que acechaban en cada umbral. A través de la penumbra y el misterio, cada paso hacia adelante era un paso hacia la libertad, cada enfrentamiento una prueba de su valor y coraje.\n\n"
-                    +
-                    "Así, armado con la fuerza de su " + Colors.RED + jugador.getArma() + Colors.RESET
-                    + " y el anhelo de la libertad, " + Colors.YELLOW + jugador.getNombre() + Colors.RESET
-                    + " se adentró en las profundidades de la mazmorra con la esperanza ardiente en su corazón, decidido a desafiar las sombras y emerger triunfante bajo el resplandor del sol.\n";
-        }
-
-        // Limpiar pantalla
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-
-        int multiplicadorVelocidad = 1;
-
-        for (int i = 0; i < historia.length(); i++) {
-            System.out.print(historia.charAt(i));
-            if ((historia.charAt(i) == ',') || (historia.charAt(i) == '\n')) {
-                Thread.sleep(400 * multiplicadorVelocidad);
-            } else if ((historia.charAt(i) == '.') || (historia.charAt(i) == ':')) {
-                Thread.sleep(800 * multiplicadorVelocidad);
+        Pantalla screen = new Pantalla(86, 280);
+        screen.marco('b');
+        Letras.imprimirFrase("¿Leer historia? [y/n]:", screen, 2, 2, 40);
+        String input = sc.nextLine();
+        if (input.equals("y")) {
+            String historia = "";
+    
+            if (jugador.getArma().getTipo() == "Hechizo") {
+                historia = "En las antiguas crónicas de tiempos olvidados se nos cuenta el relato de " + jugador.getNombre() + ", un héroe cuyo despertar resonó en las paredes de una arcaica mazmorra.\n\nLleno de confusión, " + jugador.getNombre() + " se despertó de su sueño para encontrarse perdido en un pasillo lúgubre, cuyas baldosas desgastadas marcaban el inicio de un laberinto.\n\nTodavía somnoliento, se sentía embrujado por un poder ancestral: La capacidad de hacer hechizos, una habilidad existente desde tiempos remotos y cuyo origen parecía ser un regalo de los dioses ya olvidados.\n\nCon determinación en su pecho, "+ jugador.getNombre()+ " se embarcó en la osada aventura de atravesar las 40 habitaciones, desafiando los enigmas y peligros que acechaban en cada pasillo. A través de la penumbra y del misterio, cada paso hacia adelante era un paso hacia la libertad, cada enfrentamiento una prueba de su valor y coraje.\n\nAsí, armado con la magia de los dioses y el anhelo de la libertad, " + jugador.getNombre() + " se adentró en las profundidades de la mazmorra con esperanza, decidido a desafiar las sombras y emerger triunfante bajo el resplandor del sol.\n";
             } else {
-                Thread.sleep(40 * multiplicadorVelocidad);
+                historia = "En las crónicas de tiempos olvidados se entrelaza el relato de " + Colors.YELLOW
+                        + jugador.getNombre() + Colors.RESET
+                        + ", un héroe cuyo despertar resonó en las paredes pétreas de una mazmorra ancestral. Envuelto en un velo de confusión, "
+                        + Colors.YELLOW + jugador.getNombre() + Colors.RESET
+                        + " se alzó de su letargo para encontrarse perdido en un pasillo lúgubre, cuyas baldosas desgastadas marcaban el inicio de un laberinto de 40 habitaciones. En el umbral de la conciencia, su mano se cerró en torno a un objeto antiguo y poderoso: su fiel "
+                        + Colors.RED + jugador.getArma() + Colors.RESET
+                        + ", un tesoro de tiempos remotos que reposaba en el suelo de piedra como un regalo de los dioses olvidados.\n\n"
+                        +
+                        "Con el arma en mano y la determinación ardiente en su pecho, " + Colors.YELLOW
+                        + jugador.getNombre() + Colors.RESET
+                        + " se embarcó en la osada empresa de atravesar las 40 habitaciones, desafiando a los enigmas y peligros que acechaban en cada umbral. A través de la penumbra y el misterio, cada paso hacia adelante era un paso hacia la libertad, cada enfrentamiento una prueba de su valor y coraje.\n\n"
+                        +
+                        "Así, armado con la fuerza de su " + Colors.RED + jugador.getArma() + Colors.RESET
+                        + " y el anhelo de la libertad, " + Colors.YELLOW + jugador.getNombre() + Colors.RESET
+                        + " se adentró en las profundidades de la mazmorra con la esperanza ardiente en su corazón, decidido a desafiar las sombras y emerger triunfante bajo el resplandor del sol.\n";
             }
+            screen.limpiarPantalla();
+            Letras.imprimirFrase(historia, screen, 2, 2, 40);
+            sc.nextLine();
         }
     }
 
@@ -434,6 +412,7 @@ public class dungeon {
         //Elección de personaje
         do {
             screen.limpiarPantalla();
+            screen.marco('b');
 
             if (option > 3) {
                 option = 1;
@@ -521,61 +500,75 @@ public class dungeon {
         }
 
         elegido = false;
+        option = 1;
 
         //Elección de arma
         do {
             screen.limpiarPantalla();
+            screen.marco('b');
 
-            if (option > 3) {
+            if (option > 4) {
                 option = 1;
             }
             if (option < 1) {
-                option = 3;
+                option = 4;
             }
 
             screen.posiciona(sprites.getFondoSeleccion(), 'n', 2, 2);
             screen.posiciona(stats.toString(), 'x', 2, 2, true);
             
-            if (option == 1) { //Imprimir enano
-                screen.posiciona(sprites.getEnano(), 'z', 120, 4);
+            if (option == 1) { //Imprimir espada
+                screen.posiciona(sprites.getEspadaEleccion(), 'z', 80, 15);
 
                 screen.posiciona(opciones.toString(), 'x', 2, 49, true);
 
-                screen.posiciona(sprites.getTipo(option-1), 'x', 4, 4);
+                screen.posiciona(sprites.getTipoArma(option-1), 'x', 4, 4);
         
-                screen.posiciona(sprites.getStatsHeroe(), 'a', 4, 10);
+                screen.posiciona(sprites.getStatsArma(), 'a', 4, 10);
         
-                screen.posiciona(sprites.getNumero(Enano.getMinVida()), 'r', 30, 10);
-                screen.posiciona(sprites.getNumero(Enano.getMaxVida()/10), 'v', 41, 10);
-                screen.posiciona(sprites.getNumero(Enano.getMaxVida()%10), 'v', 47, 10);
-                screen.posiciona(sprites.getNumero(Enano.getVidaXpiso()), 'v', 36, 16);
-            } else if (option == 2) { //Imprimir guerrero
-                screen.posiciona(sprites.getGuerrero(), 'z', 120, 2);
+                screen.posiciona(sprites.getNumero(Espada.getDanyoMax()/10), 'r', 30, 11);
+                screen.posiciona(sprites.getNumero(Espada.getDanyoMax()%10), 'r', 35, 11);
+                screen.posiciona(sprites.getNumero((int)(Espada.getCritico()*10)%10), 'v', 4, 24);
+                screen.posiciona(sprites.getNumero((int)(Espada.getCritico()*100)%10), 'v', 9, 24);
+            } else if (option == 2) { //Imprimir arco
+                screen.posiciona(sprites.getArcoEleccion(), 'z', 90, 20);
                 
                 screen.posiciona(opciones.toString(), 'x', 2, 49, true);
-                screen.posiciona(stats.toString(), 'x', 2, 2, true);
-                
-                screen.posiciona(sprites.getTipo(option-1), 'x', 4, 4);
-                
-                screen.posiciona(sprites.getStatsHeroe(), 'a', 4, 10);
-                
-                screen.posiciona(sprites.getNumero(Guerrero.getMinVida()), 'r', 30, 10);
-                screen.posiciona(sprites.getNumero(Guerrero.getMaxVida()/10), 'v', 41, 10);
-                screen.posiciona(sprites.getNumero(Guerrero.getMaxVida()%10), 'v', 47, 10);
-                screen.posiciona(sprites.getNumero(Guerrero.getVidaXpiso()), 'v', 36, 16);
-            } else if (option == 3) { //Imprimir mago
-                screen.posiciona(sprites.getMago(), 'z', 120, 2);
+
+                screen.posiciona(sprites.getTipoArma(option-1), 'x', 4, 4);
+        
+                screen.posiciona(sprites.getStatsArma(), 'a', 4, 10);
+        
+                screen.posiciona(sprites.getNumero(Arco.getDanyoMax()/10), 'r', 30, 11);
+                screen.posiciona(sprites.getNumero(Arco.getDanyoMax()%10), 'r', 35, 11);
+                screen.posiciona(sprites.getNumero((int)(Arco.getCritico()*10)%10), 'v', 4, 24);
+                screen.posiciona(sprites.getNumero((int)(Arco.getCritico()*100)%10), 'v', 9, 24);
+            } else if (option == 3) { //Imprimir hacha
+                screen.posiciona(sprites.getHachaEleccion(), 'z', 90, 10);
                 
                 screen.posiciona(opciones.toString(), 'x', 2, 49, true);
-                screen.posiciona(stats.toString(), 'x', 2, 2, true);
+
+                screen.posiciona(sprites.getTipoArma(option-1), 'x', 4, 4);
+        
+                screen.posiciona(sprites.getStatsArma(), 'a', 4, 10);
+        
+                screen.posiciona(sprites.getNumero(Hacha.getDanyoMax()/10), 'r', 30, 11);
+                screen.posiciona(sprites.getNumero(Hacha.getDanyoMax()%10), 'r', 35, 11);
+                screen.posiciona(sprites.getNumero((int)(Hacha.getCritico()*10)%10), 'v', 4, 24);
+                screen.posiciona(sprites.getNumero((int)(Hacha.getCritico()*100)%10), 'v', 9, 24);
+            } else if (option == 4) { //Imprimir hechizo
+                screen.posiciona(sprites.getHechizoEleccion(), 'z', 110, 4);
                 
-                screen.posiciona(sprites.getTipo(option-1), 'x', 4, 4);
-                
-                screen.posiciona(sprites.getStatsHeroe(), 'a', 4, 10);
-                
-                screen.posiciona(sprites.getNumero(Mago.getMinVida()), 'r', 30, 10);
-                screen.posiciona(sprites.getNumero(Mago.getMaxVida()), 'v', 41, 10);
-                screen.posiciona(sprites.getNumero(Mago.getVidaXpiso()), 'v', 36, 16);
+                screen.posiciona(opciones.toString(), 'x', 2, 49, true);
+
+                screen.posiciona(sprites.getTipoArma(option-1), 'x', 4, 4);
+        
+                screen.posiciona(sprites.getStatsArma(), 'a', 4, 10);
+        
+                screen.posiciona(sprites.getNumero(Hechizo.getDanyoMax()/10), 'r', 30, 11);
+                screen.posiciona(sprites.getNumero(Hechizo.getDanyoMax()%10), 'r', 35, 11);
+                screen.posiciona(sprites.getNumero((int)(Hechizo.getCritico()*10)%10), 'v', 4, 24);
+                screen.posiciona(sprites.getNumero((int)(Hechizo.getCritico()*100)%10), 'v', 9, 24);
             }
             
             screen.posiciona(sprites.getA(), 'x', 4, 51);
@@ -599,54 +592,20 @@ public class dungeon {
             }
         } while (!elegido);
 
-        // Limpiar pantalla
-        /*
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-
-        System.out.print(Colors.BLUE + "[+]" + Colors.RESET + " Nombre del personaje: ");
-        nick = sc.nextLine();
-
-        // Crear tipo de jugador
-        MostrarMenu(1);
-        option = sc.nextInt();
-        sc.nextLine();
         switch (option) {
             case 1:
-                p = new Mago(nick);
+                jugador.setArma(new Arco());
                 break;
             case 2:
-                p = new Guerrero(nick);
+                jugador.setArma(new Espada());
                 break;
             case 3:
-                p = new Enano(nick);
-                break;
-            default:
-                break;
-        }
-
-        // Añadir arma al jugador
-        MostrarMenu(2);
-        option = sc.nextInt();
-        sc.nextLine();
-        switch (option) {
-            case 1:
-                p.setArma(new Arco());
-                break;
-            case 2:
-                p.setArma(new Espada());
-                break;
-            case 3:
-                p.setArma(new Hacha());
+                jugador.setArma(new Hacha());
                 break;
             case 4:
-                p.setArma(new Hechizo());
-                break;
-            default:
+                jugador.setArma(new Hechizo());
                 break;
         }
-        */
-        //contarHistoria(jugador);
 
         return jugador;
     }

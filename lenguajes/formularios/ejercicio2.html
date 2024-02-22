@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 2 Formulario</h1>
+    <form action="" method="get">
+        <fieldset>
+            <legend>Formulario de opciones</legend>
+            <ul style="list-style: none; padding: 0;">
+                <li>
+                    <label for="it">Instituto</label>
+                    <input type="text" name="instituto" id="it">
+                </li>
+                <li>
+                    <label for="st">Estudios elegidos</label>
+                    <input type="text" name="estudios" id="st">
+                </li>
+                <li>
+                    <label for="nm">Nombre</label>
+                    <input type="text" name="nombre" id="nm">
+                </li>
+                <li>
+                    <label for="ap">Apellidos</label>
+                    <input type="text" name="apellidos" id="ap">
+                </li>
+                <li>
+                    <label for="em">Email</label>
+                    <input type="email" name="email" id="em">
+                </li>
+            </ul>
+            <ul style="list-style: none; padding: 0;">
+                <li>
+                    <label for="cl">Elija un color:</label>
+                    <input type="color" name="color" id="cl">
+                </li>
+                <li>
+                    <textarea name="algo" id="lg" cols="47" rows="5">Utilice este recuadro por favor</textarea>
+                </li>
+                <li>
+                    <input type="radio" name="red" id="2g" value="red2g">
+                    <label for="2g">2G</label>
+                </li>
+                <li>
+                    <input type="radio" name="red" id="3g" value="red3g">
+                    <label for="3g">3G</label>
+                </li>
+                <li>
+                    <input type="radio" name="red" id="4g" value="red4g">
+                    <label for="4g">4G</label>
+                </li>
+                <li> 
+                    <label for="fc">Elija una fecha:</label>
+                    <input type="date" name="fecha" id="fc">
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset>
+            <legend>Por favor, complete estas opciones</legend>
+            <ul style="list-style: none; padding: 0;">
+                <li>
+                    <label for="ch">Elija un fichero</label>
+                    <input type="file" name="file" id="ch">
+                </li>
+                <li>
+                    <select name="conector" id="cn">
+                        <option value="usb">USB</option>
+                        <option value="Paralelo">Paralelo</option>
+                        <option value="ps2">PS2</option>
+                    </select>
+                </li>
+                <li>
+                    <input type="radio" name="sistema" id="sistemawindows">
+                    <label for="sistemawindows">Windows</label>
+                    <input type="radio" name="sistema" id="sistemamac">
+                    <label for="sistemamac">Mac</label>
+                    <input type="radio" name="sistema" id="sistemalinux">
+                    <label for="sistemalinux">Linux</label>
+                </li>
+                <li>
+                    <label for="fc">Elija una fecha:</label>
+                    <input type="date" name="fecha" id="fc">
+                </li>
+            </ul>
+        </fieldset>
+    </form>
+</body>
+</html>

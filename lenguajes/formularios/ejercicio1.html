@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulario de registro</h1>
+    <form action="" method="get">
+        <ul style="list-style: none; padding: 0;">
+            <li>
+                <p>
+                    <label for="nm">Nombre: </label>
+                    <input type="text" name="nombre" id="nm" maxlength="50">
+                </p>
+            </li>
+            <li>
+                <p>
+                    <label for="ap">Apellidos: </label>
+                    <input type="text" name="apellidos" id="ap" maxlength="50">
+                </p>
+            </li>
+            <li>
+                <p>
+                    Sexo:
+                    <input type="radio" name="sexo" id="hm" value="Hombre">
+                    <label for="hm">hombre</label>
+                    <input type="radio" name="sexo" id="mj" value="Mujer">
+                    <label for="mj">mujer</label>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <label for="em">Correo:</label>
+                    <input type="email" name="email" id="em">
+                </p>
+            </li>
+            <li>
+                <p>
+                    <input type="checkbox" name="recibir" id="rb" checked>
+                    <label for="rb">Deseo recibir información sobre novedades y ofertas</label>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <input type="checkbox" name="declarar" id="dc">
+                    <label for="dc">Declaro haber leido y aceptar las condiciones generales del programa y la normativa sobre protección de datos</label>
+                </p>
+            </li>
+            <li>
+                <p>
+                    <input type="submit" value="Enviar">
+                </p>
+            </li>
+        </ul>
+    </form>
+</body>
+</html>
