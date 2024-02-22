@@ -16,61 +16,9 @@ public class dungeon {
         Personaje jugador = new Personaje();
         ArrayList<Monstruo> monstruos = new ArrayList<>();
         monstruos = creacionEnemigos(3);
-        String nick;
-        int option;
 
-        // Inserción de datos del jugador
-        // Limpiar pantalla
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-
-        System.out.print(Colors.BLUE + "[+]" + Colors.RESET + " Nombre del personaje: ");
-        nick = sc.nextLine();
-
-        // Crear tipo de jugador
-        MostrarMenu(1);
-        option = sc.nextInt();
-        sc.nextLine();
-        switch (option) {
-            case 1:
-                jugador = new Mago(nick);
-                break;
-            case 2:
-                jugador = new Guerrero(nick);
-                break;
-            case 3:
-                jugador = new Enano(nick);
-                break;
-            default:
-                break;
-        }
-
-        // Añadir arma al jugador
-        MostrarMenu(2);
-        option = sc.nextInt();
-        sc.nextLine();
-        switch (option) {
-            case 1:
-                jugador.setArma(new Arco());
-                break;
-            case 2:
-                jugador.setArma(new Espada());
-                break;
-            case 3:
-                jugador.setArma(new Hacha());
-                break;
-            case 4:
-                jugador.setArma(new Hechizo());
-                break;
-            default:
-                break;
-        }
-
-        contarHistoria(jugador);
-
-        System.out.println(Colors.RED + "[!!] ¡¡Minimiza la pantalla al mínimo!!" + Colors.RESET);
-        System.out.println("[+] Lo único que tienes que hacer es presionar enter...");
-        sc.nextLine();
+        // Inserción de datos del jugador y contar historia
+        jugador = seleccionarPersonajeArma();
 
         ////////////////////////////////////////////////////
 
@@ -96,15 +44,17 @@ public class dungeon {
                 // Si hay un enemigo en la misma sala pues salta una alerta
                 imprimirGraficos(jugador, true);
                 sc.nextLine();
-                imprimirGraficos(jugador, monstruo, 0, danyo);
+                imprimirGraficos(jugador, monstruo, 0, danyo, false);
                 sc.nextLine();
 
                 // Aquí empieza el combate
                 jugadorAtaca = 1;
                 do {
+                    boolean critico = false;
                     // Ataca el jugador
                     if (jugadorAtaca == 1) {
-                        danyo = jugador.getArma().danyoArma();
+                        critico = jugador.getArma().isCritico();
+                        danyo = jugador.getArma().danyoArma(critico);
                         monstruo.recibeDanyo(danyo);
                         if (monstruo.getVida() <= 0) {
                             monstruo.setVida(0);
@@ -112,11 +62,12 @@ public class dungeon {
                         jugadorAtaca = -1;
                         // Ataca el monstruo
                     } else {
-                        danyo = monstruo.getArma().danyoArma();
+                        critico = monstruo.getArma().isCritico();
+                        danyo = monstruo.getArma().danyoArma(critico);
                         jugador.recibeDanyo(danyo);
                         if (jugador.getVida() <= 0) {
                             jugador.setVida(0);
-                            imprimirGraficos(jugador, monstruo, jugadorAtaca, danyo);
+                            imprimirGraficos(jugador, monstruo, jugadorAtaca, danyo, critico);
                             Thread.sleep(1000);
                             acabarJuego(false);
                             System.exit(0);
@@ -124,7 +75,7 @@ public class dungeon {
                         jugadorAtaca = 1;
                     }
                     // Se imprime todo después de cada turno
-                    imprimirGraficos(jugador, monstruo, jugadorAtaca, danyo);
+                    imprimirGraficos(jugador, monstruo, jugadorAtaca, danyo, critico);
                     sc.nextLine();
                 } while ((monstruo.getVida() > 0) && (jugador.getVida() > 0));
             } else {
@@ -135,37 +86,6 @@ public class dungeon {
             jugador.avanzar();
         }
         acabarJuego(true);
-    }
-
-    public static void MostrarMenu(int menu) {
-        // Limpiar pantalla
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-
-        switch (menu) {
-            case 1:
-                System.out
-                        .println(Colors.BLUE + "[+]" + Colors.RESET + " Elige el tipo de heroe que deseas utilizar: ");
-                System.out.println(
-                        "\t--> " + Colors.PURPLE + "1" + Colors.RESET + ")" + Colors.YELLOW + "Mago" + Colors.RESET);
-                System.out.println("\t--> " + Colors.PURPLE + "2" + Colors.RESET + ")" + Colors.YELLOW + "Guerrero"
-                        + Colors.RESET);
-                System.out.println(
-                        "\t--> " + Colors.PURPLE + "3" + Colors.RESET + ")" + Colors.YELLOW + "Enano" + Colors.RESET);
-                break;
-
-            case 2:
-                System.out.println(Colors.BLUE + "[+]" + Colors.RESET + " Elige el arma que deseas utilizar: ");
-                System.out.println(
-                        "\t--> " + Colors.PURPLE + "1" + Colors.RESET + ")" + Colors.YELLOW + "Arco" + Colors.RESET);
-                System.out.println(
-                        "\t--> " + Colors.PURPLE + "2" + Colors.RESET + ")" + Colors.YELLOW + "Espada" + Colors.RESET);
-                System.out.println(
-                        "\t--> " + Colors.PURPLE + "3" + Colors.RESET + ")" + Colors.YELLOW + "Hacha" + Colors.RESET);
-                System.out.println(
-                        "\t--> " + Colors.PURPLE + "4" + Colors.RESET + ")" + Colors.YELLOW + "Hechizo" + Colors.RESET);
-                break;
-        }
     }
 
     public static ArrayList<Monstruo> creacionEnemigos(int numEnemigos) {
@@ -211,7 +131,7 @@ public class dungeon {
         return monstruos;
     }
 
-    public static void imprimirGraficos(Personaje jugador, Monstruo monstruo, int jugadorAtaca, int danyo) {
+    public static void imprimirGraficos(Personaje jugador, Monstruo monstruo, int jugadorAtaca, int danyo, boolean critico) {
         Pantalla screen = new Pantalla(86, 280);
         Pantalla info = new Pantalla(25, 276);
         Pantalla armaPantalla = new Pantalla(21, 34);
@@ -274,8 +194,14 @@ public class dungeon {
         valoresTipo.put("Mago", 2);
         screen.posiciona(sprites.getTipo(valoresTipo.get(jugador.getTipo())), 'a', 80, 62);
         if (jugadorAtaca == -1) {
-            screen.posiciona(sprites.getCorte(), 'a', 70, 30);
-            screen.posiciona(sprites.getGolpe(), 'a', 80, 68);
+            if (critico) {
+                screen.posiciona(sprites.getCorte(), 'a', 70, 25);
+                screen.posiciona(sprites.getCorte(), 'a', 70, 35);
+                screen.posiciona(sprites.getGolpe(), 'r', 80, 68);
+            } else {
+                screen.posiciona(sprites.getCorte(), 'a', 70, 30);
+                screen.posiciona(sprites.getGolpe(), 'a', 80, 68);
+            }
             // Daño hecho
             screen.posiciona(sprites.getNumero(danyo / 10), 'b', 96, 72);
             screen.posiciona(sprites.getNumero(danyo % 10), 'b', 101, 72);
@@ -316,9 +242,13 @@ public class dungeon {
         }
 
         if (jugadorAtaca == 1) {
-            screen.posiciona(sprites.getGolpe(), 'a', 155, 68);
-            screen.posiciona(sprites.getNumero(danyo / 10), 'b', 171, 72);
-            screen.posiciona(sprites.getNumero(danyo % 10), 'b', 176, 72);
+            if (critico) {
+                screen.posiciona(sprites.getGolpe(), 'r', 155, 68);
+            } else {
+                screen.posiciona(sprites.getGolpe(), 'a', 155, 68);
+            }
+            screen.posiciona(sprites.getNumero(danyo / 10), 'z', 171, 72);
+            screen.posiciona(sprites.getNumero(danyo % 10), 'z', 176, 72);
         }
         ///////////////////////////////////////////
         screen.mostrarPantalla();
@@ -473,5 +403,251 @@ public class dungeon {
                 Thread.sleep(40 * multiplicadorVelocidad);
             }
         }
+    }
+
+    public static Personaje seleccionarPersonajeArma() {
+        Pantalla screen = new Pantalla(86, 280);
+        Pantalla opciones = new Pantalla(35, 276);
+        Pantalla stats = new Pantalla(46, 60);
+        opciones.marco('b');
+        stats.marco('b');
+        screen.marco('b');
+        Sprite sprites = new Sprite();
+
+        Personaje jugador = new Personaje();
+        String nick = "";
+        int option = 1;
+
+        // Input del nombre
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+
+        System.out.print(Colors.BLUE + "[+]" + Colors.RESET + " Nombre del personaje: ");
+        nick = sc.nextLine();
+
+        System.out.println(Colors.RED + "[!!] ¡¡Minimiza la pantalla al mínimo!!" + Colors.RESET);
+        System.out.println("[+] Presionar enter para continuar...");
+        sc.nextLine();
+ 
+        boolean elegido = false;
+
+        //Elección de personaje
+        do {
+            screen.limpiarPantalla();
+
+            if (option > 3) {
+                option = 1;
+            }
+            if (option < 1) {
+                option = 3;
+            }
+
+            screen.posiciona(sprites.getFondoSeleccion(), 'n', 2, 2);
+            screen.posiciona(stats.toString(), 'x', 2, 2, true);
+            
+            if (option == 1) { //Imprimir enano
+                screen.posiciona(sprites.getEnano(), 'z', 120, 4);
+
+                screen.posiciona(opciones.toString(), 'x', 2, 49, true);
+
+                screen.posiciona(sprites.getTipo(option-1), 'x', 4, 4);
+        
+                screen.posiciona(sprites.getStatsHeroe(), 'a', 4, 10);
+        
+                screen.posiciona(sprites.getNumero(Enano.getMinVida()), 'r', 30, 10);
+                screen.posiciona(sprites.getNumero(Enano.getMaxVida()/10), 'v', 41, 10);
+                screen.posiciona(sprites.getNumero(Enano.getMaxVida()%10), 'v', 47, 10);
+                screen.posiciona(sprites.getNumero(Enano.getVidaXpiso()), 'v', 36, 16);
+            } else if (option == 2) { //Imprimir guerrero
+                screen.posiciona(sprites.getGuerrero(), 'z', 120, 2);
+                
+                screen.posiciona(opciones.toString(), 'x', 2, 49, true);
+                screen.posiciona(stats.toString(), 'x', 2, 2, true);
+                
+                screen.posiciona(sprites.getTipo(option-1), 'x', 4, 4);
+                
+                screen.posiciona(sprites.getStatsHeroe(), 'a', 4, 10);
+                
+                screen.posiciona(sprites.getNumero(Guerrero.getMinVida()), 'r', 30, 10);
+                screen.posiciona(sprites.getNumero(Guerrero.getMaxVida()/10), 'v', 41, 10);
+                screen.posiciona(sprites.getNumero(Guerrero.getMaxVida()%10), 'v', 47, 10);
+                screen.posiciona(sprites.getNumero(Guerrero.getVidaXpiso()), 'v', 36, 16);
+            } else if (option == 3) { //Imprimir mago
+                screen.posiciona(sprites.getMago(), 'z', 120, 2);
+                
+                screen.posiciona(opciones.toString(), 'x', 2, 49, true);
+                screen.posiciona(stats.toString(), 'x', 2, 2, true);
+                
+                screen.posiciona(sprites.getTipo(option-1), 'x', 4, 4);
+                
+                screen.posiciona(sprites.getStatsHeroe(), 'a', 4, 10);
+                
+                screen.posiciona(sprites.getNumero(Mago.getMinVida()), 'r', 30, 10);
+                screen.posiciona(sprites.getNumero(Mago.getMaxVida()), 'v', 41, 10);
+                screen.posiciona(sprites.getNumero(Mago.getVidaXpiso()), 'v', 36, 16);
+            }
+            
+            screen.posiciona(sprites.getA(), 'x', 4, 51);
+            screen.posiciona(sprites.getS(), 'x', 113, 51);
+            screen.posiciona(sprites.getD(), 'x', 219, 51);
+    
+            screen.mostrarPantalla();
+            
+            try {
+                String input = sc.nextLine();
+                
+                if (input.equals("d")) {
+                    option++;
+                } else if (input.equals("a")) {
+                    option--;
+                } else if (input.equals("s")) {
+                    elegido = true;
+                }
+            } catch (Exception e) {
+                System.out.println("[!] Opción no válida");
+            }
+        } while (!elegido);
+        
+        switch (option) {
+            case 1:
+                jugador = new Enano(nick);
+                break;
+            case 2:
+                jugador = new Guerrero(nick);
+                break;
+            case 3:
+                jugador = new Mago(nick);
+                break;
+        }
+
+        elegido = false;
+
+        //Elección de arma
+        do {
+            screen.limpiarPantalla();
+
+            if (option > 3) {
+                option = 1;
+            }
+            if (option < 1) {
+                option = 3;
+            }
+
+            screen.posiciona(sprites.getFondoSeleccion(), 'n', 2, 2);
+            screen.posiciona(stats.toString(), 'x', 2, 2, true);
+            
+            if (option == 1) { //Imprimir enano
+                screen.posiciona(sprites.getEnano(), 'z', 120, 4);
+
+                screen.posiciona(opciones.toString(), 'x', 2, 49, true);
+
+                screen.posiciona(sprites.getTipo(option-1), 'x', 4, 4);
+        
+                screen.posiciona(sprites.getStatsHeroe(), 'a', 4, 10);
+        
+                screen.posiciona(sprites.getNumero(Enano.getMinVida()), 'r', 30, 10);
+                screen.posiciona(sprites.getNumero(Enano.getMaxVida()/10), 'v', 41, 10);
+                screen.posiciona(sprites.getNumero(Enano.getMaxVida()%10), 'v', 47, 10);
+                screen.posiciona(sprites.getNumero(Enano.getVidaXpiso()), 'v', 36, 16);
+            } else if (option == 2) { //Imprimir guerrero
+                screen.posiciona(sprites.getGuerrero(), 'z', 120, 2);
+                
+                screen.posiciona(opciones.toString(), 'x', 2, 49, true);
+                screen.posiciona(stats.toString(), 'x', 2, 2, true);
+                
+                screen.posiciona(sprites.getTipo(option-1), 'x', 4, 4);
+                
+                screen.posiciona(sprites.getStatsHeroe(), 'a', 4, 10);
+                
+                screen.posiciona(sprites.getNumero(Guerrero.getMinVida()), 'r', 30, 10);
+                screen.posiciona(sprites.getNumero(Guerrero.getMaxVida()/10), 'v', 41, 10);
+                screen.posiciona(sprites.getNumero(Guerrero.getMaxVida()%10), 'v', 47, 10);
+                screen.posiciona(sprites.getNumero(Guerrero.getVidaXpiso()), 'v', 36, 16);
+            } else if (option == 3) { //Imprimir mago
+                screen.posiciona(sprites.getMago(), 'z', 120, 2);
+                
+                screen.posiciona(opciones.toString(), 'x', 2, 49, true);
+                screen.posiciona(stats.toString(), 'x', 2, 2, true);
+                
+                screen.posiciona(sprites.getTipo(option-1), 'x', 4, 4);
+                
+                screen.posiciona(sprites.getStatsHeroe(), 'a', 4, 10);
+                
+                screen.posiciona(sprites.getNumero(Mago.getMinVida()), 'r', 30, 10);
+                screen.posiciona(sprites.getNumero(Mago.getMaxVida()), 'v', 41, 10);
+                screen.posiciona(sprites.getNumero(Mago.getVidaXpiso()), 'v', 36, 16);
+            }
+            
+            screen.posiciona(sprites.getA(), 'x', 4, 51);
+            screen.posiciona(sprites.getS(), 'x', 113, 51);
+            screen.posiciona(sprites.getD(), 'x', 219, 51);
+    
+            screen.mostrarPantalla();
+            
+            try {
+                String input = sc.nextLine();
+                
+                if (input.equals("d")) {
+                    option++;
+                } else if (input.equals("a")) {
+                    option--;
+                } else if (input.equals("s")) {
+                    elegido = true;
+                }
+            } catch (Exception e) {
+                System.out.println("[!] Opción no válida");
+            }
+        } while (!elegido);
+
+        // Limpiar pantalla
+        /*
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+
+        System.out.print(Colors.BLUE + "[+]" + Colors.RESET + " Nombre del personaje: ");
+        nick = sc.nextLine();
+
+        // Crear tipo de jugador
+        MostrarMenu(1);
+        option = sc.nextInt();
+        sc.nextLine();
+        switch (option) {
+            case 1:
+                p = new Mago(nick);
+                break;
+            case 2:
+                p = new Guerrero(nick);
+                break;
+            case 3:
+                p = new Enano(nick);
+                break;
+            default:
+                break;
+        }
+
+        // Añadir arma al jugador
+        MostrarMenu(2);
+        option = sc.nextInt();
+        sc.nextLine();
+        switch (option) {
+            case 1:
+                p.setArma(new Arco());
+                break;
+            case 2:
+                p.setArma(new Espada());
+                break;
+            case 3:
+                p.setArma(new Hacha());
+                break;
+            case 4:
+                p.setArma(new Hechizo());
+                break;
+            default:
+                break;
+        }
+        */
+        //contarHistoria(jugador);
+
+        return jugador;
     }
 }
