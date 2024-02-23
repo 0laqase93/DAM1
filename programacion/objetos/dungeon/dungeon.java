@@ -15,7 +15,8 @@ public class dungeon {
     public static void main(String[] args) throws InterruptedException {
         Personaje jugador = new Personaje();
         ArrayList<Monstruo> monstruos = new ArrayList<>();
-        monstruos = creacionEnemigos(3);
+        int random = (int)(Math.random()*3) + 3;
+        monstruos = creacionEnemigos(random);
 
         // Inserción de datos del jugador
         jugador = seleccionarPersonajeArma();
@@ -68,6 +69,7 @@ public class dungeon {
                         jugador.recibeDanyo(danyo);
                         if (jugador.getVida() <= 0) {
                             jugador.setVida(0);
+                            jugadorAtaca = 1;
                             imprimirGraficos(jugador, monstruo, jugadorAtaca, danyo, critico);
                             Thread.sleep(1000);
                             acabarJuego(false);
@@ -95,7 +97,7 @@ public class dungeon {
             int tipo = (int) (Math.random() * 3) + 1;
             int x = 0;
             do {
-                x = (int) (Math.random() * 38) + 1; // Posición aleatoria (1-39)
+                x = (int) (Math.random() * 37) + 1; // Posición aleatoria (1-38)
                 if (!pasillo[x]) {
                     pasillo[x] = true;
                 }
@@ -204,8 +206,8 @@ public class dungeon {
                 screen.posiciona(sprites.getGolpe(), 'a', 80, 68);
             }
             // Daño hecho
-            screen.posiciona(sprites.getNumero(danyo / 10), 'x', 96, 72);
-            screen.posiciona(sprites.getNumero(danyo % 10), 'x', 101, 72);
+            screen.posiciona(sprites.getNumero(danyo / 10), 'n', 96, 72);
+            screen.posiciona(sprites.getNumero(danyo % 10), 'n', 101, 72);
         }
 
         /////////////////////////////////////////// Enemigo
@@ -248,8 +250,8 @@ public class dungeon {
             } else {
                 screen.posiciona(sprites.getGolpe(), 'a', 155, 68);
             }
-            screen.posiciona(sprites.getNumero(danyo / 10), 'x', 171, 72);
-            screen.posiciona(sprites.getNumero(danyo % 10), 'x', 176, 72);
+            screen.posiciona(sprites.getNumero(danyo / 10), 'n', 171, 72);
+            screen.posiciona(sprites.getNumero(danyo % 10), 'n', 176, 72);
         }
         ///////////////////////////////////////////
         screen.mostrarPantalla();
@@ -353,29 +355,15 @@ public class dungeon {
     public static void contarHistoria(Personaje jugador) throws InterruptedException {
         Pantalla screen = new Pantalla(86, 280);
         screen.marco('b');
-        Letras.imprimirFrase("¿Leer historia? [y/n]:", screen, 2, 2, 40);
+        Letras.imprimirFrase("¿Leer historia? [¬vy¬/¬rn¬]:", screen, 2, 2, 40);
         String input = sc.nextLine();
         if (input.equals("y")) {
             String historia = "";
     
             if (jugador.getArma().getTipo() == "Hechizo") {
-                historia = "En las antiguas crónicas de tiempos olvidados se nos cuenta el relato de " + jugador.getNombre() + ", un héroe cuyo despertar resonó en las paredes de una arcaica mazmorra.\n\nLleno de confusión, " + jugador.getNombre() + " se despertó de su sueño para encontrarse perdido en un pasillo lúgubre, cuyas baldosas desgastadas marcaban el inicio de un laberinto.\n\nTodavía somnoliento, se sentía embrujado por un poder ancestral: La capacidad de hacer hechizos, una habilidad existente desde tiempos remotos y cuyo origen parecía ser un regalo de los dioses ya olvidados.\n\nCon determinación en su pecho, "+ jugador.getNombre()+ " se embarcó en la osada aventura de atravesar las 40 habitaciones, desafiando los enigmas y peligros que acechaban en cada pasillo. A través de la penumbra y del misterio, cada paso hacia adelante era un paso hacia la libertad, cada enfrentamiento una prueba de su valor y coraje.\n\nAsí, armado con la magia de los dioses y el anhelo de la libertad, " + jugador.getNombre() + " se adentró en las profundidades de la mazmorra con esperanza, decidido a desafiar las sombras y emerger triunfante bajo el resplandor del sol.\n";
+                historia = "En las antiguas crónicas de tiempos olvidados se nos cuenta el relato de ¬a" + jugador.getNombre() + "¬, un héroe cuyo despertar resonó en las paredes de una arcaica mazmorra.\n\nLleno de confusión, ¬a" + jugador.getNombre() + "¬ se despertó de su sueño para encontrarse perdido en un pasillo lúgubre, cuyas baldosas desgastadas marcaban el inicio de un laberinto.\n\n Todavía somnoliento, se sentía embrujado por un poder ancestral: La capacidad de hacer ¬rHechizos¬, una habilidad existente desde tiempos remotos y cuyo origen parecía ser un regalo de los dioses ya olvidados.\n\n Con determinación en su pecho, ¬a"+ jugador.getNombre()+ "¬ se embarcó en la osada aventura de atravesar las 40 habitaciones, desafiando los enigmas y peligros que acechaban en cada pasillo. A través de la penumbra y del misterio, cada paso hacia adelante era un paso hacia la libertad, cada enfrentamiento una prueba de su valor y coraje.\n\n Así, armado con la magia de los dioses y el anhelo de la libertad, ¬a" + jugador.getNombre() + "¬ se adentró en las profundidades de la mazmorra con esperanza, decidido a desafiar las sombras y emerger triunfante bajo el resplandor del sol.\n";
             } else {
-                historia = "En las crónicas de tiempos olvidados se entrelaza el relato de " + Colors.YELLOW
-                        + jugador.getNombre() + Colors.RESET
-                        + ", un héroe cuyo despertar resonó en las paredes pétreas de una mazmorra ancestral. Envuelto en un velo de confusión, "
-                        + Colors.YELLOW + jugador.getNombre() + Colors.RESET
-                        + " se alzó de su letargo para encontrarse perdido en un pasillo lúgubre, cuyas baldosas desgastadas marcaban el inicio de un laberinto de 40 habitaciones. En el umbral de la conciencia, su mano se cerró en torno a un objeto antiguo y poderoso: su fiel "
-                        + Colors.RED + jugador.getArma() + Colors.RESET
-                        + ", un tesoro de tiempos remotos que reposaba en el suelo de piedra como un regalo de los dioses olvidados.\n\n"
-                        +
-                        "Con el arma en mano y la determinación ardiente en su pecho, " + Colors.YELLOW
-                        + jugador.getNombre() + Colors.RESET
-                        + " se embarcó en la osada empresa de atravesar las 40 habitaciones, desafiando a los enigmas y peligros que acechaban en cada umbral. A través de la penumbra y el misterio, cada paso hacia adelante era un paso hacia la libertad, cada enfrentamiento una prueba de su valor y coraje.\n\n"
-                        +
-                        "Así, armado con la fuerza de su " + Colors.RED + jugador.getArma() + Colors.RESET
-                        + " y el anhelo de la libertad, " + Colors.YELLOW + jugador.getNombre() + Colors.RESET
-                        + " se adentró en las profundidades de la mazmorra con la esperanza ardiente en su corazón, decidido a desafiar las sombras y emerger triunfante bajo el resplandor del sol.\n";
+                historia = "En las crónicas de tiempos olvidados se entrelaza el relato de ¬a" + jugador.getNombre() + "¬, un héroe cuyo despertar resonó en las paredes pétreas de una mazmorra ancestral. Envuelto en un velo de confusión, ¬a"+ jugador.getNombre() + "¬ se alzó de su letargo para encontrarse perdido en un pasillo lúgubre, cuyas baldosas desgastadas marcaban el inicio de un laberinto de 40 habitaciones. En el umbral de la conciencia, su mano se cerró en torno a un objeto antiguo y poderoso: su fiel ¬r" + jugador.getArma() + "¬, un tesoro de tiempos remotos que reposaba en el suelo de piedra como un regalo de los dioses olvidados.\n\n Con el arma en mano y la determinación ardiente en su pecho, ¬a" + jugador.getNombre() + "¬ se embarcó en la osada empresa de atravesar las 40 habitaciones, desafiando a los enigmas y peligros que acechaban en cada umbral. A través de la penumbra y el misterio, cada paso hacia adelante era un paso hacia la libertad, cada enfrentamiento una prueba de su valor y coraje.\n\nAsí, armado con la fuerza de su ¬r" + jugador.getArma() + "¬ y el anhelo de la libertad, ¬a" + jugador.getNombre() + "¬ se adentró en las profundidades de la mazmorra con la esperanza ardiente en su corazón, decidido a desafiar las sombras y emerger triunfante bajo el resplandor del sol.\n";
             }
             screen.limpiarPantalla();
             Letras.imprimirFrase(historia, screen, 2, 2, 40);
@@ -425,7 +413,7 @@ public class dungeon {
             screen.posiciona(stats.toString(), 'x', 2, 2, true);
             
             if (option == 1) { //Imprimir enano
-                screen.posiciona(sprites.getEnano(), 'z', 120, 4);
+                screen.posiciona(sprites.getEnano(), 'z', 140, 11);
 
                 screen.posiciona(opciones.toString(), 'x', 2, 49, true);
 
@@ -594,10 +582,10 @@ public class dungeon {
 
         switch (option) {
             case 1:
-                jugador.setArma(new Arco());
+                jugador.setArma(new Espada());
                 break;
             case 2:
-                jugador.setArma(new Espada());
+                jugador.setArma(new Arco());
                 break;
             case 3:
                 jugador.setArma(new Hacha());

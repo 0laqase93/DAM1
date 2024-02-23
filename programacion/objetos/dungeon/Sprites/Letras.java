@@ -225,15 +225,15 @@ public class Letras {
         " ███ \n",
 
         "█████\n" +
-        "██ ██\n" +
-        "   ██\n" +
+        "█   █\n" +
+        "   █ \n" +
         "     \n" +
-        "   ██\n",
+        "   █\n",
 
-        "██   \n" +
+        " █   \n" +
         "     \n" +
-        "██   \n" +
-        "██ ██\n" +
+        " █   \n" +
+        "█   █\n" +
         "█████\n",
 
         " ███ \n" +
@@ -317,15 +317,15 @@ public class Letras {
         "█████"
     };
 
-    public static void imprimirLetra(char l, Pantalla p, int x, int y) {
+    public static void imprimirLetra(char l, Pantalla p, int x, int y, char color) {
         char letra = (char)(l - 97);
         if (l != ' ') {
             if ((l >= '0') && (l <= '9')) { // Números
                 letra = (char)(l - '0');
-                p.posiciona(numeros[letra], 'b', x, y);
+                p.posiciona(numeros[letra], color, x, y);
             } else if ((l <= 'z') && (l >= 'a')) { // Letras normales
                 letra = (char)(l - 'a');
-                p.posiciona(letras[letra], 'b', x, y);
+                p.posiciona(letras[letra], color, x, y);
             } else { // Casos especiales
                 switch (l) {
                     case 'á':
@@ -393,28 +393,50 @@ public class Letras {
 
     public static void imprimirFrase(String s, Pantalla p, int x, int y, int tiempo) throws InterruptedException {
         Scanner sc = new Scanner(System.in);
-        String palabra = "";
+        String[] palabra = s.split(" ");
         s = s.toLowerCase();
         int xInicial = x;
         int yInicial = y;
+        char color = 'b';
+        boolean hayColor = false;
         for (int i = 0; i < s.length(); i++) {
             if ((x >= p.getAncho() - 6) || (s.charAt(i) == '\n')) {
                 x = xInicial;
                 if ((s.charAt(i) == '\n') || (s.charAt(i) == ' ')) {
+                    if ((y == yInicial) && (s.charAt(i) == '\n')) {
+                        y -= 6;
+                    }
                     x -= 6;
                 }
                 y += 6;
             }
-            if ((y >= p.getAltura() - 6)) {
+            if ((y >= p.getAltura() - 6)) {//Esto es para cuando se llena la pantalla
                 sc.nextLine();
                 p.limpiarPantalla();
                 x = xInicial;
                 y = yInicial;
             }
-            imprimirLetra(s.charAt(i), p, x, y);
-            p.mostrarPantalla();
-            x += 6;
-            Thread.sleep(tiempo);
+            if (s.charAt(i) == '¬') {//Esto es para identificar el color
+                if (hayColor) {
+                    color = 'b';
+                    hayColor = false;
+                } else {
+                    color = s.charAt(i+1);
+                    hayColor = true;
+                    i++;
+                }
+            } else {
+                imprimirLetra(s.charAt(i), p, x, y, color);
+                p.mostrarPantalla();
+                x += 6;
+                if (s.charAt(i) == ',') { //Ajustar tiempos
+                    Thread.sleep(tiempo*10);
+                } else if (s.charAt(i) == '.') {
+                    Thread.sleep(tiempo*20);
+                } else {
+                    Thread.sleep(tiempo);
+                }
+            }
         }
     }
 }

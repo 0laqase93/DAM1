@@ -14,7 +14,7 @@ public abstract class Monstruo {
 
     public Monstruo(String tipo, int x) {
         this.tipo = tipo;
-        this.vida = numRandom.nextInt(5, 20);
+        this.vida = numRandom.nextInt(8, 20);
         this.x = x;
     }
 

@@ -19,7 +19,11 @@ public abstract class Arma {
 
     public int danyoArma(boolean critico) {
         if (critico) {
-            return this.numRandom.nextInt(danyomin, danyomax)*2;
+            int d = this.numRandom.nextInt(danyomin, danyomax);
+            if (d == 1) {
+                d++;
+            }
+            return d*2;
         } else {
             return this.numRandom.nextInt(danyomin, danyomax);
         }
