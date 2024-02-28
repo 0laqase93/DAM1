@@ -1,0 +1,134 @@
+@media screen and (max-width: 1024px) {
+    body {
+        background-color: #E0E1EB;
+        margin: 0;
+        font-family: sans-serif;
+    }
+    
+    h1 {
+        z-index: 1000;
+        left: 0;
+        right: 0;
+        background-color: #33354D;
+        color: white;
+        margin: 0;
+        font-size: 3rem;
+    }
+    
+    h2 {
+        background-color: #33354D;
+        color: white;
+        font-size: 1.5rem;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 0;
+    }
+    
+    h3 {
+        background-color: #26A631;
+        color: white;
+        font-size: 1.5rem;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        margin-top: 10px;
+        margin-bottom: 0;
+        padding-left: 5px;
+    }
+    
+    section.desktop {
+        position: absolute;
+        top: 77px;
+        left: 10px;
+        right: 10px;
+    }
+    
+    section.internet {
+        position: absolute;
+        top: 985px;
+        left: 10px;
+        right: 10px;
+    }
+    
+    article {
+        margin: 0;
+    }
+    
+    p {
+        background-color: white;
+        text-align: justify;
+        margin: 0;
+        margin-bottom: 5px;
+        padding: 5px;
+        padding-bottom: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    body {
+        background-color: #E0E1EB;
+        font-family: sans-serif;
+        margin: 0;
+    }
+    
+    h1 {
+        color: white;
+        background-color: #33354D;
+        font-size: 4rem;
+        margin: 0;
+    }
+    
+    h2 {
+        color: white;
+        background-color: #33354D;
+        font-size: 2rem;
+        margin: 0 10px;
+        text-align: center;
+    }
+    
+    h3 {
+        color: white;
+        background-color: #26A631;
+        font-size: 1.5rem;
+        margin: 0;
+        padding-left: 5px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    
+    section.desktop {
+        position: absolute;
+        top: 11%;
+        right: 54.7%;
+        left: 10%;
+        border-left: 2px #33354D solid;
+        border-right: 2px #33354D solid;
+    }
+    
+    section.internet {
+        position: absolute;
+        top: 11%;
+        right: 10%;
+        left: 54.7%;
+        border-left: 2px #33354D solid;
+        border-right: 2px #33354D solid;
+    }
+    
+    article {
+        margin: 20px 40px;
+    }
+    
+    p {
+        background-color: white;
+        margin: 0;
+        padding: 5px;
+        padding-bottom: 10px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        text-align: justify;
+    }
+}
+
+  

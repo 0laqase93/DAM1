@@ -12,6 +12,12 @@ body {
         "footer footer footer"
 }
 
+div.menu:hover {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+}
+
 nav {
     display: flex;
     flex-wrap: nowrap;
@@ -93,7 +99,7 @@ main {
     flex-direction: column;
 }
 
-article p {
+div p {
     text-align: center;
     color: rgb(71, 71, 71);
 }
@@ -106,7 +112,7 @@ h1 {
     color: black;
 }
 
-article.servicios {
+div.servicios {
     grid-area: servicios;
     display: flex;
     justify-content: center;
@@ -114,7 +120,7 @@ article.servicios {
     padding: 30px;
 }
 
-article.servicios p {
+div.servicios p {
     color: white;
     padding: 0 30px;
     margin: 0;
@@ -146,10 +152,12 @@ article.servicios p {
 
 .infoImg img.foto1 {
     grid-area: foto1;
+    width: 100%;
 }
 
 .infoImg img.foto2 {
     grid-area: foto2;
+    width: 100%;
 }
 
 footer {

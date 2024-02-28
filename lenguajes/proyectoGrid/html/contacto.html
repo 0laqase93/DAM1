@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/contacto.css">
+    <link rel="stylesheet" href="../styles/indexPhone.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="pagina">
+        <header>
+            <nav>
+                <a href="index.html"><img src="../images/logo.png" alt="Logo NextAI" title="Logo NextAI" height="30"></a>
+                <ul>
+                    <!--
+                        Al final si lo pongo div me sale el mismo error y si lo pongo en el li me pasa lo mismo.
+
+                        <li><div onclick="location.href='./index.html'" class="menu">Inicio</div></li>
+                    -->
+                    <a href="index.html"><li>Inicio</li></a>
+                    <a href=""><li>Productos</li></a>
+                    <a href=""><li>Asesoramiento</li></a>
+                    <a href=""><li>Seguridad</li></a>
+                    <a href="contacto.html"><li class="active">Contacto</li></a>
+                </ul>
+            </nav>
+            <div class="imagenPresentacion">
+                <img src="../images/background2.png" alt="Imagen presentación">
+            </div>
+        </header>
+        <main>
+            <h1>Métodos de contacto</h1>
+            <div class="textoContacto">
+                <div>
+                    <p>
+                        ¡Hola!
+                    </p>
+                    <p>
+                        Gracias por visitar nuestra página web de productos de inteligencia artificial. Estamos emocionados de que estés interesado en lo que ofrecemos. Si tienes alguna pregunta, comentario o sugerencia, no dudes en ponerte en contacto con nosotros a través de este formulario. Nuestro equipo estará encantado de ayudarte en todo lo que necesites.
+                    </p>
+                    <p>
+                        Por favor, completa el siguiente formulario con tus datos y tu mensaje, y te responderemos lo antes posible. Queremos asegurarnos de brindarte la mejor experiencia posible y de satisfacer todas tus necesidades relacionadas con nuestros productos de IA.
+                    </p>
+                    <p>
+                        ¡Esperamos poder ayudarte pronto!
+                    </p>
+                    <p>
+                        Atentamente,
+                    </p>
+                    <p>
+                        NextAI
+                    </p>
+                </div>
+                <form action="google.es" method="get">
+                    <input type="text" name="name" id="nombre" placeholder="TU NOMBRE">
+                    <input type="email" name="email" id="email" placeholder="TU EMAIL">
+                    <input type="text" name="asunto" id="asunto" placeholder="TU ASUNTO">
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="TU MENSAJE"></textarea>
+                </form>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

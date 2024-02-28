@@ -1,0 +1,57 @@
+/*                                           */
+/* Vicente Casares                           */
+/*                                           */
+/* CSS ejercicio: Don  Quijote Capítulo 1    */
+/*                                           */
+/* Escriba la fecha                          */
+/*                                           */
+
+body {
+  font-family: sans-serif;
+}
+
+h1, h2 {
+  text-align: left;
+}
+
+p {
+  text-align: justify;
+  line-height: 150%;
+}
+
+footer {
+  border-top: black 3px solid;
+  color: black;
+}
+
+
+@media screen and (min-width: 1024px) {
+  body {
+    color: #8C1A1A;
+    background-color: #CCB3E6;
+    margin: 0 330px;
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 1024px) {
+  body {
+    color: #660000;
+    background-color: #40BFBF;
+    margin: 0 150px;
+  }
+}
+
+@media screen and (min-width: 480px) and (max-width: 719px) {
+  body {
+    color: #262673;
+    background-color: #80BF40;
+    margin: 0 50px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  body {
+    color: #EAFF00;
+    background-color: #BF4040;
+  }
+}
