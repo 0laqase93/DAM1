@@ -1,0 +1,20 @@
+Lewis Hamilton:HAM:Reino Unido:Mercedes
+George Russell:RUS:Reino Unido:Mercedes
+Max Verstappen:VER:Paises Bajos:Red Bull
+Sergio Pérez:PER:México:Red Bull
+Lando Norris:NOR:Reino Unido:McLaren
+Oscar Piastri:PIA:Australia:McLaren
+Fernando Alonso:ALO:España:Aston Martin
+Lance Stroll:STR:Canadá:Aston Martin
+Esteban Ocon:OCO:Francia:Alpine
+Pierre Gasly:GAS:Francia:Alpine
+Charles Leclerc:LEC:Mónaco:Ferrari
+Carlos Sainz:SAI:España:Ferrari
+Yuki Tsunoda:TSU:Japón:Visa RB
+Daniel Ricciardo:RIC:Australia:Visa RB
+Valtteri Bottas:BOT:Finlandia:Stake Sauber
+Guanyu Zhou:ZHO:China:Stake Sauber
+Kevin Magnussen:MAG:Dinamarca:Haas
+Nico Hulkenberg:HUL:Alemania:Haas
+Alex Albon:ALB:Tailandia:Williams
+Logan Sargeant:SAR:Estados Unidos:Williams

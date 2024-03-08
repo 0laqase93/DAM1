@@ -1,0 +1,13 @@
+- 2 ficheros (index y formulario). -> link <a>
+- Organizar estructura del proyecto con las carpetas adecuadas. -> rutas relativas
+- Layout GRID. (10%-15%)
+- Tendrá un contenedor principal (de las dos webs solo cambia el contenedor principal).
+- Flexbox para dentro del contenedor principal.
+- Formulario no formato. (15%) (no responsive)
+- Colores de la página están.
+- Se puede utilizar Internet para descargar un fuente (latin-ext) y para los apuntes de clase. !!
+- Añadir un punto de ruptura (lo dice el examen). -> responsive -> se modifica el Layout de la página
+- Muentra como se puntua cada parte.
+- Posicionamiento (bastante%).
+
+Página donde se corregirá el examen: https://validator.w3.org/#validate_by_upload

@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap'); /* Fuente pedida */
+
+
+
+body {
+    font-family: serif;
+    background-color: #3a73b4;
+    color: #fff3e6;
+    margin-bottom: 40px;
+    margin: 0 5%;
+}
+
+.web {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: 
+        "header header"
+        "main aside";
+}
+
+header {
+    grid-area: header;
+    margin-bottom: 80px;
+}
+
+main {
+    grid-area: main;
+    display: flex;
+    flex-direction: row;
+}
+
+aside {
+    grid-area: aside;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-top: 0;
+    padding-left: 0;
+}
+
+li {
+    margin: 0 10px;
+}
+
+a {
+    color: #fff3e6;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f16527;
+}
+
+h1 {
+    font-size: 2.4rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+h2 {
+    font-size: 1.37rem;
+    font-family: "Sixtyfour";
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+article {
+    width: 30%;
+    border: 1px solid white;
+    border-radius: 35px;
+    padding: 0 30px;
+    margin: 0 30px;
+}
+
+h3 {
+    border-bottom: 1px solid white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+article img {
+    display:block;
+    margin:auto;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+article p {
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+}
+
+aside p {
+    margin: 0;
+}
+
+aside p a {
+    margin: 0 10px;
+}
+
+footer {
+    position: fixed;
+    color: #3a73b4;
+    bottom: 30px;
+    left: 15px;
+    background-color: white;
+}
+
+footer p {
+    margin: 0;
+}
+
+h4 {
+    font-size: 1.3rem;
+    margin: 0;
+    text-align: center;
+}
+
+.form {
+    margin: 0 15%;
+}

@@ -38,6 +38,9 @@ header {
 
 main {
     grid-area: main;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 }
 
 footer {
@@ -92,11 +95,6 @@ li:hover {
 
 .imagenPresentacion img:hover {
     opacity: 1;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
 }
 
 div p {
@@ -186,3 +184,4 @@ footer p a {
 footer p a:hover {
     color: white;
 }
+

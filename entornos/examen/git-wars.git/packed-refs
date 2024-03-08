@@ -1,0 +1,6 @@
+# pack-refs with: peeled fully-peeled sorted 
+3f6bc7e0946bf9f73bd20ad1b1dc6d6419952849 refs/heads/antologia
+3f6bc7e0946bf9f73bd20ad1b1dc6d6419952849 refs/heads/main
+5f0e45eab3aa8ad4e3dce290b61d3c52d25dc8cf refs/heads/trilogia_original
+b64e567216baac2e9017567e88bc5ee4eb7259fd refs/heads/trilogia_precuelas
+422dee7b652baa46c8373bfdbc9f60fb8d26c7f3 refs/heads/trilogia_secuelas

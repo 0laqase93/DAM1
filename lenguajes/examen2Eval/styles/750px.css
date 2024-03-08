@@ -1,0 +1,29 @@
+@media screen and (max-width: 750px) {
+    ul {
+        flex-direction: column;
+    }
+
+    main {
+        flex-direction: column;
+    }
+    
+    .web {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        grid-template-areas: 
+            "header"
+            "main"
+            "aside";
+        justify-content: center;
+    }
+
+    article {
+        margin-bottom: 20px;
+        width: 300px;
+    }
+
+    aside {
+        margin-bottom: 100px;
+    }
+}

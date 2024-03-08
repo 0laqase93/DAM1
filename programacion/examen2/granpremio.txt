@@ -1,0 +1,24 @@
+1:Bahrein:02/03/2024:
+2:Arabia Saudí:09/03/2024:
+3:Australia:24/03/2024:
+4:Japón:07/04/2024:
+5:China:21/04/2024:
+6:Miami:05/05/2024:
+7:Emilia Romagna:19/05/2024:
+8:Mónaco:26/05/2024:
+9:Canadá:09/06/2024:
+10:España:23/06/2024:
+11:Austria:30/06/2024:
+12:Gran Bretaña:07/07/2024:
+13:Hungría:21/07/2024:
+14:Bélgica:28/07/2024:
+15:Países Bajos:25/08/2024:
+16:Italia:01/09/2024:
+17:Azerbaiyán:15/09/2024:
+18:Singapur:22/09/2024:
+19:Estados Unidos:20/10/2024:
+20:México:27/10/2024:
+21:Brasil:03/11/2024:
+22:Las Vegas:24/11/2024:
+23:Qatar:01/12/2024:
+24:Abu Dabi:08/12/2024:

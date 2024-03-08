@@ -1,0 +1,24 @@
+1:Bahrein:Sakhir:5412
+2:La Corniche:Yeda:6175
+3:Albert Park:Melbourne:5303
+4:Suzuka:Suzuka:5807
+5:Shanghai:Shanghai:5451
+6:Miami:Miami:5410
+7:Ferrari:Imola:5410
+8:Mónaco:Montecarlo:3340
+9:Gilles Villeneuve:Montreal:4361
+10:Catalunya:Montmeló:4655
+11:Red Bull Ring:Knittelfeld:4326
+12:Silverstone:Silverstone:5891
+13:Hungaroring:Mogyorod:4381
+14:Spa-Francorchamps:Spa-Francorchamps:7004
+15:Zandvoort:Zandvoort:4259
+16:Monza:Monza:5793
+17:Bakú:Bakú:6003
+18:Marina Bay:Singapur:5073
+19:Las Américas:Austin:5513
+20:Hermanos Rodríguez:México DF:4421
+21:Interlagos:Sao Paulo:4309
+22:Las Vegas:Las Vegas:6201
+23:Losail:Losail:5380
+24:Yas Marina:Abu Dhabi:5554
