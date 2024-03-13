@@ -1,0 +1,43 @@
+version: '2'
+services:
+  web:
+    container_name: cms
+    image: wordpress:4.9.8
+    depends_on:
+      - db
+    volumes:
+      - ./target:/var/www/html
+    ports:
+      - "8100:80"
+    env_file:
+      - .env
+    environment:
+      - WORDPRESS_DB_USER=${WORDPRESS_DB_USER}
+      - WORDPRESS_DB_PASSWORD=${WORDPRESS_DB_PASSWORD}
+      - WORDPRESS_DB_HOST=${WORDPRESS_DB_HOST}
+    networks:
+      - gestor_network
+  
+  db:
+    container_name: gestordb
+    image: mariadb:10.3.9
+    env_file:
+      - .env
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABSE=${MYSQL_DATABSE}
+      - MYSQL_USER=${MYSQL_USER}
+      - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+    volumes:
+      - data:/var/lib/mysql
+    ports:
+      - "33001:3306"
+    networks:
+      - gestor_network
+
+volumes:
+  data:
+
+networks:
+  gestor_network:
+    external: true
