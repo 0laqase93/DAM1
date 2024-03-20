@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<musica>
+    <disco id="7464372">
+        <album>A Hard Day's Night</album>
+        <grupo>The Beatles</grupo>
+        <canciones>
+            <cancion>
+                <nombre>A Hard Day's Night</nombre>
+                <cantante>Lennon with McCartney</cantante>
+                <duracion>
+                    <minutos>2</minutos>
+                    <segundos>34</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>I Should Have Known Better</nombre>
+                <cantante>Lennon</cantante>
+                <duracion>
+                    <minutos>2</minutos>
+                    <segundos>43</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>If I Fell</nombre>
+                <cantante>Lennon and McCartney</cantante>
+                <duracion>
+                    <minutos>2</minutos>
+                    <segundos>19</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>I'm Happy Just to Dance with You</nombre>
+                <cantante>Harrison</cantante>
+                <duracion>
+                    <minutos>1</minutos>
+                    <segundos>56</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>And I Love Her</nombre>
+                <cantante>McCartney</cantante>
+                <duracion>
+                    <minutos>2</minutos>
+                    <segundos>30</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>I'm Happy Just to Dance with You</nombre>
+                <cantante>Harrison</cantante>
+                <duracion>
+                    <minutos>1</minutos>
+                    <segundos>56</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>Tell Me Why</nombre>
+                <cantante>Lennon</cantante>
+                <duracion>
+                    <minutos>2</minutos>
+                    <segundos>9</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>Can't Buy Me Love</nombre>
+                <cantante>McCartney</cantante>
+                <duracion>
+                    <minutos>2</minutos>
+                    <segundos>12</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>Any Time at All</nombre>
+                <cantante>Lennon</cantante>
+                <duracion>
+                    <minutos>2</minutos>
+                    <segundos>11</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>I'll Cry Instead</nombre>
+                <cantante>Lennon</cantante>
+                <duracion>
+                    <minutos>1</minutos>
+                    <segundos>44</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>Things We Said Today</nombre>
+                <cantante>McCartney</cantante>
+                <duracion>
+                    <minutos>2</minutos>
+                    <segundos>35</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>When I Get Home</nombre>
+                <cantante>Lennon</cantante>
+                <duracion>
+                    <minutos>2</minutos>
+                    <segundos>17</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>You Can't Do That</nombre>
+                <cantante>Lennon</cantante>
+                <duracion>
+                    <minutos>2</minutos>
+                    <segundos>35</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>I'll Be Back</nombre>
+                <cantante>Lennon</cantante>
+                <duracion>
+                    <minutos>2</minutos>
+                    <segundos>24</segundos>
+                </duracion>
+            </cancion>
+        </canciones>
+    </disco>
+    <disco id="7464462">
+        <album>Abbey Road</album>
+        <grupo>The Beatles</grupo>
+        <canciones>
+            <cancion>
+                <nombre>Come Together</nombre>
+                <cantante>Lennon</cantante>
+                <duracion>
+                    <minutos>4</minutos>
+                    <segundos>20</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>Something</nombre>
+                <cantante>Harrison</cantante>
+                <duracion>
+                    <minutos>3</minutos>
+                    <segundos>3</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>Maxwell's Silver Hammer</nombre>
+                <cantante>McCartney</cantante>
+                <duracion>
+                    <minutos>3</minutos>
+                    <segundos>27</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>Oh! Darling</nombre>
+                <cantante>McCartney</cantante>
+                <duracion>
+                    <minutos>3</minutos>
+                    <segundos>26</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>Octopus's Garden</nombre>
+                <cantante>Starr</cantante>
+                <duracion>
+                    <minutos>2</minutos>
+                    <segundos>51</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>I Want You (She's So Heavy)</nombre>
+                <cantante>Lennon</cantante>
+                <duracion>
+                    <minutos>7</minutos>
+                    <segundos>47</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>Here Comes the Sun</nombre>
+                <cantante>Harrison</cantante>
+                <duracion>
+                    <minutos>3</minutos>
+                    <segundos>5</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>Because</nombre>
+                <cantante>Lennon, McCartney y Harrison</cantante>
+                <duracion>
+                    <minutos>2</minutos>
+                    <segundos>45</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>You Never Give Me Your Money</nombre>
+                <cantante>McCartney</cantante>
+                <duracion>
+                    <minutos>4</minutos>
+                    <segundos>2</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>I'll Cry Instead</nombre>
+                <cantante>Lennon</cantante>
+                <duracion>
+                    <minutos>1</minutos>
+                    <segundos>44</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>Things We Said Today</nombre>
+                <cantante>McCartney</cantante>
+                <duracion>
+                    <minutos>2</minutos>
+                    <segundos>35</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>When I Get Home</nombre>
+                <cantante>Lennon</cantante>
+                <duracion>
+                    <minutos>2</minutos>
+                    <segundos>17</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>You Can't Do That</nombre>
+                <cantante>Lennon</cantante>
+                <duracion>
+                    <minutos>2</minutos>
+                    <segundos>35</segundos>
+                </duracion>
+            </cancion>
+            <cancion>
+                <nombre>I'll Be Back</nombre>
+                <cantante>Lennon</cantante>
+                <duracion>
+                    <minutos>2</minutos>
+                    <segundos>24</segundos>
+                </duracion>
+            </cancion>
+        </canciones>
+    </disco>
+</musica>
