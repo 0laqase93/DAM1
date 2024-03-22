@@ -1,0 +1,8 @@
+<!DOCTYPE letras [
+    <!ELEMENT letras (letra)>
+    <!ELEMENT letra (#PCDATA)> 
+]>
+
+<letras>
+    <letra>m</letra> 
+</letras>

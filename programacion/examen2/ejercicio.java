@@ -55,9 +55,9 @@ public class ejercicio {
                 for (Piloto p : pilotos) {
                     puntuaciones.add(new PuntuacionPiloto(p));
                 }
-                Clasificacion clasificacion = new Clasificacion(puntuaciones);
-                clasificacion.ordenaClasificación();
-                clasificacion.imprimirClasificacion();
+                //Clasificacion clasificacion = new Clasificacion(puntuaciones);
+                //clasificacion.ordenaClasificación();
+                //clasificacion.imprimirClasificacion();
                 System.out.println("Presione enter para continuar...");
                 sc.nextLine();
             }

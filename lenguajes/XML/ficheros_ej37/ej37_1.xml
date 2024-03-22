@@ -1,0 +1,153 @@
+<!-- 1. Números (dtd_01.xml) -->
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE numeros [
+    <!ELEMENT numeros (#PCDATA)> 
+]>
+
+<numeros> 
+    <numero>25</numero>
+</numeros>
+
+<!-- ################################################# -->
+
+<!-- 2. Letras (dtd_02.xml) -->
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE letras [
+    <!ELEMENT letras (letra)>
+    <!ELEMENT letra (#PCDATA)> 
+]>
+
+<letras>
+    <letra>m</letra> 
+</letras>
+
+<!-- ################################################# -->
+
+<!-- 3. Colores (dtd_03.xml) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE colores [
+    <!ELEMENT colores (color*)>
+    <!ELEMENT color (#PCDATA)>
+]>
+
+<colores>
+    <color>azul marino</color>
+    <color>negro</color>
+    <color>amarillo</color>
+</colores>
+
+<!-- ################################################# -->
+
+<!-- 4. Flores (dtd_04.xml) -->
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE flores [
+    <!ELEMENT flores (flor+)>
+    <!ELEMENT flor (#PCDATA)> 
+]>
+
+<flores>
+    <flor>Rosa</flor>
+</flores>
+
+<!-- ################################################# -->
+
+<!-- 5. Animales (dtd_05.xml) -->
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE animales [
+    <!ELEMENT animales (animal*)>
+    <!ELEMENT animal (#PCDATA)> 
+]>
+
+<animales> 
+    <animal>Caniche</animal> 
+    <animal>Siamés</animal>
+</animales>
+
+<!-- ################################################# -->
+
+<!-- 6. Escritores (dtd_06.xml) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE escritores [
+    <!ELEMENT escritores (escritor*)>
+    <!ELEMENT escritor (nombre, nacimiento)>
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT nacimiento (#PCDATA)>
+]>
+
+<escritores>
+    <escritor>
+        <nombre>Mario Vargas LLosa</nombre>
+        <nacimiento>28 de marzo de 1936</nacimiento>
+    </escritor>
+    <escritor>
+        <nacimiento>1 de abril de 1929</nacimiento>
+        <nombre>Milan Kundera</nombre>
+    </escritor>
+</escritores>
+
+<!-- ################################################# -->
+
+<!-- 7. Musicos (dtd_07.xml) -->
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE musicos [
+    <!ELEMENT musicos (musico*)>
+    <!ELEMENT musico ((nombre | apodo), fechaNacimiento)> 
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT apodo (#PCDATA)>
+    <!ELEMENT fechaNacimiento (#PCDATA)>
+]>
+
+<musicos>
+    <musico>
+        <nombre>Antonio Vivaldi</nombre>
+        <apodo>El cura pelirrojillo</apodo> 
+        <fechaNacimiento>4 de marzo de 1678</fechaNacimiento>
+    </musico>
+    <musico>
+        <nombre>Johann Sebastian Bach</nombre>
+        <apodo>El viejo peluca</apodo>
+        <fechaNacimiento>21 de marzo de 1685</fechaNacimiento>
+    </musico>
+</musicos>
+
+<!-- ################################################# -->
+
+<!-- 8. Agenda (dtd_08.xml) -->
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE agenda [
+    <!ELEMENT agenda (contacto*)>
+    <!ELEMENT contacto (nombre, telefonoFijo*, telefonoMovil+)> 
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT telefonoFijo (#PCDATA)>
+    <!ELEMENT telefonoMovil (#PCDATA)> 
+]>
+
+<agenda>
+    <contacto>
+        <nombre>Ayuntamiento</nombre>
+        <telefonoFijo>010</telefonoFijo> </contacto>
+        <contacto>
+        <nombre>Emergencias</nombre>
+        <telefonoFijo>112 (Unión Europea)</telefonoFijo> 
+        <telefonoMovil>Desconocido</telefonoMovil> 
+        <telefonoFijo>911 (Estados Unidos)</telefonoFijo>
+    </contacto>
+</agenda>
+
+<!-- ################################################# -->
+
+<!-- 9. Sistema Solar (dtd_09.xml) -->
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE sistemaSolar [
+<!ELEMENT sistemaSolar (cuerpo*)>
+<!ELEMENT cuerpo ((planeta|satelite|asteroide)+)> 
+<!ELEMENT planeta (#PCDATA)>
+<!ELEMENT satelite (#PCDATA)>
+<!ELEMENT asteroide (#PCDATA)>
+]>
+
+<sistemaSolar>
+    <cuerpo>
+        <planeta>Tierra</planeta>
+        <satelite>Luna</satelite> 
+    </cuerpo> 
+    <asteroide>Ceres</asteroide>
+</sistemaSolar>
