@@ -1,0 +1,3 @@
+Hay que denotar la diferencia entre autenticación e identificación. En primer lugar hay que identificiar (¿Tú quien eres?) y depués hay que autenticar ese usuario (Vale, a ver el DNI).
+De ahí nace el A2F (auntenticación de doble factor).
+Investigar como funcionan los usuarios a nivel de autenticacion y identificacion a nivel de tablas en mysql (No hace falta que sea siempre por contraseña: Token, Conexión SSH, Pin, Doble autenticación, etc...).

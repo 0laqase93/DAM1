@@ -1,0 +1,14 @@
+<!ELEMENT destinos (destino+)>
+<!ELEMENT destino (nombre, descripcion, actividades?, atracciones?)>
+    <!ATTLIST destino pais CDATA #REQUIRED
+                      region CDATA #IMPLIED
+                      idioma CDATA #IMPLIED
+                      moneda CDATA #IMPLIED
+                      clima CDATA #IMPLIED>
+<!ELEMENT actividades (actividad*)>
+<!ELEMENT actividad (nombre, descripcion)>
+<!ELEMENT atracciones (atraccion*)>
+<!ELEMENT atraccion (nombre, descripcion, ubicacion)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT descripcion (#PCDATA)>
+<!ELEMENT ubicacion (#PCDATA)>

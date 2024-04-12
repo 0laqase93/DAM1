@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#atras" prefHeight="400.0" prefWidth="600.0" type="AnchorPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agenda.PrimaryController">
+   <children>
+      <TextField fx:id="id" layoutX="285.0" layoutY="98.0" />
+      <TextField fx:id="name" layoutX="285.0" layoutY="134.0" />
+      <TextField fx:id="work" layoutX="285.0" layoutY="278.0" />
+      <TextField fx:id="date" layoutX="285.0" layoutY="241.0" />
+      <TextField fx:id="phone" layoutX="285.0" layoutY="208.0" />
+      <TextField fx:id="lastname" layoutX="285.0" layoutY="170.0" />
+      <Label layoutX="198.0" layoutY="46.0" text="EMPLEADOS" textFill="#1a0fdd">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label layoutX="186.0" layoutY="102.0" text="IdEmpleado" />
+      <Label layoutX="211.0" layoutY="138.0" text="Nombre" />
+      <Label layoutX="207.0" layoutY="174.0" text="Apellidos" />
+      <Label layoutX="208.0" layoutY="212.0" text="Telefono" />
+      <Label layoutX="131.0" layoutY="245.0" text="Fecha de nacimiento" />
+      <Label layoutX="225.0" layoutY="282.0" text="Cargo" />
+      <Button fx:id="next" layoutX="293.0" layoutY="328.0" mnemonicParsing="false" onMouseClicked="#siguienteEmpleado" prefHeight="24.0" prefWidth="57.0" text="&gt;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="previous" layoutX="221.0" layoutY="328.0" mnemonicParsing="false" onMouseClicked="#anteriorEmpleado" prefHeight="24.0" prefWidth="59.0" text="&lt;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="inicio" layoutX="151.0" layoutY="328.0" mnemonicParsing="false" onMouseClicked="#primerEmpleado" prefHeight="28.0" prefWidth="59.0" text="INI">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="363.0" layoutY="328.0" mnemonicParsing="false" onMouseClicked="#ultimoEmpleado" prefHeight="28.0" prefWidth="59.0" text="FIN">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</fx:root>

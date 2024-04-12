@@ -1,4 +1,5 @@
 package reservaVuelos;
+
 import java.io.*;
 import java.sql.*;
 import java.util.*;
@@ -9,7 +10,7 @@ public class ReservaVuelos {
         int opcion = 0;
         Connection con = null;
         try {
-            con = crearConexion("33006", "reservaVuelos", "root", "123");
+            con = crearConexion("33006", "reservaVuelos", "root", "root");
             opcion = mostrarMenu();
             while (opcion != 6) {
                 switch (opcion) {
@@ -326,7 +327,8 @@ public class ReservaVuelos {
     }
 
     public static void modificarReserva(Connection con) {
-        int idReserva = 0, idPasajero = 0, idVuelo = 0;
+        int idReserva = 0, idPasajero = 0, idVuelo = 0, asiento = 0, nuevoAsiento = 0;
+        String sql = "";
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         try {
             // Limpar pantalla
@@ -343,7 +345,7 @@ public class ReservaVuelos {
                     idReserva = Integer.parseInt(br.readLine());
 
                     // Comprobamos si existe
-                    String sql = "SELECT * FROM Vuelos_Pasajeros WHERE id_reserva = ?";
+                    sql = "SELECT * FROM Vuelos_Pasajeros WHERE id_reserva = ?";
                     PreparedStatement st = con.prepareStatement(sql);
                     st.setInt(1, idReserva);
                     ResultSet out = st.executeQuery();
@@ -351,18 +353,43 @@ public class ReservaVuelos {
                         reservaValida = true;
                         idVuelo = out.getInt("id_vuelo");
                         idPasajero = out.getInt("id_pasajero");
+                        asiento = out.getInt("n_asiento");
+                        // Se guarda el vuelo y el pasajero en objetos
+                        sql = "SELECT * FROM Vuelos WHERE id_vuelo = ?;";
+                        st = con.prepareStatement(sql);
+                        st.setInt(1, idVuelo);
+                        out = st.executeQuery();
+                        Vuelo vuelo = new Vuelo(out.getInt(1), out.getString(2), out.getString(3), out.getString(4), out.getInt(5));
+                        
+
+
+                        System.out.print("[?] ¿Desea ver la información del" + ConsoleColors.PURPLE + " vuelo " +idVuelo + ConsoleColors.RESET + "? Su " + ConsoleColors.PURPLE + "asiento" + ConsoleColors.RESET + " es el " + ConsoleColors.PURPLE + asiento + ConsoleColors.RESET + ". " + ConsoleColors.RED + "(S/N)" + ConsoleColors.RESET + ":");
+                        String input = br.readLine().toUpperCase();
+                        if (input.equals("S")) { // Si es necesario se lee el vuelo
+                            sql = "SELECT * FROM Vuelos WHERE id_vuelo = ?;";
+                            st = con.prepareStatement(sql);
+                            st.setInt(1, idVuelo);
+                            out = st.executeQuery();
+                            if (out.next()) {
+                                System.out.println(ConsoleColors.BLUE + "Vuelo: " + ConsoleColors.RESET + ConsoleColors.PURPLE + idVuelo + ConsoleColors.RESET + ConsoleColors.BLUE + "\n\tTrayecto: " + ConsoleColors.RESET + ConsoleColors.RED + out.getString("origen") + ConsoleColors.RESET + " -> " + ConsoleColors.GREEN + out.getString("destino") + ConsoleColors.RESET + ConsoleColors.BLUE + "\n\tFecha: " + ConsoleColors.RESET + ConsoleColors.YELLOW + out.getString("fecha") + ConsoleColors.RESET);
+                            }
+                        }
+                        System.out.println("[?] ¿A cuál asiento desea cambiar su reserva?: ");
+                        nuevoAsiento = Integer.parseInt(br.readLine());
+                        if (reservaValida) {
+                            
+                        }
                     } else {
                         throw new SQLException("No existe una reserva con ese ID en la base de datos");
                     }
                 } catch (SQLException e) {
                     System.out.println(ConsoleColors.RED + "[!] Error: " + e.getMessage() + ConsoleColors.RESET);
-                } catch (Exception e) {
+                } catch (IOException e) {
                     System.out.println(ConsoleColors.RED + "[!] Error: Formato no válido" + ConsoleColors.RESET);
+                } catch (Exception e) {
+                    System.out.println(ConsoleColors.RED + "[!] Error:" + e.getMessage() + ConsoleColors.RESET);
                 }
             } while (!reservaValida);
-
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }

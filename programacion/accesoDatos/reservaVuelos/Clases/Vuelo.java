@@ -5,11 +5,7 @@ import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
-
-import com.mysql.cj.PreparedQuery;
 
 public class Vuelo {
     private int idVuelo;
@@ -101,5 +97,9 @@ public class Vuelo {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void rellenarAsientos() {
+        String sql = "SELECT n_asiento FROM Vuelos_Pasajeros WHERE id_vuelo = " + idVuelo + ";";
     }
 }

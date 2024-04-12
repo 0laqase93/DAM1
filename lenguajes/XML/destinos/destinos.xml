@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE destinos SYSTEM "destinos.dtd">
+<destinos>
+    <destino pais="España" region="Andalucía">
+        <nombre>Granada</nombre>
+        <descripcion>Granada es una ciudad ubicada en el sur de España, conocida por la Alhambra y el barrio del Albaicín.</descripcion>
+        <actividades>
+            <actividad>
+                <nombre>Visita a la Alhambra</nombre>
+                <descripcion>Recorrido por el complejo de palacios, jardines y fortaleza.</descripcion>
+            </actividad>
+            <actividad>
+                <nombre>Paseo por el Albaicín</nombre>
+                <descripcion>Exploración del pintoresco barrio árabe con sus estrechas calles y vistas panorámicas.</descripcion>
+            </actividad>
+        </actividades>
+    </destino>
+    <destino pais="Italia" region="Toscana">
+        <nombre>Florencia</nombre>
+        <descripcion>Florencia es una ciudad ubicada en la región de Toscana, Italia, famosa por su arte y arquitectura renacentista.</descripcion>
+    </destino>
+    <destino pais="Francia" region="Provenza-Alpes-Costa Azul">
+        <nombre>Niza</nombre>
+        <descripcion>Niza es una ciudad costera en la Riviera francesa, famosa por su clima mediterráneo y su paseo marítimo.</descripcion>
+        <atracciones>
+            <atraccion>
+                <nombre>Promenade des Anglais</nombre>
+                <descripcion>Paseo marítimo bordeado de palmeras y playas.</descripcion>
+                <ubicacion>Nice, Francia</ubicacion>
+            </atraccion>
+            <atraccion>
+                <nombre>Vieux Nice</nombre>
+                <descripcion>Barrio antiguo con calles estrechas, edificios coloridos y mercados.</descripcion>
+                <ubicacion>Nice, Francia</ubicacion>
+            </atraccion>
+        </atracciones>
+    </destino>
+</destinos>

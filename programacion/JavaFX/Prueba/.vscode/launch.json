@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "App",
+            "projectName": "Prueba_e305a5fd"
+        },
+        {
+            "type": "java",
+            "name": "Launch App",
+            "request": "launch",
+            "mainClass": "App.java",
+            "vmArgs": "--module-path /home/olaqase93/DAM1/programacion/JavaFX/Prueba/lib --add-modules javafx.controls,javafx.fxml"
+        }
+    ]
+  }
