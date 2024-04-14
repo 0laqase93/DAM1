@@ -1,11 +1,14 @@
 package reservaVuelos.Clases;
 
+import java.beans.Statement;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class Vuelo {
     private int idVuelo;
@@ -13,7 +16,7 @@ public class Vuelo {
     private String destino;
     private String fecha;
     private int capacidad;
-    private HashMap<Integer, Pasajero> asientos;
+    private ArrayList<Integer> asientos;
 
     public Vuelo() {};
     
@@ -23,10 +26,7 @@ public class Vuelo {
         this.destino = destino;
         this.fecha = fecha;
         this.capacidad = capacidad;
-        this.asientos = new HashMap<>(capacidad);
-        for (int i = 1; i <= capacidad; i++) {
-            this.asientos.put(i, null);
-        }
+        this.asientos = rellenarAsientos();
     }
 
     public Vuelo(String origen, String destino, String fecha, int capacidad) {
@@ -34,7 +34,7 @@ public class Vuelo {
         this.destino = destino;
         this.fecha = fecha;
         this.capacidad = capacidad;
-        this.asientos = new HashMap<>(capacidad);
+        this.asientos = rellenarAsientos();
     }
 
     public int getIdVuelo() {
@@ -73,6 +73,15 @@ public class Vuelo {
         this.capacidad = capacidad;
     }
 
+
+    public ArrayList<Integer> getAsientos() {
+        return asientos;
+    }
+
+    public void setAsientos(ArrayList<Integer> asientos) {
+        this.asientos = asientos;
+    }
+
     public void guardarDatos(Connection con) {
         String sql = "INSERT INTO Vuelos VALUES (null, ?, ?, ?, ?)";
         PreparedStatement in = null;
@@ -99,7 +108,60 @@ public class Vuelo {
         }
     }
 
-    public void rellenarAsientos() {
+    public ArrayList<Integer> rellenarAsientos() {
+        ArrayList<Integer> asientos = new ArrayList<>();
         String sql = "SELECT n_asiento FROM Vuelos_Pasajeros WHERE id_vuelo = " + idVuelo + ";";
+        try {
+            Connection con = crearConexion("33006", "reservaVuelos", "root", "root");
+            PreparedStatement st = con.prepareStatement(sql);
+            ResultSet out = st.executeQuery();
+            while (out.next()) {
+                asientos.add(out.getInt("n_asiento"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return asientos;
+    }
+
+    public static Connection crearConexion(String puerto, String baseDatos, String usuario, String passwd) {
+        try {
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:" + puerto + "/" + baseDatos, usuario, passwd);
+            return con;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public void ImprimirAsientosDisponibles() {
+        int contador = 0;
+        System.out.println("[+] " + ConsoleColors.PURPLE + "Asientos" + ConsoleColors.RESET + " disponibles:");
+        for (int i = 1; i <= this.capacidad; i++) {
+            if (contador == 10) {
+                contador = 0;
+                System.out.println();
+            }
+            contador++;
+            if (asientos.contains(i)) {
+                System.out.print(ConsoleColors.BLACK + " X " + ConsoleColors.RESET);
+            } else {
+                System.out.print(ConsoleColors.BLUE + " " + i + " " + ConsoleColors.RESET);
+            }
+        }
+        System.out.println();
+    }
+
+    public void asignarAsiento(int asiento){
+        String sql = "UPDATE Vuelos_Pasajeros SET n_asiento = ? WHERE id_vuelo = ?;";
+        try {
+            Connection con = crearConexion("33006", "reservaVuelos", "root", "root");
+            PreparedStatement st = con.prepareStatement(sql);
+            st.setInt(1, asiento);
+            st.setInt(2, idVuelo);
+            st.executeUpdate();
+            asientos.add(asiento);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

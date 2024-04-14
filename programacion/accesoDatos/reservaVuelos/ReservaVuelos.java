@@ -335,7 +335,7 @@ public class ReservaVuelos {
             System.out.println("\33[H\033[2J");
             System.out.flush();
 
-            System.out.println(ConsoleColors.YELLOW + "RESERVAR VUELO" + ConsoleColors.RESET);
+            System.out.println(ConsoleColors.YELLOW + "MODIFICAR VUELO" + ConsoleColors.RESET);
 
             // Pedir ID de la reserva
             boolean reservaValida = false;
@@ -351,6 +351,7 @@ public class ReservaVuelos {
                     ResultSet out = st.executeQuery();
                     if (out.next()) { // Si hay datos entonces hay una reserva y guardamos los datos
                         reservaValida = true;
+                        Vuelo vuelo = null;
                         idVuelo = out.getInt("id_vuelo");
                         idPasajero = out.getInt("id_pasajero");
                         asiento = out.getInt("n_asiento");
@@ -359,9 +360,9 @@ public class ReservaVuelos {
                         st = con.prepareStatement(sql);
                         st.setInt(1, idVuelo);
                         out = st.executeQuery();
-                        Vuelo vuelo = new Vuelo(out.getInt(1), out.getString(2), out.getString(3), out.getString(4), out.getInt(5));
-                        
-
+                        if (out.next()) {
+                            vuelo = new Vuelo(out.getInt(1), out.getString(2), out.getString(3), out.getString(4), out.getInt(5));
+                        }
 
                         System.out.print("[?] ¿Desea ver la información del" + ConsoleColors.PURPLE + " vuelo " +idVuelo + ConsoleColors.RESET + "? Su " + ConsoleColors.PURPLE + "asiento" + ConsoleColors.RESET + " es el " + ConsoleColors.PURPLE + asiento + ConsoleColors.RESET + ". " + ConsoleColors.RED + "(S/N)" + ConsoleColors.RESET + ":");
                         String input = br.readLine().toUpperCase();
@@ -374,11 +375,18 @@ public class ReservaVuelos {
                                 System.out.println(ConsoleColors.BLUE + "Vuelo: " + ConsoleColors.RESET + ConsoleColors.PURPLE + idVuelo + ConsoleColors.RESET + ConsoleColors.BLUE + "\n\tTrayecto: " + ConsoleColors.RESET + ConsoleColors.RED + out.getString("origen") + ConsoleColors.RESET + " -> " + ConsoleColors.GREEN + out.getString("destino") + ConsoleColors.RESET + ConsoleColors.BLUE + "\n\tFecha: " + ConsoleColors.RESET + ConsoleColors.YELLOW + out.getString("fecha") + ConsoleColors.RESET);
                             }
                         }
-                        System.out.println("[?] ¿A cuál asiento desea cambiar su reserva?: ");
-                        nuevoAsiento = Integer.parseInt(br.readLine());
-                        if (reservaValida) {
-                            
+                        vuelo.ImprimirAsientosDisponibles();
+                        while ((nuevoAsiento <= 0) || (nuevoAsiento > vuelo.getCapacidad() || (vuelo.getAsientos().contains(nuevoAsiento)))) {   
+                            System.out.print("[?] ¿A cuál " + ConsoleColors.PURPLE + "asiento" + ConsoleColors.RESET + " desea cambiar su reserva?: ");
+                            nuevoAsiento = Integer.parseInt(br.readLine());
+                            if ((nuevoAsiento <= 0) || (nuevoAsiento > vuelo.getCapacidad()) || (vuelo.getAsientos().contains(nuevoAsiento))) {
+                                System.out.println(ConsoleColors.RED + "[!] Asiento no válido" + ConsoleColors.RESET);
+                            }
                         }
+                        vuelo.asignarAsiento(nuevoAsiento);
+                        System.out.println(ConsoleColors.GREEN + "[+] Asiento guardado con éxito." + ConsoleColors.RESET);
+                        System.out.print(ConsoleColors.BLUE + "[+] Presione una tecla para continuar..." + ConsoleColors.RESET);
+                        br.readLine();
                     } else {
                         throw new SQLException("No existe una reserva con ese ID en la base de datos");
                     }
@@ -396,6 +404,44 @@ public class ReservaVuelos {
     }
 
     public static void darBajaReserva(Connection con) {
+        int idReserva = 0;
+        boolean noHayReserva = false;
+        String sql = "SELECT * FROM Vuelos_Pasajeros WHERE id_reserva = ?;";
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            // Limpar pantalla
+            System.out.println("\33[H\033[2J");
+            System.out.flush();
 
+            System.out.println(ConsoleColors.YELLOW + "BAJA RESERVA" + ConsoleColors.RESET);
+            do {
+                noHayReserva = false;
+                System.out.print("[+] Inserte el " + ConsoleColors.PURPLE + "ID de la reserva" + ConsoleColors.RESET + ": ");
+                idReserva = Integer.parseInt(br.readLine());
+                PreparedStatement st = con.prepareStatement(sql);
+                st.setInt(1, idReserva);
+                ResultSet out = st.executeQuery();
+                if (out.next() && out != null) {
+                    System.out.print("[?] Está seguro de que quiere cancelar la " + ConsoleColors.PURPLE + "reserva" + ConsoleColors.RESET + "?" + ConsoleColors.RED + "(S/N)" + ConsoleColors.RESET + ": ");
+                    String input = br.readLine().toUpperCase();
+                    if (input.equals("S")) {
+                        sql = "DELETE FROM Vuelos_Pasajeros WHERE id_reserva = ?;";
+                        st = con.prepareStatement(sql);
+                        st.setInt(1, idReserva);
+                        st.executeUpdate();
+                        System.out.println(ConsoleColors.GREEN + "[+] Reserva cancelada con éxito." + ConsoleColors.RESET);
+                        System.out.print(ConsoleColors.BLUE + "[+] Presione una tecla para continuar..." + ConsoleColors.RESET);
+                        br.readLine();
+                    }
+                } else {
+                    noHayReserva = true;
+                    System.out.println(ConsoleColors.RED + "[!] Esta reserva no existe." + ConsoleColors.RESET);
+                }
+            } while (noHayReserva);
+        } catch (IOException e){
+            System.out.println(ConsoleColors.RED + "[!] Error: Formato no válido" + ConsoleColors.RESET);
+        } catch (Exception e) {
+            System.out.println(ConsoleColors.RED + "[!] Error: " + e.getMessage() + ConsoleColors.RESET);;
+        }
     }
 }
