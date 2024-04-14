@@ -1,0 +1,140 @@
+<!-- 1. Marcadores (dtd_01.xml) -->
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE favoritos [
+    <!ELEMENT favoritos (marcador)> 
+    <!ELEMENT marcador (nombre, uri)> 
+    <!ELEMENT nombre (#PCDATA)> 
+    <!ELEMENT uri (#PCDATA)>
+]>
+
+<marcadores>
+    <marcador>
+        <nombre>W3C</nombre>
+        <uri>http://www.w3.org/</uri> </marcador>
+    <marcador>
+        <nombre>Web Hypertext Application Technology Working Group (WHATWG)</nombre>
+        <uri>http://www.whatwg.org/</uri>
+    </marcador>
+</marcadores>
+
+<!-- ################################################# -->
+
+<!-- 2. Efemérides (dtd_02.xml) -->
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE efemerides [
+    <!ELEMENT efemerides (efemeride)>
+    <!ELEMENT efemeride (fecha, hecho)> 
+]>
+
+<efemerides>
+    <efemeride>
+        <fecha>20 de julio de 1969</fecha>
+        <hecho>Llegada del hombre a la Luna</hecho> 
+    </efemeride>
+    <efemeride>
+        <fecha>12 de octubre de 1492</fecha>
+        <hecho>Llegada de Colón a América</hecho> 
+    </efemeride>
+    <efemeride>
+        <fecha>6 de abril de 1909</fecha>
+        <hecho>llegada de Robert Peary al Polo Norte</hecho>
+    </efemeride>
+</efemerides>
+
+<!-- ################################################# -->
+
+<!-- 3. Aeropuertos (dtd_03.xml) -->
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE aeropuertos [
+    <!ELEMENT aeropuertos (aeropuerto*)> 
+    <!ELEMENT aeropuerto (nombre, cerrado)> 
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT cerrado (#PCDATA)>
+]>
+
+<aeropuertos>
+    <aeropuerto>
+        <nombre>Berlín Schönefeld (SFX)</nombre> 
+    </aeropuerto>
+    <aeropuerto>
+        <nombre>Berlín Tempelhof (THF)</nombre>
+        <cerrado />
+    </aeropuerto>
+</aeropuertos>
+
+<!-- ################################################# -->
+
+<!-- 4. Vuelos (dtd_04.xml) -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE vuelos [
+    <!ELEMENT vuelos (vuelo*)>
+    <!ELEMENT vuelo (origen, destino)>
+    <!ELEMENT origen (#PCDATA)>
+    <!ELEMENT destino (#PCDATA)>
+]>
+
+<vuelos>
+    <vuelo>
+        <origen>Valencia (VLC)</origen>
+        <destino>Londres Heathrow (LHR)</destino> </vuelo>
+    <vuelo>
+        <destino>Berlín Schönefeld (SFX)</destino> 
+        <origen>Paris Charles de Gaulle (CDG)</origen>
+    </vuelo>
+</vuelos>
+
+<!-- ################################################# -->
+
+<!-- 5. Reyes españoles (dtd_05.xml) -->
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE reyesEspanyoles [
+    <!ELEMENT reyesEspanyoles (rey*, reina*)> 
+    <!ELEMENT rey (nombre, padre, madre)> 
+    <!ELEMENT nombre (#PCDATA)>
+    <!ELEMENT padre (#PCDATA)>
+    <!ELEMENT madre (#PCDATA)>
+]>
+
+<reyesEspanyoles>
+    <rey>
+        <nombre>Felipe III</nombre> 
+        <padre>Felipe II</padre> 
+        <madre>Ana de Austria</madre>
+    </rey>
+    <reina>
+        <nombre>Juana la Loca</nombre> 
+        <padre>Fernando el Católico</padre> 
+        <madre>Isabel la Católica</madre>
+    </reina>
+    <rey>
+        <nombre>Carlos I</nombre>
+        <padre>Felipe el Hermoso</padre>
+        <madre>Juana la Loca</madre>
+    </rey>
+</reyesEspanyoles>
+
+<!-- ################################################# -->
+
+<!-- 6. Países (dtd_06.xml) -->
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE paises [
+    <!ELEMENT pais (nombre, unionEuropea, otan)> 
+    <!ELEMENT nombre EMPTY>
+    <!ELEMENT unionEuropea EMPTY>
+    <!ELEMENT otan EMPTY>
+]>
+
+<paises>
+    <pais>
+        <nombre>España</nombre> 
+        <unionEuropea />
+        <otan />
+    </pais>
+    <pais>
+        <nombre>Noruega</nombre>
+        <otan />
+    </pais>
+    <pais> 
+        <nombre>Austria</nombre> 
+        <unionEuropea />
+    </pais>
+</paises>
