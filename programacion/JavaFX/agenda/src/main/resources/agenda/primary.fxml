@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#atras" prefHeight="400.0" prefWidth="600.0" type="AnchorPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agenda.PrimaryController">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="agenda.Controlador">
    <children>
-      <TextField fx:id="id" layoutX="285.0" layoutY="98.0" />
-      <TextField fx:id="name" layoutX="285.0" layoutY="134.0" />
-      <TextField fx:id="work" layoutX="285.0" layoutY="278.0" />
-      <TextField fx:id="date" layoutX="285.0" layoutY="241.0" />
-      <TextField fx:id="phone" layoutX="285.0" layoutY="208.0" />
-      <TextField fx:id="lastname" layoutX="285.0" layoutY="170.0" />
+      <TextField fx:id="id" disable="true" editable="false" layoutX="285.0" layoutY="98.0" />
+      <TextField fx:id="name" disable="true" layoutX="285.0" layoutY="134.0" />
+      <TextField fx:id="work" disable="true" layoutX="285.0" layoutY="278.0" />
+      <TextField fx:id="phone" disable="true" layoutX="285.0" layoutY="208.0" />
+      <TextField fx:id="lastname" disable="true" layoutX="285.0" layoutY="170.0" />
       <Label layoutX="198.0" layoutY="46.0" text="EMPLEADOS" textFill="#1a0fdd">
          <font>
             <Font size="28.0" />
@@ -26,25 +27,51 @@
       <Label layoutX="208.0" layoutY="212.0" text="Telefono" />
       <Label layoutX="131.0" layoutY="245.0" text="Fecha de nacimiento" />
       <Label layoutX="225.0" layoutY="282.0" text="Cargo" />
-      <Button fx:id="next" layoutX="293.0" layoutY="328.0" mnemonicParsing="false" onMouseClicked="#siguienteEmpleado" prefHeight="24.0" prefWidth="57.0" text="&gt;">
+      <Button fx:id="next" layoutX="291.0" layoutY="328.0" mnemonicParsing="false" onMouseClicked="#siguienteEmpleado" prefHeight="24.0" prefWidth="57.0" text="&gt;">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="previous" layoutX="221.0" layoutY="328.0" mnemonicParsing="false" onMouseClicked="#anteriorEmpleado" prefHeight="24.0" prefWidth="59.0" text="&lt;">
+      <Button fx:id="previous" layoutX="220.0" layoutY="328.0" mnemonicParsing="false" onMouseClicked="#anteriorEmpleado" prefHeight="24.0" prefWidth="59.0" text="&lt;">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button fx:id="inicio" layoutX="151.0" layoutY="328.0" mnemonicParsing="false" onMouseClicked="#primerEmpleado" prefHeight="28.0" prefWidth="59.0" text="INI">
+      <Button fx:id="inicio" layoutX="149.0" layoutY="328.0" mnemonicParsing="false" onMouseClicked="#primerEmpleado" prefHeight="28.0" prefWidth="59.0" text="INI">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="363.0" layoutY="328.0" mnemonicParsing="false" onMouseClicked="#ultimoEmpleado" prefHeight="28.0" prefWidth="59.0" text="FIN">
+      <Button fx:id="last" layoutX="360.0" layoutY="328.0" mnemonicParsing="false" onMouseClicked="#ultimoEmpleado" prefHeight="28.0" prefWidth="59.0" text="FIN">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
+      <Button fx:id="salir" layoutX="559.0" layoutY="14.0" mnemonicParsing="false" onMouseClicked="#salirPrograma" text="X" textFill="#ff5555">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="save" disable="true" layoutX="243.0" layoutY="328.0" mnemonicParsing="false" onMouseClicked="#guardarDatos" opacity="0.0" prefHeight="28.0" prefWidth="84.0" text="Guardar">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="lock" fitHeight="16.0" fitWidth="21.0" layoutX="456.0" layoutY="102.0" onMouseClicked="#mostrarBotonGuardar" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/candadoCerrado.png" />
+         </image>
+      </ImageView>
+      <DatePicker fx:id="date" disable="true" layoutX="285.0" layoutY="241.0" prefHeight="24.0" prefWidth="173.0" />
+      <ImageView fx:id="trash" fitHeight="16.0" fitWidth="39.0" layoutX="472.0" layoutY="102.0" onMouseClicked="#borrarEmpleado" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/basura.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="add" disable="true" fitHeight="16.0" fitWidth="16.0" layoutX="489.0" layoutY="102.0" onMouseClicked="#addEmpleado" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/add.png" />
+         </image>
+      </ImageView>
    </children>
-</fx:root>
+</AnchorPane>

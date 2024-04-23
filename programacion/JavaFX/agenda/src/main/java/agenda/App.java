@@ -35,4 +35,11 @@ public class App extends Application {
         launch();
     }
 
+    public static Scene getScene() {
+        return scene;
+    }
+
+    public static void setScene(Scene scene) {
+        App.scene = scene;
+    }
 }

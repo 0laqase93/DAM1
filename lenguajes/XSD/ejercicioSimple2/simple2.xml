@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Libro xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="simple2.xsd">
+    <Titulo>Programming Bye</Titulo>
+    <Autor>John C. Smith</Autor>
+    <Fecha>2014</Fecha>
+    <ISBN>84-202-77678-3</ISBN>
+    <Editorial>Mc Graw Hill</Editorial>
+    <color>rojo</color>
+    <ruta>c:\Mis Documentos\práctica 1\prueba.txt</ruta>
+</Libro>

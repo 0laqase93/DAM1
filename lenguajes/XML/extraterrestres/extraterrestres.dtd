@@ -1,0 +1,10 @@
+<!ELEMENT club_extraterrestres (mision+, extraterrestre+)>
+<!ELEMENT mision EMPTY>
+<!ATTLIST mision id ID #REQUIRED
+                 objetivo CDATA #REQUIRED>
+<!ELEMENT extraterrestre (#PCDATA)>
+<!ATTLIST extraterrestre id ID #REQUIRED
+                         nombre CDATA #REQUIRED
+                         planeta_origen CDATA #REQUIRED
+                         amigos IDREFS #IMPLIED
+                         target IDREF #IMPLIED>

@@ -1,0 +1,33 @@
+Código Postal: Valida códigos postales españoles en formato estándar de 5 dígitos. Ejemplos válidos son:
+“28001”, “08012”, “46001”, etc.
+^\d{6}$
+
+Número de Identificación Fiscal: Valida números de NIF españoles en formato estándar de 8 dígitos seguidos
+de una letra en mayusculas. Ejemplos válidos son: “12345678Z”, “98765432X”, etc.
+^\d{8}[A-Z]$
+
+Teléfono : Valida números de teléfono españoles que sigan el siguiente formato. El teléfono consta de 9 digitos
+y solo pueden empezar por 6,7 o 9. Además, opcionalmente también aceptamos el prefijo del país de dos digitos
+encabezado por el simbolo ‘+’. Ejemplos válidos; 666554433, 961112233, +34709567896.
+^(\+\d{2})?[679]\d{8}$
+
+Correo Electrónico: Debe ser una dirección de correo electrónico válida que cumpla con el siguiente formato.
+(formato reducción del estandar) Nombre de usuario: Esta es la parte que identifica al usuario dentro del sistema
+de correo electrónico. Esta parte viene antes del símbolo “@” y puede contener letras (mayúsculas y minúsculas),
+dígitos y ciertos caracteres especiales como “.”, “-“, y “_”. El nombre de usuario debe tener al menos un carácter.
+Por ejemplo, en la dirección de correo “usuario@example.com”, “usuario” es el nombre de usuario.
+
+Dominio: Esta es la parte que identifica el servidor de correo electrónico al que está asociado el usuario. Esta
+parte viene después del símbolo “@” y para este ejercicio consta de dos partes (‘parte1.parte2’): La parte2 del
+dominio consta de tres carácteres (como “.com”, “.net”, “.org”, etc.).La parte1 contiene letras (mayúsculas y
+minúsculas), dígitos, y los caracteres especiales como “-“ y, en algunos casos, “_”. Por ejemplo, en la dirección
+de correo “usuario@example.com”, “example.com” es el dominio.
+^[\.\-\_\w]+@[\-\_\w]+\.\w{3}$
+
+Ruta de Windows . Debe validar que una ruta absoluta de windows a un directorio o fichero sea válida. Los directorios
+y archivos pueden contener caracteres alfanumericos La unidad consta de una letra mayúscula o minúscula Una expresión
+valida sería c:\Mis Documentos\práctica 1\prueba.txt
+^[A-Za-z]:\\([\w]|[^<>:"/\\|?*])+(\\([\w]|[^<>:"/\\|?*])+)*$
+
+Fechas (DD/MM/AAAA):
+^([1-31]){2}/([1-12]){2}/\d{4}$

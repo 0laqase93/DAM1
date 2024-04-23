@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="Libro">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Titulo" type="xs:string"></xs:element>
+                <xs:element name="Autor" type="xs:string"></xs:element>
+                <xs:element name="Fecha" type="xs:gYear"></xs:element>
+                <xs:element name="ISBN" type="xs:string"></xs:element>
+                <xs:element name="Editorial" type="xs:string"></xs:element>
+                <xs:element name="color" type="xs:string" default="rojo"></xs:element>
+                <xs:element name="ruta">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:pattern value="[A-Za-z]:\\([\w]|[^>:/\\|?*])+(\\([\w]|[^>:/\\|?*])+)*"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

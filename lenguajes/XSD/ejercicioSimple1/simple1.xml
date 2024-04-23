@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alumno xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="simple1.xsd">
+    <nombre>Roberto</nombre>
+    <dni>28542345</dni>
+    <direccion>San José 2</direccion>
+    <edad>22</edad>
+    <telefono>9659434523</telefono>
+    <semana>Lunes</semana>
+</alumno>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE club_extraterrestres SYSTEM "extraterrestres.dtd">
+<club_extraterrestres>
+    <mision id="m2001" objetivo="Humanos" />
+    <mision id="m2003" objetivo="Ganas la pachanga" />
+
+    <extraterrestre id="e1001" nombre="Zog" planeta_origen="Xenón" amigos="e1002 e1003" />
+    <extraterrestre id="e1002" nombre="Luna" planeta_origen="Nebulosa Azul" amigos="e1001 e1004" />
+    <extraterrestre id="e1003" nombre="Glimp" planeta_origen="Andrómeda" amigos="e1001" />
+    <extraterrestre id="e1004" nombre="Quasar" planeta_origen="Galaxia Espiral" amigos="e1002" target="m2001" />
+    <extraterrestre id="e1005" nombre="Zog" planeta_origen="Xenón" amigos="e1002 e1003" target="m2001" ></extraterrestre>
+</club_extraterrestres>
