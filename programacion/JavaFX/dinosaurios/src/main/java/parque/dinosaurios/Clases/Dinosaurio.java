@@ -44,4 +44,9 @@ public class Dinosaurio {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
+    @Override
+    public String toString() {
+        return "Nombre: " + this.nombre + "\n\t tamaño: " + this.tamanyo + "\n\t alimentación: " + this.alimentacion + "\n\t tipo: " + this.tipo;
+    }
 }

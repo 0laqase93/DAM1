@@ -2,69 +2,44 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="32185978-2579-4d28-8829-9a384ea13acb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#ib_16384_0.dblwr" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#ib_16384_0.dblwr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo10" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo10" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo11_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo11_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo12_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo12_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo13_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo13_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo14_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo14_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo15_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo15_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo16_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo16_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo17_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo17_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo18_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo18_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo19_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo19_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo20_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo20_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo21_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo21_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo22_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo22_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo23_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo23_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo24_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo24_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo25_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo25_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo26_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo26_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo27_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo27_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo28_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo28_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo29_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo29_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo30_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo30_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo31_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo31_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo32_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo32_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo33_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo33_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo34_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo34_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo35_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo35_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo36_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo36_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo37_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo37_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo38_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo38_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo39_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo39_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo40_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo40_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo41_tmp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_redo/#ib_redo41_tmp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_1.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_1.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_10.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_10.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_2.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_2.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_3.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_3.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_4.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_4.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_5.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_5.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_6.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_6.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_7.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_7.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_8.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_8.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_9.ibt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/#innodb_temp/temp_9.ibt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/binlog.000006" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/binlog.000006" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/binlog.index" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/binlog.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/ca-key.pem" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/ca-key.pem" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/client-key.pem" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/client-key.pem" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/ibdata1" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/ibdata1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/ibtmp1" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/ibtmp1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/mysql.ibd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/private_key.pem" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/private_key.pem" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/server-key.pem" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/server-key.pem" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/undo_001" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/../../../basesDatos/data/db/mysql/undo_002" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../entornos/testing/Calculator/src/main/java/org/antonio/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../entornos/testing/Calculator/src/main/java/org/antonio/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaFX/agenda/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaFX/agenda/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaFX/agenda/src/main/java/agenda/PrimaryController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaFX/agenda/src/main/java/agenda/SecondaryController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaFX/agenda/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaFX/agenda/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaFX/agenda/src/main/resources/agenda/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaFX/agenda/src/main/resources/agenda/primary.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaFX/agenda/src/main/resources/agenda/secondary.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaFX/agenda/target/classes/agenda/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaFX/agenda/target/classes/agenda/primary.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../JavaFX/agenda/target/classes/agenda/secondary.fxml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../entornos/testing/OneTest/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../entornos/testing/OneTest/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../entornos/testing/OneTest/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../entornos/testing/OneTest/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../entornos/testing/OneTest/src/test/java/org/antonio/TestUnitarios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JavaFX/dinosaurios/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JavaFX/dinosaurios/src/main/java/parque/dinosaurios/ControladorAtraccion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../JavaFX/dinosaurios/src/main/resources/images/atracción.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sistemas/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sistemas/scripting/practica 6-3/ejercicio8.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../sistemas/scripting/practica 6-3/numeros.num" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../entornos/testing/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../entornos/testing/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../entornos/testing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../entornos/testing/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../entornos/testing/avengers (2)/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../entornos/testing/avengers (2)/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../entornos/testing/avengers (2)/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../entornos/testing/avengers (2)/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../entornos/testing/avengers (2)/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../entornos/testing/avengers (2)/src/main/java/org/antonio/Exception/HeroeNoEncontradoException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../entornos/testing/avengers (2)/src/main/java/org/antonio/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../entornos/testing/avengers (2)/src/main/java/org/antonio/Model/GestorHeroes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../entornos/testing/avengers (2)/src/main/java/org/antonio/Model/Heroe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../entornos/testing/avengers (2)/src/test/java/org/antonio/TestHeroes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../entornos/testing/avengers/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../entornos/testing/avengers/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../entornos/testing/avengers/src/main/java/org/antonio/Model/GestorHeroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../entornos/testing/avengers/src/main/java/org/antonio/Model/GestorHeroes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../entornos/testing/avengers/src/test/java/org/antonio/TestHeroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../entornos/testing/avengers/src/test/java/org/antonio/TestHeroes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JavaFX/dinosaurios/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaFX/dinosaurios/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JavaFX/dinosaurios/src/main/java/parque/dinosaurios/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaFX/dinosaurios/src/main/java/parque/dinosaurios/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JavaFX/dinosaurios/src/main/java/parque/dinosaurios/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaFX/dinosaurios/src/main/java/parque/dinosaurios/ControladorMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JavaFX/dinosaurios/src/main/resources/parque/dinosaurios/atraccion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaFX/dinosaurios/src/main/resources/parque/dinosaurios/atraccion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../JavaFX/dinosaurios/src/main/resources/parque/dinosaurios/principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../JavaFX/dinosaurios/src/main/resources/parque/dinosaurios/principal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sistemas/scripting/practica 6-3/ejercicio1.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sistemas/scripting/practica 6-3/ejercicio1.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sistemas/scripting/practica 6-3/ejercicio2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sistemas/scripting/practica 6-3/ejercicio2.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sistemas/scripting/practica 6-3/ejercicio3.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sistemas/scripting/practica 6-3/ejercicio3.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sistemas/scripting/practica 6-3/ejercicio4.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sistemas/scripting/practica 6-3/ejercicio4.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sistemas/scripting/practica 6-3/ejercicio5.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sistemas/scripting/practica 6-3/ejercicio5.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sistemas/scripting/practica 6-3/ejercicio6.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sistemas/scripting/practica 6-3/ejercicio6.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../sistemas/scripting/practica 6-3/ejercicio7.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../../sistemas/scripting/practica 6-3/ejercicio7.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,24 +49,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2fHJYSH7RjEzkOcaqESmxhQgtdL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/olaqase93/DAM1/programacion/accesoDatos/reservaVuelos",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/olaqase93/DAM1/programacion/accesoDatos/reservaVuelos&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -109,6 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1713452116873</updated>
       <workItem from="1713452118079" duration="107000" />
+      <workItem from="1714028541235" duration="206000" />
     </task>
     <servers />
   </component>

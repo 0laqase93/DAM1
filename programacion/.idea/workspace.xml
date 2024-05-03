@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ac3e9876-623a-4246-9ebf-78330aab70aa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../entornos/testing/OneTest/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../entornos/testing/OneTest/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../entornos/testing/OneTest/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../entornos/testing/OneTest/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../entornos/testing/OneTest/src/test/java/org/antonio/TestUnitarios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lenguajes/XSD/ejercicioComplejo1/complejo1.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lenguajes/XSD/nivel2/feria/feriaMedieval.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lenguajes/XSD/nivel2/feria/feriaMedieval.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lenguajes/XSD/nivel2/restriccion/restriccionValores.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lenguajes/XSD/nivel2/restriccion/restriccionValores.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lenguajes/XSD/nivel2/taller/taller.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lenguajes/XSD/nivel2/taller/taller.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/dinosaurios/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/dinosaurios/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/java/parque/dinosaurios/ControladorAtraccion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/java/parque/dinosaurios/ControladorListarDinosaurios.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/java/parque/dinosaurios/ControladorListarZonas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/resources/images/atracción.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/resources/images/lupa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/resources/images/mapa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/resources/parque/dinosaurios/listarDinosaurios.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sistemas/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sistemas/scripting/practica 6-3/ejercicio8.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../sistemas/scripting/practica 6-3/numeros.num" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../entornos/testing/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../entornos/testing/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../entornos/testing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../entornos/testing/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../entornos/testing/avengers (2)/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../entornos/testing/avengers (2)/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../entornos/testing/avengers (2)/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../entornos/testing/avengers (2)/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../entornos/testing/avengers (2)/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../entornos/testing/avengers (2)/src/main/java/org/antonio/Exception/HeroeNoEncontradoException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../entornos/testing/avengers (2)/src/main/java/org/antonio/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../entornos/testing/avengers (2)/src/main/java/org/antonio/Model/GestorHeroes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../entornos/testing/avengers (2)/src/main/java/org/antonio/Model/Heroe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../entornos/testing/avengers (2)/src/test/java/org/antonio/TestHeroes.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../entornos/testing/avengers/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../entornos/testing/avengers/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../entornos/testing/avengers/src/main/java/org/antonio/Model/GestorHeroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../entornos/testing/avengers/src/main/java/org/antonio/Model/GestorHeroes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../entornos/testing/avengers/src/test/java/org/antonio/TestHeroes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../entornos/testing/avengers/src/test/java/org/antonio/TestHeroes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/dinosaurios/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFX/dinosaurios/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/java/parque/dinosaurios/Clases/Dinosaurio.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/java/parque/dinosaurios/Clases/Dinosaurio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/java/parque/dinosaurios/Clases/Zona.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/java/parque/dinosaurios/Clases/Zona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/java/parque/dinosaurios/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/java/parque/dinosaurios/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/java/parque/dinosaurios/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/java/parque/dinosaurios/ControladorMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/resources/parque/dinosaurios/atraccion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/resources/parque/dinosaurios/atraccion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/resources/parque/dinosaurios/principal.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaFX/dinosaurios/src/main/resources/parque/dinosaurios/principal.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accesoDatos/reservaVuelos/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accesoDatos/reservaVuelos/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sistemas/scripting/practica 6-3/ejercicio1.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../sistemas/scripting/practica 6-3/ejercicio1.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sistemas/scripting/practica 6-3/ejercicio2.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../sistemas/scripting/practica 6-3/ejercicio2.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sistemas/scripting/practica 6-3/ejercicio3.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../sistemas/scripting/practica 6-3/ejercicio3.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sistemas/scripting/practica 6-3/ejercicio4.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../sistemas/scripting/practica 6-3/ejercicio4.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sistemas/scripting/practica 6-3/ejercicio5.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../sistemas/scripting/practica 6-3/ejercicio5.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sistemas/scripting/practica 6-3/ejercicio6.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../sistemas/scripting/practica 6-3/ejercicio6.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../sistemas/scripting/practica 6-3/ejercicio7.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../sistemas/scripting/practica 6-3/ejercicio7.sh" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2fmn9GstSyZVpH6zqTk4ljekBxW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/olaqase93/DAM1/programacion",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac3e9876-623a-4246-9ebf-78330aab70aa" name="Changes" comment="" />
+      <created>1714414967866</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714414967866</updated>
+      <workItem from="1714414969133" duration="244000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

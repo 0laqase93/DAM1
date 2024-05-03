@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="armaduras">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="casco" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="descripcion" type="xs:string"/>
+                        </xs:sequence>
+                        <xs:attribute name="nombre" type="xs:string" use="required"/>
+                        <xs:attribute name="tipo" type="xs:string" use="required"/>
+                        <xs:attribute name="material" type="xs:string" use="required"/>
+                        <xs:attribute name="precio" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="espada" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="descripcion" type="xs:string"/>
+                        </xs:sequence>
+                        <xs:attribute name="nombre" type="xs:string" use="required"/>
+                        <xs:attribute name="tipo" type="xs:string" use="required"/>
+                        <xs:attribute name="material" type="xs:string" use="required"/>
+                        <xs:attribute name="filo" type="xs:string" use="required"/>
+                        <xs:attribute name="precio" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="escudo" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="descripcion" type="xs:string"/>
+                        </xs:sequence>
+                        <xs:attribute name="nombre" type="xs:string" use="required"/>
+                        <xs:attribute name="tipo" type="xs:string" use="required"/>
+                        <xs:attribute name="material" type="xs:string" use="required"/>
+                        <xs:attribute name="tamaño" type="xs:string" use="required"/>
+                        <xs:attribute name="diseño" type="xs:string" use="required"/>
+                        <xs:attribute name="precio" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -5,19 +5,17 @@
 # caso contrario.
 
 clear
-RESET='\033[0m'
-GREEN='\033[00;32m'
-RED='\033[00;31m'
-PURPLE='\033[00;35m'
 
 if [ $# -eq 2 ]; then
-  if [ $1 -le $2 ]; then
-    declare -i res=$1+$2
-    echo -e "${GREEN}[+]${RESET} La ${PURPLE}suma${RESET} de ${GREEN}$1${RESET} + ${GREEN}$2${RESET} = ${GREEN}$res${RESET}"
+  if expr $1 -le $2 2>/dev/null; then
+    if [ "$1" -le "$2" ]; then
+      echo "[+] La suma de $1 + $2 = $(($1+$2))"
+    else
+      echo "[+] La resta de $1 - $2 = $(($1-$2))"
+    fi
   else
-    declare -i res=$1-$2
-        echo -e "${GREEN}[+]${RESET} La ${PURPLE}resta${RESET} de ${GREEN}$1${RESET} - ${GREEN}$2${RESET} = ${GREEN}$res${RESET}"
+    echo "[!] Valores no válidos"
   fi
 else
-  echo -e "${RED}[!]${RESET} Se necesitan dos argumentos numéricos ${PURPLE}[Ej: ejercicio1 1 2]${RESET}"
+  echo -e "[!] Se necesitan dos argumentos numéricos [Ej: ejercicio1 1 2]"
 fi

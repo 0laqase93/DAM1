@@ -4,19 +4,13 @@
 # parámetro, primero hemos de comprobar si el fichero existe, si no existe avisará.
 
 clear
-RESET='\033[0m'
-GREEN='\033[00;32m'
-RED='\033[00;31m'
-PURPLE='\033[00;35m'
-
 
 if [ "$1" ]; then
-  if [ -f $1 ]; then
-    chmod +x $1
-    echo -e "${GREEN}[+]${RESET} Se le han asignado permisos de ejecución al fichero ${PURPLE}$1${RESET}"
+  if chmod +x "$1" 2>/dev/null; then
+    echo -e "[+] Se le han asignado permisos de ejecución al fichero $1"
   else
-    echo -e "${RED}[!]${RESET} El fichero no se ha encontrado."
+    echo -e "[!] No se ha podido modificar los permisos de $1."
   fi
 else
-  echo -e "${RED}[!]${RESET} Se debe pasar un fichero como argumento."
+  echo -e "[!] Se debe pasar un fichero como argumento."
 fi

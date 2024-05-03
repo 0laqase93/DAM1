@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="tienda">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="mascota" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nombre" type="xs:string"/>
+                            <xs:element name="especie" type="xs:string"/>
+                            <xs:element name="raza" type="xs:string" minOccurs="0"/>
+                            <xs:element name="edad" type="xs:decimal"/>
+                            <xs:element name="precio" type="xs:decimal"/>
+                        </xs:sequence>
+                        <xs:attribute name="tipo">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="perro"/>
+                                    <xs:enumeration value="gato"/>
+                                    <xs:enumeration value="ave"/>
+                                    <xs:enumeration value="reptil"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

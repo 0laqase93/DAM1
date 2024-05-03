@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<real-estate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="02.xsd">
+    <agencies>
+        <agency>
+            <name>LolCorp</name>
+            <e-mail>LolCopr@lol.corp</e-mail>
+            <phone>123456789</phone>
+        </agency>
+    </agencies>
+    <owners>
+        <owner>
+            <name>Alfonso</name>
+        </owner>
+    </owners>
+    <properties>
+        <property>
+            <name>Edificio Linares</name>
+            <numberOfFlats>12</numberOfFlats>
+        </property>
+    </properties>
+    <flats>
+        <flat>
+            <name>Piso 12</name>
+            <description>Moderno y grande</description>
+            <rate>9</rate>
+        </flat>
+    </flats>
+</real-estate>

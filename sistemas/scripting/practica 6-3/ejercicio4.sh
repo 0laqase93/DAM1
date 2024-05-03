@@ -5,20 +5,18 @@
 # éxito y los ficheros que no existen.
 
 clear
-RESET='\033[0m'
-GREEN='\033[00;32m'
-RED='\033[00;31m'
-PURPLE='\033[00;35m'
+
+echo -e "ARCHIVOS ELIMINADOS\n-------------------" > archivosEliminados.fich
+echo -e "ARCHIVOS NO ELIMINADOS\n----------------------" > archivosNoEliminados.fich
 
 if [ $# -ne 0 ]; then
   for i in $* ; do
-    if [ -f $i ]; then
-      rm $i
-      echo -e "${GREEN}[+]${RESET} Archivo $i eliminado con éxito"
+    if rm "$i" 2>/dev/null; then
+      echo -e "[+] Archivo $i eliminado con éxito" >> archivosEliminados.fich
     else
-      echo -e "${RED}[-]${RESET} El archivo $i no existe"
+      echo -e "[-] El archivo $i no se ha borrado" >> archivosNoEliminados.fich
     fi
   done
 else
-  echo -e "${RED}[!]${RESET} Se deben pasar los archivos que se quieren borrar como parámetro."
+  echo -e "[!] Se deben pasar los archivos que se quieren borrar como parámetro."
 fi

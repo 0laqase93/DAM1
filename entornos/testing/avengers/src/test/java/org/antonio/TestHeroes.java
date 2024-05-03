@@ -94,8 +94,8 @@ public class TestHeroes {
     @Test
     public void testGetDescripcion() throws HeroeNoEncontradoException {
         assertEquals("Sugar daddy", ironMan.getDescripcion());
-        assertTrue(capitanAmerica2.getDescripcion().equals("Superfuerza, agilidad, resistencia"));
-        assertEquals("Traje americano con un escudo super chulo", capitanAmerica2.getDescripcion());
+        assertNotEquals("Superfuerza, agilidad, resistencia", capitanAmerica.getDescripcion());
+        assertEquals("Traje americano con un escudo super chulo", capitanAmerica.getDescripcion());
     }
 
     @Test
@@ -141,6 +141,16 @@ public class TestHeroes {
         assertEquals("Iron Man", ironMan2.getNombre());
         assertSame("Cara de araña", spiderMan2.getDescripcion());
         assertTrue(capitanAmerica2.getBiografia().equals("Soldado de la Segunda Guerra Mundial"));
+    }
+
+    @Test
+    public void testActualizarHeroe() throws HeroeNoEncontradoException {
+        Heroe ironMan2 = new Heroe("Iron Man", "Traje de baja tecnología", "Pobre y aburrido", "Nada especial");
+        gestorHeroes.actualizarHeroe(ironMan2);
+
+        assertNotNull(gestorHeroes.buscarHeroe("Iron Man"));
+        assertEquals("Traje de baja tecnología", gestorHeroes.buscarHeroe("Iron Man").getSuperpoderes());
+        assertNotEquals("Millonario y filántropo", gestorHeroes.buscarHeroe("Iron Man").getBiografia());
     }
 
     @Test

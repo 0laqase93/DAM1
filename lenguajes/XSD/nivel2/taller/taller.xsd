@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="taller">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="marca">
+                    <xs:complexType>
+                        <xs:attribute name="id" type="xs:ID" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="matriz" minOccurs="0">
+                    <xs:complexType>
+                        <xs:simpleContent>
+                            <xs:extension base="xs:string">
+                                <xs:attribute name="id" type="xs:ID" use="optional"/>
+                            </xs:extension>
+                        </xs:simpleContent>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="coche" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:all>
+                            <xs:element name="marca" type="xs:string"/>
+                            <xs:element name="color" type="xs:string" minOccurs="0"/>
+                        </xs:all>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="mecanico" minOccurs="2" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:group ref="nombreCompleto"/>
+                        <xs:attribute name="especialidad" use="required">
+                            <xs:simpleType>
+                                <xs:restriction base="xs:string">
+                                    <xs:enumeration value="electrónica"/>
+                                    <xs:enumeration value="chapa"/>
+                                    <xs:enumeration value="pintura"/>
+                                    <xs:enumeration value="motores"/>
+                                </xs:restriction>
+                            </xs:simpleType>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="gerente" minOccurs="0">
+                    <xs:complexType>
+                        <xs:group ref="nombreCompleto"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="observaciones">
+                    <xs:complexType mixed="true">
+                        <xs:sequence>
+                            <xs:choice>
+                                <xs:element name="importancia" type="xs:boolean"/>
+                                <xs:element name="relevancia" type="xs:boolean"/>
+                            </xs:choice>
+                            <xs:element name="fecha" type="xs:date"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:group name="nombreCompleto">
+        <xs:sequence>
+            <xs:element name="nombre"/>
+            <xs:element name="apellido"/>
+        </xs:sequence>
+    </xs:group>
+</xs:schema>

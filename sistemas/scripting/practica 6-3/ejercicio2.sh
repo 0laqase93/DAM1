@@ -5,25 +5,23 @@
 # bucle for con seq. Si no se proporciona un número, mostrar cómo se usa el programa.
 
 clear
-RESET='\033[0m'
-GREEN='\033[00;32m'
-RED='\033[00;31m'
-PURPLE='\033[00;35m'
 
-declare -i input=0
+input=0
 
-echo -en "${GREEN}[+]${RESET} Ingrese un número: "
-read input
-
-if [ $input -gt 0 ]; then
-  echo -e "----------------"
-  echo -e "${PURPLE}[+] Tabla del $input${RESET}"
-  echo -e "----------------"
-  for (( i = 1; i <= 10; i++ )); do
-    declare -i mult=$input*$i
-    echo -e "${GREEN}$input${RESET} x ${GREEN}$j${RESET} = ${RED}$mult${RESET}"
-  done
-  echo -e "----------------"
+echo -en "[+] Ingrese un número: "
+read -r input
+if [[ $input != [!0-9]* || -z $input ]]; then
+  if [ "$input" -gt 0 ]; then
+    echo -e "----------------"
+    echo -e "[+] Tabla del $input"
+    echo -e "----------------"
+    for (( i = 1; i <= 10; i++ )); do
+      echo -e "$input x $i = $((input*i))"
+    done
+    echo -e "----------------"
+  else
+    echo -e "[!] Se debe ingresar un número mayor a 0."
+  fi
 else
-  echo -e "${RED}[!]${RESET} Se debe ingresar un número mayor a 0."
+  echo -e "[!] Se debe ingresar un número"
 fi

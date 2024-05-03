@@ -58,7 +58,7 @@
             <!-- Default configuration for running with: mvn clean javafx:run -->
             <id>default-cli</id>
             <configuration>
-              <mainClass>parque.dinosaurios/parque.dinosaurios.HelloApplication</mainClass>
+              <mainClass>parque.dinosaurios/parque.dinosaurios.App</mainClass>
               <launcher>app</launcher>
               <jlinkZipName>app</jlinkZipName>
               <jlinkImageName>app</jlinkImageName>

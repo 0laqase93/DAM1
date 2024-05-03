@@ -43,6 +43,17 @@ public class GestorHeroes {
         throw new HeroeNoEncontradoException(superpoder);
     }
 
+    public void actualizarHeroe(Heroe heroeActualizado) {
+        int index = 0;
+        for (Heroe heroe : this.heroes) {
+            if (heroe.getNombre().equals(heroeActualizado.getNombre())) {
+                heroes.set(index, heroeActualizado);
+                break;
+            }
+            index++;
+        }
+    }
+
     public String listarHeroes() {
         String nombres = heroes.get(0).getNombre();
         for (int i = 1; i < heroes.size(); i++) {

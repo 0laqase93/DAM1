@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tienda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="restriccionValores.xsd">
+    <mascota tipo="perro">
+        <nombre>Toby</nombre>
+        <especie>Canino</especie>
+        <raza>Labrador Retriever</raza>
+        <edad>2</edad>
+        <precio>500</precio>
+    </mascota>
+    <mascota tipo="gato">
+        <nombre>Luna</nombre>
+        <especie>Felino</especie>
+        <raza>Siamés</raza>
+        <edad>1</edad>
+        <precio>300</precio>
+    </mascota>
+    <mascota tipo="ave">
+        <nombre>Periquito</nombre>
+        <especie>Psitácido</especie>
+        <raza>Común</raza>
+        <edad>0.5</edad>
+        <precio>20</precio>
+    </mascota>
+</tienda>

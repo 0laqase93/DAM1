@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<armaduras xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="feriaMedieval.xsd">
+    <casco nombre="Casco de Caballero" tipo="cerrado" material="acero" precio="100 monedas">
+        <descripcion>Un casco resistente con visera para proteger la cabeza del caballero.</descripcion>
+    </casco>
+    <espada nombre="Espada Larga" tipo="mandoble" material="acero" filo="doble" precio="80 monedas">
+        <descripcion>Una espada larga y pesada para cortar y apuñalar.</descripcion>
+    </espada>
+    <escudo nombre="Escudo Normando" material="madera" tamaño="grande" diseño="escudo de cruz" precio="50 monedas">
+        <descripcion>Un escudo grande de madera con diseño de cruz para proteger al caballero de flechas y lanzas.</descripcion>
+    </escudo>
+</armaduras>

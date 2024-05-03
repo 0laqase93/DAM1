@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<taller xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="taller.xsd">
+    <marca id = "AB45GTX"/>
+    <matriz id ="DFX-D"> Renault Madrid </matriz>
+    <coche>
+        <marca>Porche</marca>
+        <color>rojo</color>
+    </coche>
+    <mecanico especialidad="electrónica">
+        <nombre>Rodrigo</nombre>
+        <apellido>Vivar</apellido>
+    </mecanico>
+    <mecanico especialidad="pintura">
+        <nombre>pedro</nombre>
+        <apellido>Vivar</apellido>
+    </mecanico>
+    <gerente>
+        <nombre>Afonso</nombre>
+        <apellido>Díaz</apellido>
+    </gerente>
+    <observaciones>
+        <relevancia>true</relevancia>
+        <fecha>2024-10-10</fecha>
+        Este taller se dedica principalmente a la reparación de vehículos de alta gama
+    </observaciones>
+</taller>
+

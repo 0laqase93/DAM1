@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="539.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="parque.dinosaurios.ControladorListarZonas">
+   <children>
+      <ImageView fitHeight="353.0" fitWidth="539.0" layoutX="1.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/mapa.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="128.0" layoutY="2.0" prefHeight="50.0" prefWidth="284.0" style="-fx-background-color: #FFFAF0;" text="Listar Zonas">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.5047619047619047" startX="0.23809523809523803" startY="0.3476190476190476">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.8157894611358643" green="0.4041179418563843" blue="0.4041179418563843" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.4163011610507965" green="0.8040326237678528" blue="0.8815789222717285" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Button fx:id="salir" layoutX="503.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#salirPrograma" text="X" textFill="#d30909" />
+      <Button fx:id="volver" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#volverMenu" text="⤣" />
+      <Button fx:id="zonaNoroeste" layoutX="112.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#noroeste" opacity="0.0" prefHeight="151.0" prefWidth="151.0" text="NorOeste" />
+      <Button fx:id="ZonaNoreste" layoutX="263.0" layoutY="76.0" mnemonicParsing="false" onMouseClicked="#noreste" opacity="0.0" prefHeight="151.0" prefWidth="151.0" text="NorEste" />
+      <Button fx:id="zonaSuroeste" layoutX="112.0" layoutY="226.0" mnemonicParsing="false" onMouseClicked="#suroeste" opacity="0.0" prefHeight="151.0" prefWidth="151.0" text="SurOeste" />
+      <Button fx:id="zonaSureste" layoutX="263.0" layoutY="184.0" mnemonicParsing="false" onMouseClicked="#sureste" opacity="0.0" prefHeight="151.0" prefWidth="151.0" text="SurEste" />
+      <Separator layoutX="212.0" layoutY="77.0" orientation="VERTICAL" prefHeight="301.0" prefWidth="115.0" />
+      <Separator layoutX="113.0" layoutY="179.0" prefHeight="94.0" prefWidth="301.0" />
+   </children>
+</AnchorPane>

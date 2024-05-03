@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.BoxBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -10,13 +11,15 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="539.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="539.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="parque.dinosaurios.ControladorMenu">
    <children>
-      <ImageView fitHeight="410.0" fitWidth="539.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="409.0" fitWidth="539.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/fondo.png" />
          </image>
+         <effect>
+            <BoxBlur height="7.0" width="7.0" />
+         </effect>
       </ImageView>
       <Label layoutX="94.0" layoutY="15.0" prefHeight="50.0" prefWidth="355.0" style="-fx-background-color: #FFFAF0;" text=" DinoÑAM Park ">
          <font>
@@ -39,9 +42,9 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Button layoutX="375.0" layoutY="219.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="142.0" text="Crear atraccion" />
-      <Button layoutX="375.0" layoutY="254.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="142.0" text="Listar dinosaurios" />
-      <Button layoutX="375.0" layoutY="289.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="142.0" text="Listar zonas" />
-      <Button layoutX="503.0" layoutY="15.0" mnemonicParsing="false" text="X" textFill="#d30909" />
+      <Button fx:id="botonAtraccion" layoutX="375.0" layoutY="219.0" mnemonicParsing="false" onMouseClicked="#crearAtraccion" prefHeight="35.0" prefWidth="142.0" text="Crear atraccion" />
+      <Button fx:id="botonListar" layoutX="375.0" layoutY="254.0" mnemonicParsing="false" onMouseClicked="#listarDinosaurios" prefHeight="35.0" prefWidth="142.0" text="Listar dinosaurios" />
+      <Button fx:id="botonListarZonas" layoutX="375.0" layoutY="289.0" mnemonicParsing="false" onMouseClicked="#listarZonas" prefHeight="35.0" prefWidth="142.0" text="Listar zonas" />
+      <Button fx:id="salir" layoutX="503.0" layoutY="15.0" mnemonicParsing="false" onMouseClicked="#salirPrograma" text="X" textFill="#d30909" />
    </children>
 </AnchorPane>
