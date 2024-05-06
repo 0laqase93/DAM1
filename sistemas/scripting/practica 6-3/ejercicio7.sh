@@ -16,7 +16,7 @@ function insertarNumero() {
   declare -i input=0
   echo -n "[+] Inserte un número: "
   read -r input
-  if [[ $input != [!0-9]* || -z $input ]]; then
+  if [ "$input" -eq "$input" ]; then
     echo "$input" >> $file
   else
     echo -n "[+] Solo se pueden poner números"
@@ -28,9 +28,9 @@ function borrarNumero() {
   declare -i input=0
   echo -n "[+] Inserte un número: "
   read -r input
-  if [[ $input != [!0-9]* || -z $input ]] ; then
-    (tr "$input" ' ' > tmp.fl) < $file
-    mv tmp.fl "$file"
+  if [ "$input" -eq "$input" ] ; then
+    grep -vw "$input" $file > tmp.fl
+    mv tmp.fl $file
   else
     echo -n "[+] Solo se pueden poner números"
     read -r

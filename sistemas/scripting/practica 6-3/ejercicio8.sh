@@ -6,7 +6,7 @@
 esPrimo=true
 echo -n "[+] Escriba un número para saber si en primo: "
 read -r input
-if [[ $input != [!0-9]* || -z $input ]]; then
+if [ "$input" -eq "$input" ] 2>/dev/null; then
   if [ "$input" -lt 2 ]; then
       esPrimo="false"
   else

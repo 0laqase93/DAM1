@@ -10,12 +10,12 @@ input=0
 
 echo -en "[+] Ingrese un número: "
 read -r input
-if [[ $input != [!0-9]* || -z $input ]]; then
+if [ "$input" -eq "$input" ] 2>/dev/null; then
   if [ "$input" -gt 0 ]; then
     echo -e "----------------"
     echo -e "[+] Tabla del $input"
     echo -e "----------------"
-    for (( i = 1; i <= 10; i++ )); do
+    for i in $(seq 1 10) ; do
       echo -e "$input x $i = $((input*i))"
     done
     echo -e "----------------"

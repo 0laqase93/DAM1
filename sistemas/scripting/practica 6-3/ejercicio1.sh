@@ -7,7 +7,7 @@
 clear
 
 if [ $# -eq 2 ]; then
-  if expr $1 -le $2 2>/dev/null; then
+  if [ "$1" -eq "$1" ] 2>/dev/null || [ "$2" -eq "$2" ] 2>/dev/null; then
     if [ "$1" -le "$2" ]; then
       echo "[+] La suma de $1 + $2 = $(($1+$2))"
     else

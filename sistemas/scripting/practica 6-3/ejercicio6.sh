@@ -11,7 +11,7 @@ while [ $vidas -ne 0 ]; do
   echo -n "[+] Inserte su adivinación: "
   read -r input
 
-  if [[ $input != [!0-9]* || -z $input ]]; then
+  if [ "$input" -eq "$input" ] 2>/dev/null; then
     if [ "$input" -lt "$random" ] 2>/dev/null; then
       echo "[⇧] El número es más grande"
       echo "[+] Le quedan $vidas vidas"

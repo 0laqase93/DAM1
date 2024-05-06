@@ -26,7 +26,7 @@
                                     <xs:sequence>
                                         <xs:element name="name" type="xs:string"/>
                                     </xs:sequence>
-                                    <xs:attribute name="idOwner" type="xs:string" use="required"/>
+                                    <xs:attribute name="idOwner" type="xs:ID" use="required"/>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
@@ -39,10 +39,16 @@
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element name="name" type="xs:string"/>
-                                        <xs:element name="numberOfFlats" type="xs:positiveInteger"/>
+                                        <xs:element name="numberOfFlats" >
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:integer">
+                                                    <xs:maxExclusive value="1501"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
                                     </xs:sequence>
-                                    <xs:attribute name="idProperty" type="xs:string" use="required"/>
-                                    <xs:attribute name="ownerRef" type="xs:string" use="optional"/>
+                                    <xs:attribute name="idProperty" type="xs:ID" use="required"/>
+                                    <xs:attribute name="ownerRef" type="xs:IDREF" use="optional"/>
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
@@ -54,13 +60,38 @@
                             <xs:element name="flat" maxOccurs="unbounded">
                                 <xs:complexType>
                                     <xs:sequence>
-                                        <xs:element name="name" type="xs:string"/>
+                                        <xs:element name="name">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:minLength value="5"/>
+                                                    <xs:maxLength value="100"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
                                         <xs:element name="description" type="xs:string"/>
-                                        <xs:element name="rate" type="xs:integer"/>
+                                        <xs:element name="rate">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:integer">
+                                                    <xs:pattern value="[0-9]*"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
                                     </xs:sequence>
-                                    <xs:attribute name="idFlat" type="xs:string" use="required"/>
-                                    <xs:attribute name="propertyRef" type="xs:string" use="required"/>
-                                    <xs:attribute name="comfortLevel" type="xs:string" use="required"/>
+                                    <xs:attribute name="idFlat" use="required">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:ID">
+                                                <xs:pattern value="[fF][0-9]{1,5}"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
+                                    <xs:attribute name="propertyRef" type="xs:IDREF" use="required"/>
+                                    <xs:attribute name="comfortLevel">
+                                        <xs:simpleType>
+                                            <xs:restriction base="xs:string">
+                                                <xs:pattern value="[A-F]"/>
+                                            </xs:restriction>
+                                        </xs:simpleType>
+                                    </xs:attribute>
                                     <xs:attribute name="datePosted" type="xs:string" use="optional"/>
                                 </xs:complexType>
                             </xs:element>

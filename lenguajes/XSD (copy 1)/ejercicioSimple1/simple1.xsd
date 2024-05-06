@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:simpleType name="diaSemana">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="Lunes" />
+        <xs:enumeration value="Miércoles" />
+        <xs:enumeration value="Viernes" />
+    </xs:restriction>
+</xs:simpleType>
+<xs:element name="alumno">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="nombre" type="xs:string" />
+            <xs:element name="dni" type="xs:integer" />
+            <xs:element name="direccion" type="xs:string" />
+            <xs:element name="edad">
+                <xs:simpleType>
+                    <xs:restriction base="xs:integer">
+                        <xs:minExclusive value="0" />
+                        <xs:maxInclusive value="120" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+            <xs:element name="telefono" type="xs:string" />
+            <xs:element name="semana" type="diaSemana" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+</xs:schema>

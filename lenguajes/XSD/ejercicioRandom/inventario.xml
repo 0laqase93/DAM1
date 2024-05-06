@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<inventario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="inventario.xsd">
+    <objeto codigo="MM2809">
+        <mesa>
+            <tipo>Oficina</tipo>
+            <localizacion>B09</localizacion>
+        </mesa>
+    </objeto>
+    <objeto>
+        <ordenador>
+            <procesador fabricante="Intel">i3</procesador>
+            <memoria unidad="GB">2</memoria>
+            <discoduro>520</discoduro>
+        </ordenador>
+    </objeto>
+</inventario>
