@@ -8,8 +8,8 @@ clear
 grupos=""
 
 if [ $# -eq 1 ]; then
-  grupos=$(cat /etc/group | grep "$1" | cut -d ":" -f1 | grep -v "$1" | tr '\n' ' ')
+  grupos=$(cat /etc/group | grep -w "$1" | cut -d ":" -f1 | grep -v "$1" | tr '\n' ' ')
   echo "El usuario $1 tiene como grupos secundarios: $grupos"
 else
-  echo "[!] Se debe pasar un parámetro como usuario"
+  echo "[!] Se debe pasar un usuario como parámetro"
 fi
