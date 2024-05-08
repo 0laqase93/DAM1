@@ -13,7 +13,7 @@ function ordenarArchivo() {
 }
 
 function insertarNumero() {
-  declare -i input=0
+  input=0
   echo -n "[+] Inserte un número: "
   read -r input
   if [ "$input" -eq "$input" ]; then
@@ -25,7 +25,7 @@ function insertarNumero() {
 }
 
 function borrarNumero() {
-  declare -i input=0
+  input=0
   echo -n "[+] Inserte un número: "
   read -r input
   if [ "$input" -eq "$input" ] ; then
@@ -57,7 +57,7 @@ else
   touch "$file"
 fi
 
-declare -i input=0
+input=0
 while [ $input -ne 3 ]; do
   mostrarMenu
   echo -n "[+] Inserte una opción: "
