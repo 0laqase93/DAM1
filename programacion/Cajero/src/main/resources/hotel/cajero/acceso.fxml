@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #072146;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hotel.cajero.CuentaControlador">
+   <children>
+      <ImageView fitHeight="27.0" fitWidth="109.0" layoutX="33.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/NOVA.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="1.0" />
+         </effect>
+      </ImageView>
+      <Label fx:id="Nombre" alignment="CENTER" layoutY="69.0" prefHeight="44.0" prefWidth="600.0" style="-fx-background-color: #2696d7;" text="" textFill="#295c79">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Label layoutX="273.0" layoutY="137.0" text="Cuentas" textFill="WHITE" />
+      <ChoiceBox fx:id="cuentas" layoutX="225.0" layoutY="167.0" prefWidth="150.0" />
+      <Button fx:id="sacarDineroBoton" disable="true" layoutX="119.0" layoutY="218.0" mnemonicParsing="false" onMouseClicked="#sacarDinero" prefHeight="84.0" prefWidth="171.0" text="Sacar dinero" textFill="#295c79" />
+      <Button fx:id="pagarFacturaBoton" disable="true" layoutX="313.0" layoutY="218.0" mnemonicParsing="false" onMouseClicked="#pagarFactura" prefHeight="84.0" prefWidth="171.0" text="Pagar factura" textFill="#295c79" />
+      <Button layoutX="215.0" layoutY="327.0" mnemonicParsing="false" onMouseClicked="#cerrarSesion" prefHeight="52.0" prefWidth="171.0" text="Cerrar sesión" textFill="#295c79" />
+   </children>
+</AnchorPane>
