@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="976fb85a-631e-4152-adb6-69fdbec41829" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/JSON.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JSON/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JSON/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JSON/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JSON/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JSON/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JSON/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JSON/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JSON/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JSON/src/main/java/example/json/ChuckNorris.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JSON/src/main/java/example/json/schema.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JSON/src/main/java/module-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conferencia.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/MaximoPermitidoException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/NumeroNegativo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/SaldoInsuficienteException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/UsuarioNoEncontrado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/ValoresNoValidosException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../programacion/Cajero/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../programacion/Cajero/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../programacion/Cajero/src/main/java/hotel/cajero/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../programacion/Cajero/src/main/java/hotel/cajero/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../programacion/Cajero/src/main/java/hotel/cajero/CajeroControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../programacion/Cajero/src/main/java/hotel/cajero/CajeroControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../programacion/Cajero/src/main/java/hotel/cajero/Clases/Cuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../programacion/Cajero/src/main/java/hotel/cajero/Clases/Cuenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../programacion/Cajero/src/main/java/hotel/cajero/Clases/Factura.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../programacion/Cajero/src/main/java/hotel/cajero/Clases/Factura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../programacion/Cajero/src/main/java/hotel/cajero/CuentaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../programacion/Cajero/src/main/java/hotel/cajero/CuentaControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../programacion/Cajero/src/main/resources/hotel/cajero/iniciarSesion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../programacion/Cajero/src/main/resources/hotel/cajero/iniciarSesion.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="package.json" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/JSON" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2gPeuSLH6m9VfP3BkrmZtgU78J5" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.ChuckNorris.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/olaqase93/DAM1/lenguajes/JSON/JSON/src",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ChuckNorris" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="JSON.src.main.java.example.json.ChuckNorris" />
+      <module name="JSON" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="JSON.src.main.java.example.json.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ChuckNorris" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="976fb85a-631e-4152-adb6-69fdbec41829" name="Changes" comment="" />
+      <created>1715603862037</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715603862037</updated>
+      <workItem from="1715603863216" duration="1878000" />
+      <workItem from="1715605760198" duration="635000" />
+      <workItem from="1715606496238" duration="3142000" />
+      <workItem from="1715615548776" duration="20000" />
+      <workItem from="1715862575077" duration="66000" />
+      <workItem from="1715862894427" duration="43000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

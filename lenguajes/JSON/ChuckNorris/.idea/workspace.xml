@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c9aca8b8-0179-486a-9646-0eba783162a8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/JSON.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/qodana.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/main/java/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/archetype-resources/src/test/java/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../conferencia.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/MaximoPermitidoException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/NumeroNegativo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/SaldoInsuficienteException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/UsuarioNoEncontrado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/ValoresNoValidosException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/CajeroControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/CajeroControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Clases/Cuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Clases/Cuenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Clases/Factura.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Clases/Factura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/CuentaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/CuentaControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/resources/hotel/cajero/iniciarSesion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/resources/hotel/cajero/iniciarSesion.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2gY8hR64myGFgp1OCfug8ViISwq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ChuckNorris [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ChuckNorris [compile].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;avengersOnActions&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.qodana&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="QodanaCloudProjectLink">
+    <option name="linkedProjectId" value="AlRrX" />
+    <option name="organizationId" value="3ByXg" />
+    <option name="userId" value="3y6q4" />
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c9aca8b8-0179-486a-9646-0eba783162a8" name="Changes" comment="" />
+      <created>1715863270312</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1715863270312</updated>
+      <workItem from="1715863271498" duration="1282000" />
+      <workItem from="1715864664581" duration="7000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

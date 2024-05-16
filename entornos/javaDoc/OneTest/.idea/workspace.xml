@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b38f6a94-2189-48ea-b271-741cbd0342a9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../lenguajes/JSON/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lenguajes/JSON/.idea/JSON.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lenguajes/JSON/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lenguajes/JSON/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lenguajes/JSON/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../lenguajes/JSON/conferencia.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/MaximoPermitidoException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/NumeroNegativo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/SaldoInsuficienteException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/UsuarioNoEncontrado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/ValoresNoValidosException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/CajeroControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/CajeroControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Clases/Cuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Clases/Cuenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Clases/Factura.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Clases/Factura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/CuentaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/CuentaControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/resources/hotel/cajero/iniciarSesion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/resources/hotel/cajero/iniciarSesion.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2Ps9dMlrx67TGNPWOlzmg2sVKa7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.TestBarco.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestBarco.testAgregarTripulante.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestBatalla.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestBatalla.testAtaqueLuffy.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestBatalla.testAtaqueZoro.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestFruta.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestUnitarios.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestUnitarios.testFrutaEsDeliciosa.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestUnitarios.testFrutaPuedoComer.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestUnitarios.testLuffyGetNombre.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.TestUnitarios.testLuffyGetPoder.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;avengersOnActions&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/olaqase93/DAM1/entornos/javaDoc/OneTest&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.antonio" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.antonio" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.TestFruta">
+    <configuration name="TestBarco" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OneTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.antonio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.antonio" />
+      <option name="MAIN_CLASS_NAME" value="org.antonio.TestBarco" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestBarco.testAgregarTripulante" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OneTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.antonio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.antonio" />
+      <option name="MAIN_CLASS_NAME" value="org.antonio.TestBarco" />
+      <option name="METHOD_NAME" value="testAgregarTripulante" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestBatalla" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OneTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.antonio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.antonio" />
+      <option name="MAIN_CLASS_NAME" value="org.antonio.TestBatalla" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestBatalla.testAtaqueZoro" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OneTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.antonio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.antonio" />
+      <option name="MAIN_CLASS_NAME" value="org.antonio.TestBatalla" />
+      <option name="METHOD_NAME" value="testAtaqueZoro" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestFruta" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="OneTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.antonio.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.antonio" />
+      <option name="MAIN_CLASS_NAME" value="org.antonio.TestFruta" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestFruta" />
+        <item itemvalue="JUnit.TestBarco" />
+        <item itemvalue="JUnit.TestBarco.testAgregarTripulante" />
+        <item itemvalue="JUnit.TestBatalla" />
+        <item itemvalue="JUnit.TestBatalla.testAtaqueZoro" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b38f6a94-2189-48ea-b271-741cbd0342a9" name="Changes" comment="" />
+      <created>1684235008869</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684235008869</updated>
+      <workItem from="1715782479352" duration="2331000" />
+      <workItem from="1715797193080" duration="23000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
