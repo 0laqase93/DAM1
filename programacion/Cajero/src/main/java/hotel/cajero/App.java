@@ -37,7 +37,7 @@ public class App extends Application {
         this.scene = new Scene(fxmlLoader.load(), 600, 400);
         stage.setTitle("CajeroNOVA");
         stage.setScene(scene);
-        // stage.initStyle(StageStyle.UNDECORATED);
+        //stage.initStyle(StageStyle.UNDECORATED);
         stage.show();
     }
 

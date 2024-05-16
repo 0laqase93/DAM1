@@ -4,9 +4,9 @@ public class Factura {
     private Integer numeroFactura;
     private String NIF;
     private Integer numeroHabitacion;
-    private String importe;
+    private Double importe;
 
-    public Factura(Integer numeroFactura, String NIF, Integer numeroHabitacion, String importe) {
+    public Factura(Integer numeroFactura, String NIF, Integer numeroHabitacion, Double importe) {
         this.numeroFactura = numeroFactura;
         this.NIF = NIF;
         this.numeroHabitacion = numeroHabitacion;
@@ -37,11 +37,11 @@ public class Factura {
         this.numeroHabitacion = numeroHabitacion;
     }
 
-    public String getImporte() {
+    public Double getImporte() {
         return importe;
     }
 
-    public void setImporte(String importe) {
+    public void setImporte(Double importe) {
         this.importe = importe;
     }
 }

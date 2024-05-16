@@ -34,4 +34,8 @@ public class Cuenta {
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+
+    public void restarSaldo(double quitar) {
+        this.saldo -= quitar;
+    }
 }

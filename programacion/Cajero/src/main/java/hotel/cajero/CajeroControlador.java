@@ -5,9 +5,13 @@ import java.sql.*;
 import java.util.ResourceBundle;
 
 import hotel.cajero.Clases.Cliente;
+import hotel.cajero.Exceptions.UsuarioNoEncontrado;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 
 public class CajeroControlador {
@@ -23,7 +27,7 @@ public class CajeroControlador {
     private TextField NIF;
 
     @FXML
-    private TextField claveAcceso;
+    private PasswordField claveAcceso;
 
     @FXML
     void IniciarSesion(MouseEvent event) {
@@ -46,13 +50,13 @@ public class CajeroControlador {
                     App.setCliente(new Cliente(rs.getString("NIF"), rs.getString("clave"), rs.getString("nombre"), rs.getString("apellidos"), rs.getString("movil")));
                     App.setScene("acceso");
                 } else {
-                    throw new SQLException();
+                    throw new UsuarioNoEncontrado("NIF o Clave incorrecta");
                 }
-            } catch (SQLException e) {
+            } catch (UsuarioNoEncontrado e) {
                 Alert alerta = new Alert(Alert.AlertType.ERROR);
                 alerta.setTitle("ERROR DE ACCESO");
                 alerta.setHeaderText("Error");
-                alerta.setContentText("NIF o Clave incorrecta");
+                alerta.setContentText(e.getMessage());
                 alerta.showAndWait();
             } catch (Exception e) {
                 e.printStackTrace();

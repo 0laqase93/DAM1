@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://api.chucknorris.io/jokes/random",
+
+  "icon_url": "Product",
+  "id": "A product in the catalog",
+  "url": "object",
+  "value": "A product in the catalog"
+}
+

@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0daf37aa-8eec-4a27-9830-29da6086fcfa" name="Changes" comment="" />
+    <list default="true" id="0daf37aa-8eec-4a27-9830-29da6086fcfa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../lenguajes/JSON/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../lenguajes/JSON/.idea/JSON.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../lenguajes/JSON/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../lenguajes/JSON/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../lenguajes/JSON/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../lenguajes/JSON/conferencia.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/cajero/Exceptions/MaximoPermitidoException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/cajero/Exceptions/NumeroNegativo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/cajero/Exceptions/SaldoInsuficienteException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/cajero/Exceptions/UsuarioNoEncontrado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/cajero/Exceptions/ValoresNoValidosException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/cajero/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/cajero/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/cajero/CajeroControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/cajero/CajeroControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/cajero/Clases/Cuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/cajero/Clases/Cuenta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/cajero/Clases/Factura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/cajero/Clases/Factura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hotel/cajero/CuentaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hotel/cajero/CuentaControlador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hotel/cajero/iniciarSesion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hotel/cajero/iniciarSesion.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,36 +57,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.App.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "avengersOnActions",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/olaqase93/mysql-connector-j-8.3.0.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;avengersOnActions&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/olaqase93/mysql-connector-j-8.3.0.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql_aurora_aws"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql_aurora_aws&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/hotel/cajero" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="hotel.cajero.Exceptions" />
     </key>
   </component>
   <component name="RunManager">
@@ -102,6 +124,16 @@
       <workItem from="1715248764665" duration="306000" />
       <workItem from="1715249080219" duration="309000" />
       <workItem from="1715249692060" duration="235000" />
+      <workItem from="1715258680837" duration="7024000" />
+      <workItem from="1715271448285" duration="179000" />
+      <workItem from="1715271635806" duration="1496000" />
+      <workItem from="1715344133858" duration="231000" />
+      <workItem from="1715347725251" duration="96000" />
+      <workItem from="1715348497163" duration="157000" />
+      <workItem from="1715696592509" duration="105000" />
+      <workItem from="1715759483574" duration="12000" />
+      <workItem from="1715782108798" duration="50000" />
+      <workItem from="1715794034887" duration="34000" />
     </task>
     <servers />
   </component>

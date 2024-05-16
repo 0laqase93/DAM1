@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
@@ -19,6 +20,6 @@
          </effect>
       </ImageView>
       <TextField fx:id="NIF" layoutY="152.0" prefHeight="44.0" prefWidth="600.0" promptText="NIF o NIE" style="-fx-background-color: #2696d7; -fx-prompt-text-fill: #ffffff;" />
-      <TextField fx:id="claveAcceso" layoutY="209.0" prefHeight="44.0" prefWidth="600.0" promptText="Clave de acceso" style="-fx-background-color: #2696d7; -fx-prompt-text-fill: #ffffff;" />
+      <PasswordField fx:id="claveAcceso" layoutY="209.0" prefHeight="44.0" prefWidth="600.0" promptText="Clave de acceso" style="-fx-background-color: #2696d7; -fx-prompt-text-fill: #ffffff;" />
    </children>
 </AnchorPane>

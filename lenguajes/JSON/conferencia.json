@@ -1,0 +1,29 @@
+{
+  "Conferencias": [
+    {
+      "Nombre": "Introducción a la Inteligencia Artificial",
+      "Fecha": "2024-07-15",
+      "Ubicación": "Centro de Convenciones XYZ",
+      "Oradores": [
+        {"Nombre":  "Ana García", "Afiliaciones":  "Universidad ABC", "Biografías": "Experta en aprendizaje automático"},
+        {"Nombre":  "Juan Martínez", "Afiliaciones":  "Instituto XYZ", "Biografías": "Investigador en redes neuronales"}
+      ],
+      "Asistentes": [
+        {"Nombre":  "María López", "Afiliaciones": "Empresa XYZ", "Correo": "maria@example.com"},
+        {"Nombre":  "Pedro Ramírez", "Afiliaciones": "Universidad DEF", "Correo": "pedro@example.com"}
+      ]
+    },
+    {
+      "Nombre": "Desarrollo de Aplicaciones Web",
+      "Fecha": "2024-08-20",
+      "Ubicación": "Hotel ABC",
+      "Oradores": [
+        {"Nombre":  "Elena Pérez", "Afiliaciones":  "Empresa XYZ", "Biografías": "Experta en desarrollo front-end"}
+      ],
+      "Asistentes": [
+        {"Nombre":  "Luis Fernández", "Afiliaciones": "Universidad GHI", "Correo": "luis@example.com"},
+        {"Nombre":  "Ana Rodríguez", "Afiliaciones": "Instituto JKL", "Correo": "ana@example.com"}
+      ]
+    }
+  ]
+}
