@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reservas [
+        <!ELEMENT reservas (vuelo)*>
+        <!ELEMENT vuelo (origen, destino, fecha, hora_salida, duracion, pasajeros, clase, equipaje, embarque_prioritario)>
+        <!ATTLIST vuelo
+                codigo ID #REQUIRED>
+        <!ELEMENT origen (#PCDATA)>
+        <!ELEMENT destino (#PCDATA)>
+        <!ELEMENT fecha (#PCDATA)>
+        <!ELEMENT hora_salida (#PCDATA)>
+        <!ELEMENT duracion (#PCDATA)>
+        <!ELEMENT pasajeros (pasajero)+>
+        <!ELEMENT pasajero (#PCDATA)>
+        <!ATTLIST pasajero
+                nombre CDATA #REQUIRED
+                edad CDATA #REQUIRED>
+        <!ELEMENT clase (#PCDATA)>
+        <!ATTLIST clase
+                tipo (Economica | PrimeraClase) #REQUIRED>
+        <!ELEMENT equipaje (#PCDATA)>
+        <!ATTLIST equipaje
+                cantidad CDATA #REQUIRED
+                peso_total CDATA #REQUIRED>
+        <!ELEMENT embarque_prioritario (EMPTY)?>
+        ]>
+<reservas>
+    <vuelo codigo="V001">
+        <origen>Ciudad A</origen>
+        <destino>Ciudad B</destino>
+        <fecha>2023-06-10</fecha>
+        <hora_salida>14:30</hora_salida>
+        <duracion>3h30min</duracion>
+        <pasajeros>
+            <pasajero nombre="Juan Pérez" edad="30"/>
+            <pasajero nombre="María Gómez" edad="25"/>
+        </pasajeros>
+        <clase tipo="Economica"/>
+        <equipaje cantidad="2" peso_total="30kg"/>
+        <embarque_prioritario/>
+    </vuelo>
+    <!-- Otros registros de vuelos y reservas -->
+</reservas>

@@ -30,4 +30,6 @@ valida sería c:\Mis Documentos\práctica 1\prueba.txt
 ^[A-Za-z]:\\([\w]|[^<>:"/\\|?*])+(\\([\w]|[^<>:"/\\|?*])+)*$
 
 Fechas (DD/MM/AAAA):
-^([1-31]){2}/([1-12]){2}/\d{4}$
+^([1-31]){2}/([1-12]){2}$
+
+https://regexr.com/

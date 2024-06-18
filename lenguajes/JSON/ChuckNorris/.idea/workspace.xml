@@ -5,22 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9aca8b8-0179-486a-9646-0eba783162a8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Clases/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Clases/Factura.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/MaximoPermitidoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/SaldoInsuficienteException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/UsuarioNoEncontrado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/ValoresNoValidosException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/resources/hotel/cajero/acceso.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/resources/hotel/cajero/iniciarSesion.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/resources/hotel/img/NOVA.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../examenXML/damultimate.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../examenXML/damultimate.xsd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../examenXML/reservas.dtd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../examenXML/reservas.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../entornos/javaDoc/OneTest/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../entornos/javaDoc/OneTest/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../entornos/javaDoc/OneTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../entornos/javaDoc/OneTest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/archetype-resources/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/archetype-resources/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../XML/destinos/destinos.dtd" beforeDir="false" afterPath="$PROJECT_DIR$/../../XML/destinos/destinos.dtd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../expresiones/Ejercicio" beforeDir="false" afterPath="$PROJECT_DIR$/../../expresiones/Ejercicio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +47,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/olaqase93/DAM1/lenguajes/JSON/ChuckNorris/demo/src/main/java/com/example/App.java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,11 +62,17 @@
     <option name="organizationId" value="3ByXg" />
     <option name="userId" value="3y6q4" />
   </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="?" />
+      <command value="App" />
+    </option>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
       </set>
     </attachedChunks>
   </component>
@@ -83,6 +87,10 @@
       <workItem from="1715863271498" duration="1282000" />
       <workItem from="1715864664581" duration="7000" />
       <workItem from="1715876746610" duration="2000" />
+      <workItem from="1716207665707" duration="75000" />
+      <workItem from="1716208362378" duration="734000" />
+      <workItem from="1716816671902" duration="50000" />
+      <workItem from="1716817454552" duration="298000" />
     </task>
     <servers />
   </component>

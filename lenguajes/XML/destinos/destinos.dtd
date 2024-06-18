@@ -1,3 +1,4 @@
+
 <!ELEMENT destinos (destino+)>
 <!ELEMENT destino (nombre, descripcion, actividades?, atracciones?)>
     <!ATTLIST destino pais CDATA #REQUIRED

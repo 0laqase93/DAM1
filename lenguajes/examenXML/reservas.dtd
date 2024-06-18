@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reservas [
+        <!ELEMENT reservas (vuelo)*>
+        <!ELEMENT vuelo (origen|destino|fecha|hora_salida|duracion|pasajeros|clase|equipaje|embarque_prioritario)*>
+        <!ATTLIST vuelo
+                codigo ID #REQUIRED>
+        <!ELEMENT origen (#PCDATA)>
+        <!ELEMENT destino (#PCDATA)>
+        <!ELEMENT fecha (#PCDATA)>
+        <!ELEMENT hora_salida (#PCDATA)>
+        <!ELEMENT duracion (#PCDATA)>
+        <!ELEMENT pasajeros (pasajero)+>
+        <!ELEMENT pasajero (#PCDATA)>
+        <!ATTLIST pasajero
+                nombre CDATA #REQUIRED
+                edad CDATA #REQUIRED>
+        <!ELEMENT clase (#PCDATA)>
+        <!ATTLIST clase
+                tipo (Economica | Primera_clase) #REQUIRED>
+        <!ELEMENT equipaje (#PCDATA)>
+        <!ATTLIST equipaje
+                cantidad CDATA #REQUIRED
+                peso_total CDATA #REQUIRED>
+        <!ELEMENT embarque_prioritario (EMPTY)* >
+        ]>

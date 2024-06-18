@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<schema  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="damultimate">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ordenador" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="tipo">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Servidor"/>
+                                        <xs:enumeration value="Sobremesa"/>
+                                        <xs:enumeration value="Portatil"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="componentesSW">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="software" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:choice>
+                                                        <xs:element name="sistemaOperativo" type="xs:string"/>
+                                                        <xs:element name="aplicacion" type="xs:string"/>
+                                                    </xs:choice>
+                                                    <xs:element name="version" type="xs:positiveInteger"/>
+                                                    <xs:element name="fechaInstalacion" type="xs:date"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="componentesHW">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="hardware" minOccurs="0" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="tipo" type="xs:string"/>
+                                                    <xs:element name="descripcion" type="xs:string"/>
+                                                </xs:sequence>
+                                                <xs:attribute name="fechaAdquisicion" type="xs:date" use="required"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="ActualizacionesRevisiones">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="act" maxOccurs="unbounded">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="descripcion" type="xs:string"/>
+                                                    <xs:element name="numActualizacion">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:pattern value="\d{2}\.\d{2}[BF]"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="fechaInstalacion" type="xs:date" use="required"/>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:ID"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</schema>

@@ -5,24 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b38f6a94-2189-48ea-b271-741cbd0342a9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../lenguajes/JSON/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../lenguajes/JSON/.idea/JSON.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../lenguajes/JSON/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../lenguajes/JSON/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../lenguajes/JSON/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../lenguajes/JSON/conferencia.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/MaximoPermitidoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/NumeroNegativo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/SaldoInsuficienteException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/UsuarioNoEncontrado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Exceptions/ValoresNoValidosException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lenguajes/JSON/ChuckNorris/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lenguajes/JSON/ChuckNorris/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lenguajes/JSON/ChuckNorris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lenguajes/JSON/ChuckNorris/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../lenguajes/JSON/ChuckNorris/target/classes/archetype-resources/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../lenguajes/JSON/ChuckNorris/target/classes/archetype-resources/src/main/java/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/CajeroControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/CajeroControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Clases/Cuenta.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Clases/Cuenta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Clases/Factura.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/Clases/Factura.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/CuentaControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/java/hotel/cajero/CuentaControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/resources/hotel/cajero/iniciarSesion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../programacion/Cajero/src/main/resources/hotel/cajero/iniciarSesion.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,42 +34,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.TestBarco.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestBarco.testAgregarTripulante.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestBatalla.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestBatalla.testAtaqueLuffy.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestBatalla.testAtaqueZoro.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestFruta.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestUnitarios.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestUnitarios.testFrutaEsDeliciosa.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestUnitarios.testFrutaPuedoComer.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestUnitarios.testLuffyGetNombre.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.TestUnitarios.testLuffyGetPoder.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;avengersOnActions&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/olaqase93/DAM1/entornos/javaDoc/OneTest&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.TestBarco.executor": "Run",
+    "JUnit.TestBarco.testAgregarTripulante.executor": "Run",
+    "JUnit.TestBatalla.executor": "Run",
+    "JUnit.TestBatalla.testAtaqueLuffy.executor": "Run",
+    "JUnit.TestBatalla.testAtaqueZoro.executor": "Run",
+    "JUnit.TestFruta.executor": "Run",
+    "JUnit.TestUnitarios.executor": "Run",
+    "JUnit.TestUnitarios.testFrutaEsDeliciosa.executor": "Run",
+    "JUnit.TestUnitarios.testFrutaPuedoComer.executor": "Run",
+    "JUnit.TestUnitarios.testLuffyGetNombre.executor": "Run",
+    "JUnit.TestUnitarios.testLuffyGetPoder.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/olaqase93/DAM1/entornos/testing/OneTest",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.antonio" />
@@ -183,8 +169,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
       </set>
     </attachedChunks>
   </component>
@@ -198,6 +184,7 @@
       <updated>1684235008869</updated>
       <workItem from="1715782479352" duration="2331000" />
       <workItem from="1715797193080" duration="23000" />
+      <workItem from="1716384979777" duration="61000" />
     </task>
     <servers />
   </component>

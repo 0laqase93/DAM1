@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<damultimate xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:noNamespaceSchemaLocation="damultimate.xsd">
+    <ordenador id="or01">
+        <tipo>Servidor</tipo>
+        <componentesSW>
+            <software>
+                <sistemaOperativo>Windows</sistemaOperativo>
+                <version>10</version>
+                <fechaInstalacion>2022-01-01</fechaInstalacion>
+            </software>
+            <software>
+                <aplicacion>Antivirus Avast</aplicacion>
+                <version>44</version>
+                <fechaInstalacion>2023-02-15</fechaInstalacion>
+            </software>
+        </componentesSW>
+        <componentesHW>
+            <hardware fechaAdquisicion="2022-03-10">
+                <tipo>CPU</tipo>
+                <descripcion>Intel i7</descripcion>
+            </hardware>
+            <hardware fechaAdquisicion="2022-05-12">
+                <tipo>RAM</tipo>
+                <descripcion>16GB DDR4</descripcion>
+            </hardware>
+        </componentesHW>
+        <ActualizacionesRevisiones>
+            <act fechaInstalacion="2022-04-05">
+                <descripcion>Actualización de seguridad</descripcion>
+                <numActualizacion>22.04B</numActualizacion>
+            </act>
+            <act fechaInstalacion="2022-07-15">
+                <descripcion>Versión final del software</descripcion>
+                <numActualizacion>12.07F</numActualizacion>
+            </act>
+        </ActualizacionesRevisiones>
+    </ordenador>
+    <ordenador id="or02">
+        <tipo>Sobremesa</tipo>
+        <componentesSW>
+            <software>
+                <sistemaOperativo>Windows</sistemaOperativo>
+                <version>11</version>
+                <fechaInstalacion>2022-01-01</fechaInstalacion>
+            </software>
+        </componentesSW>
+        <componentesHW/>
+        <ActualizacionesRevisiones>
+            <act fechaInstalacion="2023-04-05">
+                <descripcion>Actualización de seguridad</descripcion>
+                <numActualizacion>22.04B</numActualizacion>
+            </act>
+        </ActualizacionesRevisiones>
+    </ordenador>
+</damultimate>

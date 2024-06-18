@@ -5,22 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0daf37aa-8eec-4a27-9830-29da6086fcfa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/cajero/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/cajero/Clases/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/cajero/Clases/Factura.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/cajero/Exceptions/MaximoPermitidoException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/cajero/Exceptions/SaldoInsuficienteException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/cajero/Exceptions/UsuarioNoEncontrado.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/hotel/cajero/Exceptions/ValoresNoValidosException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/cajero/acceso.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/cajero/iniciarSesion.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hotel/img/NOVA.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entornos/javaDoc/OneTest/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../entornos/javaDoc/OneTest/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../entornos/javaDoc/OneTest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../entornos/javaDoc/OneTest/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lenguajes/JSON/ChuckNorris/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lenguajes/JSON/ChuckNorris/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lenguajes/JSON/ChuckNorris/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../lenguajes/JSON/ChuckNorris/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../lenguajes/JSON/ChuckNorris/target/classes/archetype-resources/src/main/java/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../lenguajes/JSON/ChuckNorris/target/classes/archetype-resources/src/main/java/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,33 +46,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.App.executor": "Run",
-    "Application.HelloApplication.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/olaqase93/mysql-connector-j-8.3.0.jar",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.App.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/olaqase93/mysql-connector-j-8.3.0.jar&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql_aurora_aws"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql_aurora_aws&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/hotel/cajero" />
@@ -102,8 +93,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
       </set>
     </attachedChunks>
   </component>
@@ -123,6 +114,9 @@
       <workItem from="1715249080219" duration="309000" />
       <workItem from="1715249692060" duration="235000" />
       <workItem from="1715258680837" duration="7024000" />
+      <workItem from="1715876751450" duration="83000" />
+      <workItem from="1716628944055" duration="67000" />
+      <workItem from="1716726968557" duration="20000" />
     </task>
     <servers />
   </component>
